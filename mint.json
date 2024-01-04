@@ -1,8 +1,8 @@
 {
   "name": "Trace Knowledge Center",
   "logo": {
-    "dark": "logo/dark.svg",
-    "light": "logo/dark.svg"
+    "dark": "logo/fairfood_logo.png",
+    "light": "logo/fairfood_logo.png"
   },
   "favicon": "logo/dark.svg",
   "colors": {
