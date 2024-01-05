@@ -1,0 +1,381 @@
+---
+title: Trace Knowledge Center
+description: "A place to learn and understand the Trace. Check out our docs and support resources!"
+---
+
+<img
+  className="block dark:hidden"
+   src="/images/trace-base.svg"
+  alt="Hero Light"
+/>
+<img
+  className="hidden dark:block"
+   src="/images/trace-base.svg"
+ 
+  alt="Hero Dark"
+/>
+
+## What is Trace?
+
+Trace is an easy-to-use blockchain-based platform that allows agri-food businesses to make their supply chain transparent and trace their products from farm-to-fork. 
+
+<CardGroup cols={2}>
+  <Card
+    title="Web Dashboard"
+    icon="pen-to-square"
+    href="https://mintlify.com/docs/quickstart"
+  >
+   Our dashboard and public interfaces will help to understand more about the farmers and businesses in your food chain, the current whereabouts of products, and the extent to which brand promises have been met.
+  </Card>
+  <Card
+    title="Harvest Mobile App"
+    icon="image"
+    href="https://mintlify.com/docs/development"
+  >
+   The food collectors in the chain can use the application without the internet to onboard farmers and record transactions. It enabled a new gateway to interact with the farmers in the chain using NFC-based cards. 
+  </Card>
+
+   <Card
+    title="Open Source Journey "
+    icon="image"
+    href="https://mintlify.com/docs/development"
+  >
+  We started our Open source journey in 2022 with the help of the <a href="https://www.cisco.com/c/en/us/about/csr/impact/cisco-foundation.html">Cisco Foundation</a> . We are planning to publish our code  module by module. More curious? Find more details below. 
+  </Card> 
+  <Card
+    title="Integration Solutions"
+    icon="image"
+    href="https://mintlify.com/docs/development"
+  >
+   We are offering a simple solution to import the supply chain data into Trace. We are also working on more sophisticated solutions.  
+  </Card>
+    <Card
+    title="Beyond Blockchain"
+    icon="image"
+    href="https://mintlify.com/docs/development"
+  >
+  We are using <a href="https://hedera.com/">Hedera</a>  for tokenisation and ledgers. . HBAR is the native, energy-efficient cryptocurrency of Hedera that powers the decentralised economy. 
+  </Card>
+    <Card
+    title="Identity verification and more"
+    icon="image"
+    href="https://mintlify.com/docs/development"
+  >
+ We created NFC-based cards for the farmers to interact with Trace. They can use these cards to verify their transactions and premiums. 
+  </Card>
+</CardGroup>
+
+
+
+## Open Source Journey
+
+We are planning to fully open-source our code base by 2024 module by module.
+
+### Open Source Time Line
+#### &#8226; 2022
+
+<CardGroup cols={2}>
+  <Card
+  
+    title="Kick off"
+    
+    >
+    <sup>Q1: 2022</sup>
+
+    Did some initial audits to create a long-term plan. We decided to start with the mobile app and then the rest of the platform. 
+  </Card>
+ <Card
+  
+    title="Publish Mobile App"
+    
+    >
+    <sup>Q4 -2022</sup>
+
+    Publish the react native Harvest app code base. Learn and refine the open-source plan.
+  </Card>
+  
+
+</CardGroup>
+#### &#8226; 2023
+
+<CardGroup cols={2}>
+  <Card
+  
+    title="Open source ready"
+    
+    >
+    <sup>Q2 2023</sup>
+
+    Start working on the Backend and the web. Complete documentation and address what's missing.
+  </Card>
+ <Card
+  
+    title="Final Audits"
+    
+    >
+    <sup>Q4 2023</sup>
+
+    Do a final security audit and resolve vulnerabilities. 
+  </Card>
+  
+
+</CardGroup>
+
+
+#### &#8226; 2024
+
+<CardGroup cols={2}>
+  <Card
+  
+    title="Publish Frontend"
+    
+    >
+    <sup>Q2 2024</sup>
+
+    Publish frontend modules and collect feedback.
+  </Card>
+ <Card
+  
+    title="Publish Backend &Middle-wares "
+    
+    >
+    <sup>Q4 2024</sup>
+
+    Publish backend modules and collect feedback. 
+  </Card>
+  
+
+</CardGroup>
+
+## How does Trace work?
+
+Trace is an easy-to-use blockchain-based platform that allows agri-food businesses to make their supply chain transparent and trace their products from farm-to-fork. Dive into case studies and learn more about Trace.
+
+<Steps>
+  <Step title="Discover your chain">
+  <img
+  className="block dark:hidden"
+  src="/images/connect.png"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/connect.png"
+  alt="connection"
+/>
+    Trace connects supply chain partners. You build up the chain digitally by inviting partners (1-up-1-down) until the first link – the farmer – is reached. Trace is easily accessible, even for smallholder farmers in low tech environments.
+  </Step>
+
+
+  <Step title="Trace your products">
+   <img
+  className="block dark:hidden"
+  src="/images/hero-dark.svg"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/hero-dark.svg"
+  alt="Hero Dark"
+/>
+    Every transaction for each product is registered, from the purchase at the farm gate until the final sale to the consumer. These transactions together form your product chain. Blockchain offers the possibility to safely store this data, while with Trace you can make the production chain transparent.
+  </Step>
+  <Step title="Verify brand promises">
+     <img
+  className="block dark:hidden"
+  src="/images/hero-dark.svg"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/hero-dark.svg"
+  alt="Hero Dark"
+/>
+    Is your product organic? Did the farmer receive a fair price? Trace allows you to prove your promises. The proof can be shared with consumers. The blockchain tool Trace holds a library with a series of claims related to social, economic and environmental issues. Of course, we can develop a specific claim for your product.
+  </Step>
+
+   <Step title="Tell the whole story"> 
+     <img
+  className="block dark:hidden"
+  src="/images/hero-dark.svg"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/hero-dark.svg"
+  alt="Hero Dark"
+/>
+    Trace is the final link in your storytelling. Through a link or QR-code that is placed on your product, consumers land on an interface where they can walk through the whole product history. Check out the story of Pure Africa coffee
+  </Step>
+
+   <Step title="Set ambitions and share added value"> 
+     <img
+  className="block dark:hidden"
+  src="/images/hero-dark.svg"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/hero-dark.svg"
+  alt="Hero Dark"
+/>
+    The ultimate goal: by providing you with new knowledge of your chain, Trace allows you to evaluate your sustainability ambitions. Moreover, discover to whom in your chain the newly transparent information adds value, and distribute that value proportionally across the chain.
+  </Step>
+</Steps>
+
+
+## Who are we?
+
+We are a non-profit organisation accelerating the transition towards a fair food system, one that defends the livelihoods of the people behind our food. Working in over 15 countries, we bring our expertise into decision-making spaces, continuously pushing for farmer inclusion and corporate accountability at all levels. 
+
+#### We develop solutions that create value for people and the planet
+
+Fairfood is a long-term partner for companies looking to transition towards fair and sustainable supply chains. They provide solutions that deliver value for all stakeholders involved in food production through traceability, transparency and digitization of the first-mile. This improves trust and connectivity among supply chain partners, fostering sustainable business relationships and benefiting farmers, brands, retailers and consumers. 
+
+<CardGroup cols={3}>
+
+  <Card
+     title="Traceability that proves sustainability claims"> <br />
+     
+      <img
+  className="block dark:hidden"
+  src="/images/hero-dark.svg"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/hero-dark.svg"
+  alt="Hero Dark"
+/>
+  
+ 
+    We enable product traceability from verified smallholder farmers, so businesses can support sustainability claims with robust data..
+  </Card>
+
+  <Card
+     title="Supply chain transparency for responsible sourcing"> <br />
+     
+      <img
+  className="block dark:hidden"
+  src="/images/hero-dark.svg"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/hero-dark.svg"
+  alt="Hero Dark"
+/>
+  
+ 
+    We nurture public-private partnerships to increase supply chain transparency that enables businesses to deliver on sustainability commitments.
+  </Card>
+
+
+
+
+  <Card
+     title="First-mile digitisation for financial inclusion"> <br />
+     
+      <img
+  className="block dark:hidden"
+  src="/images/hero-dark.svg"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/hero-dark.svg"
+  alt="Hero Dark"
+/>
+  
+ 
+    Smallholder farmers can connect to supply chains with digital solutions that enable better access to markets and finance.
+  </Card>
+
+</CardGroup>
+
+
+
+
+## Impact areas
+
+Defining the areas in which our partnerships aim to make an impact. 
+
+
+
+<Steps>
+  <Step title="Fair Value Distribution">
+  <img
+  className="block dark:hidden"
+  src="/images/connect.png"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/connect.png"
+  alt="connection"
+/>
+    Fairfood aims to redistribute value along food supply chains, with the purpose of enhancing farmers’ and workers’ incomes and livelihoods. We want to demonstrate that this fairness can be a win-win for all stakeholders; as farmers gain a higher income, companies can profit from future-proofing their business.
+  </Step>
+
+
+  <Step title="Transparent supply chains">
+   <img
+  className="block dark:hidden"
+  src="/images/hero-dark.svg"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/hero-dark.svg"
+  alt="Hero Dark"
+/>
+    Supply chain transparency ultimately serves corporate accountability. For too long, misconducts have been hidden behind opaque food supply chains. By making them transparent, we put a spotlight on farmers’ and workers’ rights, allowing businesses to back up the promises they make about social and environmental sustainability, and consumers to dig into the true story behind their products.
+  </Step>
+  <Step title="Living wage & income">
+     <img
+  className="block dark:hidden"
+  src="/images/hero-dark.svg"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/hero-dark.svg"
+  alt="Hero Dark"
+/>
+    Poverty is a driving force behind a lot of the issues in agri-food; it has been connected to child labour, deforestation and unsustainable agricultural practices. Yet, this fundamental issue is astonishingly complex in and of itself. To make the solution measurable, Fairfood is looking at the concept of living wages and incomes, which should allow workers and farmers to afford a decent standard of living.
+  </Step>
+
+   <Step title="Digital inclusion"> 
+     <img
+  className="block dark:hidden"
+  src="/images/hero-dark.svg"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/hero-dark.svg"
+  alt="Hero Dark"
+/>
+    Global crises demand corporate accountability. As companies need a more profound understanding of their impact on people and planet, they are turning to digital solutions, which often demand data collection at farm level. Fairfood envisions a future where everyone benefits from this digitisation. We put the farmer at the centre of all data processes, to ultimately have them benefit of the value these processes add to the final product.
+  </Step>
+
+   <Step title="Climate"> 
+     <img
+  className="block dark:hidden"
+  src="/images/hero-dark.svg"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/hero-dark.svg"
+  alt="Hero Dark"
+/>
+    Carbon insetting : Insetting is when a company reduces CO2 within its supply chain. They support farmers to plant trees and adopt climate-resilient practices, selling carbon credits for income. A new program with Solidaridad, Cool Farm Alliance, &ranj, Rabobank, and 12.7 million euros from the Dutch Postcode Lottery aims to achieve this.
+
+
+Climate claims: Claim attestation is a central function of our main solution Trace. Climate claims are relatively new to Fairfood and we're currently in the process of defining which climate claims we can support within our solutions. 'No deforestation' will most likely be a key climate claim we'll support. 
+
+
+
+  </Step>
+</Steps>
