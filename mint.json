@@ -52,7 +52,7 @@
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Get Started..",
       "pages": ["introduction","How Trace Works", "quickstart", "development"]
     },
     {
