@@ -1,12 +1,12 @@
 ---
-title: Login
+title: Buy products
 
 ---
 
 
 
 <Steps>
-  <Step title="Arrange your credentials ">
+  <Step title="Select transaction type ">
    <img
   className="block dark:hidden"
   src="/images/hero-dark.svg"
@@ -17,11 +17,16 @@ title: Login
   src="/images/hero-dark.svg"
   alt="Hero Dark"
 />
-We will create an account for you and share your credentials with you. We will create an account for you and share your credentials with you. Reach out to our support team if you have not registered your email or have not provided it.
+  By clicking the Buy button, the user will be prompted to grant permission to access their device location. They should choose the option to allow access "while using the app". After granting this permission, the prompt to allow access to the location will not appear again in future sessions.
+
+
+Clicking on the Buy option will take the user to the Choose product page.
+
+
 
 
   </Step>
-  <Step title="Log in to the application">
+  <Step title="Choose product">
      <img
   className="block dark:hidden"
   src="/images/hero-dark.svg"
@@ -32,16 +37,74 @@ We will create an account for you and share your credentials with you. We will c
   src="/images/hero-dark.svg"
   alt="Hero Dark"
 />
-    To update the Fairfood Collector app from the Google Play Store, follow these steps:
-1. You need to connect to the internet to log in.
-2. Enter your email and password and click the login button.
-3. Once your credentials are validated in, you will be redirected to the synching screen.
-4. We will sync all the data from the server and it can take from 1 to 10 minutes
-5. Once the synching is completed You can click on next to go to your home screen.
-
-**Note:** _You need to stay connected to the internet in the entire synching process. If the connection get disconnected then you need to re-start the process by killing the app._
+   By clicking the Buy option, the user will be directed to the Choose product page where we can select one of the available products.
 
 
+**Note:**  _Products are mapped against the supply chain. Based on the supply chains this product will list on Choose product page._
+
+  </Step>
+
+  <Step title="Add Quantity and Base price">
+   <img
+  className="block dark:hidden"
+  src="/images/hero-dark.svg"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/hero-dark.svg"
+  alt="Hero Dark"
+/>
+  Upon selecting a product, the user will be taken to the next page where they can enter the quantity and base price for the chosen product. 
+  </Step>
+  <Step title="Add another product">
+   <img
+  className="block dark:hidden"
+  src="/images/hero-dark.svg"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/hero-dark.svg"
+  alt="Hero Dark"
+/>
+ On the same page, we will have Add another product option to add multiple products. 
+When we click on the Add another product option, it will list all products with status.
+
+**Note:**  _We can not add another product without adding the Quantity and base price for the selected products._
+  </Step>
+
+
+  <Step title="Product details">
+   <img
+  className="block dark:hidden"
+  src="/images/hero-dark.svg"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/hero-dark.svg"
+  alt="Hero Dark"
+/>
+ Select the product through Add another product option and add Quantity, Base price details. While clicking on each product it will expand and display the Premium, Price details.
+  </Step>
+
+    <Step title="Premium verification">
+   <img
+  className="block dark:hidden"
+  src="/images/hero-dark.svg"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/hero-dark.svg"
+  alt="Hero Dark"
+/>
+While clicking on the **Next** button it will navigate to the Premium verification page.
+By scanning NFC cards it will share data and transactions with others for the purpose of traceability and storytelling
+
+
+Without NFC card also we can continue with the transactions through the **"No card"** option
 
   </Step>
 
