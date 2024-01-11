@@ -85,3 +85,40 @@ In the preceding section, we elaborated on how Trace Connect can effectively ope
 
 3. **Custom Forms**: Tailoring your data collection process is made possible through the custom forms section. Here, you can establish additional data fields and seamlessly link them to existing tables such as 'farmer' and 'transactions.' These newly configured fields will seamlessly integrate into the relevant sections of the mobile app after the next synchronisation. This facilitates efficient data collection in the field, data validation, and data cleansing, particularly when interfacing with external systems. All custom forms are stored in JSON format within the Connect database.
 
+## Connect External Systems
+The ability to interface with external systems is a crucial feature, allowing for the export of data collected through the app or the import of data from external sources. Credentials can be created for these connections, tailored to specific use cases. For example, credentials for reading and writing data related to farmers can be configured. This enhances the Connect server's role as an integration agent, enabling the incorporation of multiple data sources and streamlining data flow into various systems.
+
+## App Connection
+Connecting the mobile app is simple. Download the app from the Google Play Store, enter your server URL, and log in with your collector credentials. The app will automatically sync with your server, providing easy access to all necessary data for efficient data management and collection.
+
+## Data Fields
+The Connect server focuses on collecting data related to farmers and their transactions. Data fields are categorized into 'Base Data Fields' (default fields like name, address, etc.) and 'Additional Fields' (custom fields tailored to specific needs).
+
+### Base Farmer Fields
+- **Field:** Basic details such as first name, last name, street, city, country, etc.
+- **Type:** Various types like char, float, date, int.
+- **Required:** Specifies whether a field is mandatory or optional.
+- **Description:** Provides a brief description of each field.
+
+### Base Transaction Fields
+- **Field:** Details like source_id, destination_id, product_code, etc.
+- **Type:** Includes char, float, file, etc.
+- **Required:** Indicates if a field is mandatory.
+- **Description:** Describes each field's purpose and use.
+
+### Additional Fields
+Companies can define extra fields for farmers and transactions. These are synced with the app and can include types like character, number, date, latitude, and longitude.
+
+## APIs
+We are working on publishing APIs with detailed documentation. Implemented APIs include:
+
+- **Name:** APIs like List Farmers, Create Farmer, Update Farmer, etc.
+- **Method:** GET, POST, PUT, DELETE.
+- **Description:** Describes the function of each API.
+
+## Roadmap
+1. **November 2023:** Initial deployment and mobile app linking.
+2. **Jan 2024:** Publishing the APIs and first open-source release.
+3. **Feb 2024:** Publishing APIs and external server connection.
+4. **April 2024:** Enable Trace SSO.
+5. **June 2024:** First Python SDK release.
