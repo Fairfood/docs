@@ -32,6 +32,10 @@
       "name": "API Reference",
       "url": "api-reference"
     }
+    {
+      "name": "Test",
+      "url": "api-reference"
+    }
   ],
   "anchors": [
     {
