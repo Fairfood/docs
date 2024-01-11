@@ -20,12 +20,12 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "https://fairfood.atlassian.net/servicedesk/customer/portals"
+      "url": "mailto:support@fairfood.org"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "GitHub",
+    "url": "https://github.com/orgs/Fairfood/repositories"
   },
   "tabs": [
     {
