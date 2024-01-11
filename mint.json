@@ -20,7 +20,7 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:support@fairfood.org"
+      "url": "https://fairfood.atlassian.net/servicedesk/customer/portals"
     }
   ],
   "topbarCtaButton": {
