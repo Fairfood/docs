@@ -27,16 +27,16 @@
     "name": "GitHub",
     "url": "https://github.com/orgs/Fairfood/repositories"
   },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-    {
-      "name": "Test",
-      "url": "api-reference"
-    }
-  ],
+  // "tabs": [
+  //   {
+  //     "name": "API Reference",
+  //     "url": "api-reference"
+  //   }
+  //   {
+  //     "name": "Test",
+  //     "url": "api-reference"
+  //   }
+  // ],
   "anchors": [
     {
       "name": "Documentation",
