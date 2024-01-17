@@ -21,13 +21,13 @@ Our goal with Trace Connect is to achieve the following objectives:
 
 Standalone Backend for Trace Mobile App: Serve as a backend for the Trace mobile app, allowing users to deploy their own cloud-based instances of the app independently of the main Trace system. This will include configurations like premium payments and access control. 
 
-Data Synchronisation: Guarantee smooth data synchronisation between the Trace mobile app, Trace system, and other external systems, enabling effortless two-way data transfer. Enable the easy import of data from external sources into Trace, as well as the efficient export of data from Trace to external systems, to ensure a fluid exchange of data throughout the ecosystem.
+**Data Synchronisation**: Guarantee smooth data synchronisation between the Trace mobile app, Trace system, and other external systems, enabling effortless two-way data transfer. Enable the easy import of data from external sources into Trace, as well as the efficient export of data from Trace to external systems, to ensure a fluid exchange of data throughout the ecosystem.
 
-Integration Hub: Act as a central integration hub, facilitating the exchange of data between external systems and ERPs with Trace through APIs and the Connect SDK.
+**Integration Hub:** Act as a central integration hub, facilitating the exchange of data between external systems and ERPs with Trace through APIs and the Connect SDK.
 
-Additional Data Collection Agent: Enable the Trace app to support the creation of new or extra fields for data-gathering purposes. While Connect will function as a data collection agent, focusing mainly on basic farmer data and transactions, it is not intended for use as a survey instrument. However, it can serve as a central point for integrating additional data from various systems.
+**Additional Data Collection Agent**: Enable the Trace app to support the creation of new or extra fields for data-gathering purposes. While Connect will function as a data collection agent, focusing mainly on basic farmer data and transactions, it is not intended for use as a survey instrument. However, it can serve as a central point for integrating additional data from various systems.
 
-Modular and Scalable: Design the system to be modular and scalable, allowing for future expansion and integration with evolving technologies and requirements.
+**Modular and Scalable:** Design the system to be modular and scalable, allowing for future expansion and integration with evolving technologies and requirements.
 
 **image here**
 
@@ -46,15 +46,15 @@ Trace communicates with the Connect using a shared SDK, which also serves as a b
 ### Core Modules
 The core modules of TraceConnect primarily revolve around companies, farmers, their transactions, and the customization of data connections for the Trace mobile app. Here are the key core modules:
 
-Authentication (Auth): This pivotal module is responsible for user management and access control within TraceConnect. It empowers administrators to define and manage user roles and permissions, ensuring that users have the appropriate level of access to the system's features. In addition to handling internal user authentication, the Auth module plays a crucial role in managing OAuth connections for external services. This includes the secure integration of external applications and services, enhancing the overall security and functionality of TraceConnect.
+**Authentication (Auth):** This pivotal module is responsible for user management and access control within TraceConnect. It empowers administrators to define and manage user roles and permissions, ensuring that users have the appropriate level of access to the system's features. In addition to handling internal user authentication, the Auth module plays a crucial role in managing OAuth connections for external services. This includes the secure integration of external applications and services, enhancing the overall security and functionality of TraceConnect.
 
-Supply Chain: The Supply Chain module serves as the backbone of the system, encompassing the comprehensive management of the supply chain structure. This includes the  tracking of companies, farmers, products, and their interconnected relationships. Within this module, the crucial task of managing farmer cards is executed, providing a seamless means of validation during transactions and interactions within the supply chain. The Supply Chain module ensures that all stakeholders are effectively interconnected, contributing to the streamlined flow of goods and information.
+**Supply Chain:** The Supply Chain module serves as the backbone of the system, encompassing the comprehensive management of the supply chain structure. This includes the  tracking of companies, farmers, products, and their interconnected relationships. Within this module, the crucial task of managing farmer cards is executed, providing a seamless means of validation during transactions and interactions within the supply chain. The Supply Chain module ensures that all stakeholders are effectively interconnected, contributing to the streamlined flow of goods and information.
 
-Transactions: At the heart of TraceConnect's functionality lies the Transactions module, where all transactions between companies and farmers are meticulously recorded and managed. This encompasses a wide range of activities, including product transactions and the tracking of farmer payments. 
+**Transactions:** At the heart of TraceConnect's functionality lies the Transactions module, where all transactions between companies and farmers are meticulously recorded and managed. This encompasses a wide range of activities, including product transactions and the tracking of farmer payments. 
 
-Configurations (Configs): The Configurations module is dedicated to tailoring the TraceConnect experience to suit specific requirements. It offers administrators the ability to customize various aspects of the app's functionality. This includes configuring premium settings, allowing for the fine-tuning of features, and controlling user access privileges. Importantly, administrators can make on-the-fly adjustments, such as enabling or disabling the "Buy" feature for specific collectors, ensuring that the system remains agile and adaptable to evolving needs.
+**Configurations (Configs):** The Configurations module is dedicated to tailoring the TraceConnect experience to suit specific requirements. It offers administrators the ability to customize various aspects of the app's functionality. This includes configuring premium settings, allowing for the fine-tuning of features, and controlling user access privileges. Importantly, administrators can make on-the-fly adjustments, such as enabling or disabling the "Buy" feature for specific collectors, ensuring that the system remains agile and adaptable to evolving needs.
 
-Forms: Within the Forms module, administrators can configure custom forms to collect additional data relevant to their specific workflows. These forms provide flexibility and versatility, allowing TraceConnect to capture and process a wide array of data types. Whether it's capturing unique data points or adapting to changing data requirements, this module empowers users to enhance their data-capturing capabilities, ultimately improving the precision and completeness of their records.
+**Forms:** Within the Forms module, administrators can configure custom forms to collect additional data relevant to their specific workflows. These forms provide flexibility and versatility, allowing TraceConnect to capture and process a wide array of data types. Whether it's capturing unique data points or adapting to changing data requirements, this module empowers users to enhance their data-capturing capabilities, ultimately improving the precision and completeness of their records.
 
 
 
@@ -65,17 +65,17 @@ Our database architecture has been thoughtfully designed to prioritise simplicit
 
 In the provided high-level database architecture diagram, the following key elements are illustrated:
 
-Company-Centric Structure: Each company has the autonomy to onboard its own collectors as app users, thereby establishing a dedicated user base within the system.
+**Company-Centric Structure:** Each company has the autonomy to onboard its own collectors as app users, thereby establishing a dedicated user base within the system.
 
-Customisable Preferences: Companies have the flexibility to define their app preferences, such as specifying premium requirements, configuring app functionality, and setting their preferred products for collection.
+**Customisable Preferences:** Companies have the flexibility to define their app preferences, such as specifying premium requirements, configuring app functionality, and setting their preferred products for collection.
 
-External Connections: Companies can tailor their external connections and define the scope of their interactions within the system, granting them control over data flow and integration.
+**External Connections:** Companies can tailor their external connections and define the scope of their interactions within the system, granting them control over data flow and integration.
 
-Farmers: All farmers are onboarded or connected to specific companies, fostering a well-organised and efficient ecosystem.
+**Farmers:** All farmers are onboarded or connected to specific companies, fostering a well-organised and efficient ecosystem.
 
-Product Transactions: The flow of product transactions occurs from farmers to the company table, creating a clear linkage between the products collected and the associated payment transactions.
+**Product Transactions:** The flow of product transactions occurs from farmers to the company table, creating a clear linkage between the products collected and the associated payment transactions.
 
-Payment Transactions: Payment transactions, vital for compensation to farmers, flow from the company to the farmer. The verification process is conducted seamlessly through the use of farmer cards.
+**Payment Transactions:** Payment transactions, vital for compensation to farmers, flow from the company to the farmer. The verification process is conducted seamlessly through the use of farmer cards.
 
 
 
@@ -83,15 +83,15 @@ Payment Transactions: Payment transactions, vital for compensation to farmers, f
 **image here**
 In the preceding section, we elaborated on how Trace Connect can effectively operate as a data collection server, highlighting the necessary configuration steps for seamless functionality. To illustrate the simplicity of these steps, let's dive into the operational flow. For this demonstration, we assume that the Trace Connect server is already up and running.
 
-Company Setup: To establish your presence within the system, the initial step involves creating your company account. As elucidated in the earlier sections, the entire data structure centres around the concept of 'companies,' forming the core of your data ecosystem.
+**Company Setup: **To establish your presence within the system, the initial step involves creating your company account. As elucidated in the earlier sections, the entire data structure centres around the concept of 'companies,' forming the core of your data ecosystem.
 
-Configurations: Once your company account is in place, you can proceed with essential configurations. This includes adding the specific products you intend to collect using the application. Additionally, you can designate and onboard collectors or users under your company who will utilize the app. Within the app's configuration section, you gain the flexibility to define various parameters. Customise your preferences, such as setting premiums for different product types and enabling distinct functions like buying, selling, and processing farmer payments.
+**Configurations:** Once your company account is in place, you can proceed with essential configurations. This includes adding the specific products you intend to collect using the application. Additionally, you can designate and onboard collectors or users under your company who will utilize the app. Within the app's configuration section, you gain the flexibility to define various parameters. Customise your preferences, such as setting premiums for different product types and enabling distinct functions like buying, selling, and processing farmer payments.
 
-Custom Forms: Tailoring your data collection process is made possible through the custom forms section. Here, you can establish additional data fields and seamlessly link them to existing tables such as 'farmer' and 'transactions.' These newly configured fields will seamlessly integrate into the relevant sections of the mobile app after the next synchronisation. This facilitates efficient data collection in the field, data validation, and data cleansing, particularly when interfacing with external systems. All custom forms are stored in JSON format within the Connect database.
+**Custom Forms: **Tailoring your data collection process is made possible through the custom forms section. Here, you can establish additional data fields and seamlessly link them to existing tables such as 'farmer' and 'transactions.' These newly configured fields will seamlessly integrate into the relevant sections of the mobile app after the next synchronisation. This facilitates efficient data collection in the field, data validation, and data cleansing, particularly when interfacing with external systems. All custom forms are stored in JSON format within the Connect database.
 
-Connect External Systems: The capability to interface with external systems is a valuable asset, whether you aim to export data collected via the app or import data from external sources. To establish these connections, you have the ability to create credentials, specifying the scope based on your specific use case. For instance, you can configure credentials for reading and writing data related to farmers. This functionality extends the utility of the Connect server as an integration agent, allowing you to incorporate multiple data sources and seamlessly channel data into one or more other systems.
+**Connect External Systems**: The capability to interface with external systems is a valuable asset, whether you aim to export data collected via the app or import data from external sources. To establish these connections, you have the ability to create credentials, specifying the scope based on your specific use case. For instance, you can configure credentials for reading and writing data related to farmers. This functionality extends the utility of the Connect server as an integration agent, allowing you to incorporate multiple data sources and seamlessly channel data into one or more other systems.
 
- App Connection: The process of connecting the mobile app is straightforward. Simply install the mobile application from the Google Play Store, input your server URL, and log in using your collector credentials. The application will seamlessly synchronise with your server, ensuring that all relevant data is accessible within the app, thereby facilitating efficient data management and collection.
+ **App Connection:** The process of connecting the mobile app is straightforward. Simply install the mobile application from the Google Play Store, input your server URL, and log in using your collector credentials. The application will seamlessly synchronise with your server, ensuring that all relevant data is accessible within the app, thereby facilitating efficient data management and collection.
 
 
 
@@ -145,15 +145,15 @@ Companies have the ability to define extra fields related to farmers and transac
 
 At present, we accommodate basic data types in these custom fields. However, there is always the potential to broaden this range to cater to different use cases.
 
-Character filed
+- Character filed
 
-Number
+- Number
 
-Date
+- Date
 
- Latitude
+ - Latitude
 
-Longitude
+- Longitude
 
 
 ### APIs
@@ -180,12 +180,12 @@ We are still working on publishing our APIs and the detailed documentation. We h
 
 
 ### Roadmap
-November 2023: initial deployment and mobile app linking
+**November 2023:** initial deployment and mobile app linking
 
-Jan 2024: publishing the APIs and first open-source release 
+**Jan 2024:** publishing the APIs and first open-source release 
 
-Feb 2024: Publishing APIs and external server connection
+**Feb 2024:** Publishing APIs and external server connection
 
-April 2024: enable Trace SSO
+**April 2024:** enable Trace SSO
 
-June 2024: First Python SDK release 
+**June 2024:** First Python SDK release 
