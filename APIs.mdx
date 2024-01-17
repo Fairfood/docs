@@ -1,1 +1,141 @@
+---
+title: App APIs
+description: "The app is currently functioning using data from our Trace servers. We are providing information about the API structure and data usage in order to assist you in connecting to your servers."
 
+---
+
+
+
+
+### Common structure 
+All our APIs are designed according to the principles of Representational State Transfer (REST). Our APIs typically exposes a set of resources like, farmers, companies and the transactions and allows clients to perform CRUD (create, read, update, delete) operations on those resources using HTTP verbs (e.g., GET, POST, PUT, DELETE).
+
+
+### Request headers
+
+All our API requests except login contain the following parameters in addition to the standard APIs headers,
+
+
+Bearer : Token received during the authentication 
+
+User-ID : ID of the user logged in
+
+Node-ID: ID of the user's company
+
+Version: Application version 
+
+Client-Code: client specific code assigned from the server
+
+
+
+### Request headers
+All our API requests except login contain the following parameters in addition to the standard APIs headers,
+
+
+Bearer : Token received during the authentication 
+
+User-ID : ID of the user logged in
+
+Node-ID: ID of the user's company
+
+Version: Application version 
+
+Client-Code: client specific code assigned from the server
+
+
+
+### Response
+API responses contain meta data about the  response and the detail requested. 
+
+success : Boolean values with the request status
+
+detail : Status message
+
+
+code: Http status code
+
+data: Response data
+
+
+- In addition to that we are using the following pagination setup
+
+count: total number of the object matching the get query
+
+next: next page URL (null if there is no next page)
+
+previous: previous page URL (null if there is no next page)
+
+
+```javascript 
+{
+ 	"success": true,
+ 	"detail": "Success fetched data",
+ 	"code": 200,
+ 	"data": {
+ 		"count": 15,
+		"next": "{root}/products/?limit=10&offset=10",
+		"previous": null,
+		"results": [ {... },  {... }  {... } ]
+ 	}
+}
+
+```
+
+### Common filters
+For the GET APIs we are using the following pagination filters
+
+limit: Number of items per page we can request
+
+offset: starting index of the page
+
+ast_modified: the last date the object modified. This will help us to fetch just the modified items and optimise synching(only fetch items modified after yesterday’s synching)
+
+
+
+
+
+
+### Common filters
+Our error responses are have the following formats,
+
+```javascript 
+{
+ 	"success": false,
+ 	"detail": "Invalid Bearer token or User-Id, please re-login.",
+ 	"code": 401,
+ 	"data": {}
+}
+
+
+```
+
+
+<Steps>
+  <Step title="Claims">
+   <img
+  className="block dark:hidden"
+  src="/images/hero-dark.svg"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/hero-dark.svg"
+  alt="Hero Dark"
+/>
+    The claim list consists of essential information such as the claim description, the person assigned to handle it, the unique stock ID, the associated product name, and the current status of the claim, reflecting its progress or resolution.
+  </Step>
+  <Step title="Claim details">
+     <img
+  className="block dark:hidden"
+  src="/images/hero-dark.svg"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/hero-dark.svg"
+  alt="Hero Dark"
+/>
+    The claim detail page provides comprehensive information including the claim name, a detailed description of the claim, and transaction details associated with it. This page offers a comprehensive view of the claim, aiding in understanding and managing its specifics..
+  </Step>
+
+</Steps>
