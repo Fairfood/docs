@@ -138,3 +138,40 @@ In the context of data gathering, the Connect server is primarily centred on col
 | buyer_ref_no   | char  | No       | The number used by the buyer to identify the stock.      |
 | seller_ref_no  | char  | No       | The number used by the seller to refer to the stock.     |
 
+
+
+### Additional fields
+Companies have the ability to define extra fields related to farmers and transactions on the Connect server. Once these additional fields are set up on the server, they will be incorporated into the app during the subsequent synchronization process. For example, a field named 'Living Income' could be added to the farmer form. Consequently, the next time a collector registers a new farmer, this field will appear in the form. This feature is also beneficial when integrating data from external systems. By specifying the field and its type, the system ensures proper validation.
+
+At present, we accommodate basic data types in these custom fields. However, there is always the potential to broaden this range to cater to different use cases.
+
+Character filed
+
+Number
+
+Date
+
+ Latitude
+
+Longitude
+
+
+### APIs
+We are still working on publishing our APIs and the detailed documentation. We have implemented the following APIs.
+
+| Name               | Methode                          | Description     |
+| -------------------- | ------------------------------------ | ------------- 
+                 |
+| List Farmers         | GET                                  | Retrieve a list of all farmers.      |
+| Create farmer        | POST                                 | Create a new farmer.                 |
+| Update farmer        | PUT                                  | Update an existing farmer's information. |
+| Delete farmer        | DELETE                               | Delete a farmer.                     |
+| List transaction     | GET                                  | Retrieve a list of all transactions. |
+| Create transaction   | POST                                 | Create a new transaction.            |
+| Attach transaction invoice | PUT                           | Attach an invoice to a transaction.  |
+| List payments         | GET                                  | Retrieve a list of all payments.     |
+| Create payments       | POST                                 | Create a new payment.                |
+| Attach payment invoice | PUT                                 | Attach an invoice to a payment.      |
+| List premiums         | GET                                  | Retrieve a list of all premiums.     |
+| List products         | GET                                  | Retrieve a list of all products.     |
+| Attach farmer card    | POST                                 | Attach a card to a farmer.           |
