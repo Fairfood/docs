@@ -15,7 +15,7 @@ We are very much aware open source app without the backend is kind of useless. B
 
 As we contemplated the idea, we came to the realisation that we could employ the same system to establish connections between external systems and data sources with Trace. This would essentially transform it into a central hub for both the inflow and outflow of data within the Trace ecosystem. 
 
-
+**image here**
 ###  Goals and Objectives
 Our goal with Trace Connect is to achieve the following objectives:
 
@@ -29,11 +29,7 @@ Additional Data Collection Agent: Enable the Trace app to support the creation o
 
 Modular and Scalable: Design the system to be modular and scalable, allowing for future expansion and integration with evolving technologies and requirements.
 
-
-
-
-
-
+**image here**
 
 
 
@@ -42,4 +38,103 @@ Modular and Scalable: Design the system to be modular and scalable, allowing for
 The TraceConnect server architecture comprises a Django-based server application that serves as the central hub for seamless data processing and management. It integrates with both PostgreSQL for structured data and MongoDB for unstructured data storage. Through APIs, it establishes connections with the Trace mobile app and external applications, implementing OAuth for external applications and JWT for the Trace mobile app's secure authentication. Furthermore, it features a user interface for manual data export, offering users flexibility and control over data management processes.
 
 Trace communicates with the Connect using a shared SDK, which also serves as a bridge to connect with external ERP systems. When generating OAuth credentials, users have the flexibility to configure different scopes according to their specific requirements.
+
+
+**image here**
+
+
+### Core Modules
+The core modules of TraceConnect primarily revolve around companies, farmers, their transactions, and the customization of data connections for the Trace mobile app. Here are the key core modules:
+
+Authentication (Auth): This pivotal module is responsible for user management and access control within TraceConnect. It empowers administrators to define and manage user roles and permissions, ensuring that users have the appropriate level of access to the system's features. In addition to handling internal user authentication, the Auth module plays a crucial role in managing OAuth connections for external services. This includes the secure integration of external applications and services, enhancing the overall security and functionality of TraceConnect.
+
+Supply Chain: The Supply Chain module serves as the backbone of the system, encompassing the comprehensive management of the supply chain structure. This includes the  tracking of companies, farmers, products, and their interconnected relationships. Within this module, the crucial task of managing farmer cards is executed, providing a seamless means of validation during transactions and interactions within the supply chain. The Supply Chain module ensures that all stakeholders are effectively interconnected, contributing to the streamlined flow of goods and information.
+
+Transactions: At the heart of TraceConnect's functionality lies the Transactions module, where all transactions between companies and farmers are meticulously recorded and managed. This encompasses a wide range of activities, including product transactions and the tracking of farmer payments. 
+
+Configurations (Configs): The Configurations module is dedicated to tailoring the TraceConnect experience to suit specific requirements. It offers administrators the ability to customize various aspects of the app's functionality. This includes configuring premium settings, allowing for the fine-tuning of features, and controlling user access privileges. Importantly, administrators can make on-the-fly adjustments, such as enabling or disabling the "Buy" feature for specific collectors, ensuring that the system remains agile and adaptable to evolving needs.
+
+Forms: Within the Forms module, administrators can configure custom forms to collect additional data relevant to their specific workflows. These forms provide flexibility and versatility, allowing TraceConnect to capture and process a wide array of data types. Whether it's capturing unique data points or adapting to changing data requirements, this module empowers users to enhance their data-capturing capabilities, ultimately improving the precision and completeness of their records.
+
+
+
+### Database Architecture
+**image here**
+
+Our database architecture has been thoughtfully designed to prioritise simplicity and minimalism while maintaining efficient data management. Central to this architecture is the "company" table, which serves as the core entity around which all data structures revolve. This approach ensures clean separation and allows multiple companies to utilise the same server without data overlap.
+
+In the provided high-level database architecture diagram, the following key elements are illustrated:
+
+Company-Centric Structure: Each company has the autonomy to onboard its own collectors as app users, thereby establishing a dedicated user base within the system.
+
+Customisable Preferences: Companies have the flexibility to define their app preferences, such as specifying premium requirements, configuring app functionality, and setting their preferred products for collection.
+
+External Connections: Companies can tailor their external connections and define the scope of their interactions within the system, granting them control over data flow and integration.
+
+Farmers: All farmers are onboarded or connected to specific companies, fostering a well-organised and efficient ecosystem.
+
+Product Transactions: The flow of product transactions occurs from farmers to the company table, creating a clear linkage between the products collected and the associated payment transactions.
+
+Payment Transactions: Payment transactions, vital for compensation to farmers, flow from the company to the farmer. The verification process is conducted seamlessly through the use of farmer cards.
+
+
+
+### Operational Workflow
+**image here**
+In the preceding section, we elaborated on how Trace Connect can effectively operate as a data collection server, highlighting the necessary configuration steps for seamless functionality. To illustrate the simplicity of these steps, let's dive into the operational flow. For this demonstration, we assume that the Trace Connect server is already up and running.
+
+Company Setup: To establish your presence within the system, the initial step involves creating your company account. As elucidated in the earlier sections, the entire data structure centres around the concept of 'companies,' forming the core of your data ecosystem.
+
+Configurations: Once your company account is in place, you can proceed with essential configurations. This includes adding the specific products you intend to collect using the application. Additionally, you can designate and onboard collectors or users under your company who will utilize the app. Within the app's configuration section, you gain the flexibility to define various parameters. Customise your preferences, such as setting premiums for different product types and enabling distinct functions like buying, selling, and processing farmer payments.
+
+Custom Forms: Tailoring your data collection process is made possible through the custom forms section. Here, you can establish additional data fields and seamlessly link them to existing tables such as 'farmer' and 'transactions.' These newly configured fields will seamlessly integrate into the relevant sections of the mobile app after the next synchronisation. This facilitates efficient data collection in the field, data validation, and data cleansing, particularly when interfacing with external systems. All custom forms are stored in JSON format within the Connect database.
+
+Connect External Systems: The capability to interface with external systems is a valuable asset, whether you aim to export data collected via the app or import data from external sources. To establish these connections, you have the ability to create credentials, specifying the scope based on your specific use case. For instance, you can configure credentials for reading and writing data related to farmers. This functionality extends the utility of the Connect server as an integration agent, allowing you to incorporate multiple data sources and seamlessly channel data into one or more other systems.
+
+ App Connection: The process of connecting the mobile app is straightforward. Simply install the mobile application from the Google Play Store, input your server URL, and log in using your collector credentials. The application will seamlessly synchronise with your server, ensuring that all relevant data is accessible within the app, thereby facilitating efficient data management and collection.
+
+
+
+### Data Fields
+In the context of data gathering, the Connect server is primarily centred on collecting information related to farmers and their transactions. The data fields within this category are divided into two main sections. The first section comprises 'Base Data Fields', which include default fields such as name, address, etc., that are automatically collected in Connect. The second section consists of 'Additional Fields', which are customisable and can be tailored according to specific requirements.
+
+
+#### Base farmer fileds
+
+
+| Field               | Type   | Required | Description                        |
+| ------------------- | ------ | -------- | ---------------------------------- |
+| first_name          | char   | Yes      | First name of the Farmer           |
+| last_name           | char   | Yes      | Last name of the farmer            |
+| street              | char   | No       | Street name                        |
+| city                | char   | Yes      | City or village                    |
+| country             | char   | Yes      | Country                            |
+| province            | char   | Yes      | Province or State                  |
+| post_code           | char   | No       | Postcode                           |
+| latitude            | float  | No       | Latitude of the farm location      |
+| longitude           | float  | No       | Longitude of the farm location     |
+| country_code        | char   | No       | Phone Country code                 |
+| phone               | char   | No       | Phone or mobile number             |
+| email               | char   | No       | Email address                      |
+| gender              | char   | No       | Gender of the farmer               |
+| dob                 | date   | No       | Date of birth                      |
+| house_hold_size     | int    | No       | Number of family members           |
+| description_short   | char   | No       | Short description of farmer        |
+| description_long    | char   | No       | Long description of farmer         |
+
+#### Base Transaction Fields
+
+| Field          | Type  | Required | Description                                            |
+| -------------- | ----- | -------- | ------------------------------------------------------ |
+| source_id      | char  | Yes      | Transaction source name or code.                        |
+| destination_id | char  | Yes      | Transaction destination name or code.                   |
+| product_code   | char  | Yes      | Unique product name or code.                             |
+| quantity       | float | Yes      | Total transaction quantity.                              |
+| unit           | char  | Yes      | Product unit.                                           |
+| price          | float | No       | The total price paid to the farmer.                      |
+| currency       | char  | Yes      | ISO currency code.                                      |
+| date           | date  | Yes      | Transaction date.                                       |
+| invoice        | file  | No       | Invoice number.                                         |
+| buyer_ref_no   | char  | No       | The number used by the buyer to identify the stock.      |
+| seller_ref_no  | char  | No       | The number used by the seller to refer to the stock.     |
 
