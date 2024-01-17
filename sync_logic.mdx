@@ -50,11 +50,73 @@ _Syncing in the trace mobile app is the process that updates the data between th
 
 
 ### 1. Initial sync
+Initial sync is happens on onboarding screen and it starts after login and user details APIs.
+
+When initial sync starts syncStage is updated to 1 and syncInProgress updated to true. 
+
+Initial sync starts from company details API and end on farmer list API. After initial sync user is user will get continue option on onboarding screen to go to home page. 
+
+Then syncStage is updated to 2, syncInProgress to false and, syncSuccessfull to true.
+
+
+1. Company details:
+
+Getting company details from server side and API response is saved in userCompanyDetails redux state.
+
+2. Project details:
+
+Getting project details from server side and API response is saved in userProjectDetails redux state. Also updating project premium table from premiums in this api response.
+
+3. New farmers:
+
+Syncing newly added farmers from app to server side.
+
+4. New cards:
+
+Syncing newly added cards from app to server side.
+
+5. Buy transactions:
+
+Syncing newly added buy transactions from app to server side.
+
+6. Send transactions:
+
+Syncing newly added buy transactions from app to server side.
+
+7. Transaction invoices:
+
+If the transaction verification method is manual then transaction invoice need to sync from app to server side.
+
+8. Updated farmers:
+
+Syncing updated farmer from app to server side.
+
+9. Product list:
+
+Syncing product list and updates from server side to app.
+
+10. Buyer list:
+
+Syncing buyer list and updates from server side to app.
+
+11. Farmer list:
+
+Syncing farmer list and updates from server side to app.
 
 
 
+### 2. Transaction sync
+Transaction sync happens when user on dashboard after login. syncStage will be 2, transaction list and batch list will be synced from server side to app. 
 
+After transaction sync, syncStage will be updated to 3. Syncing progress can be see in transaction list page. 
 
+1. Transaction list:
+
+Syncing transaction list and updates from server side to app.
+
+2. Batch list
+
+Syncing batch list and updates from server side to app.
 
 
 
