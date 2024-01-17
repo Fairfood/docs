@@ -1,1 +1,45 @@
+---
+title: Trace Connect
+
+---
+
+### Background 
+At the end of 2022, we released our mobile application to the community. Open sourcing is a fundamental aspect of our vision, and there are evident benefits associated with it. We have been developing the Trace app since the second half of 2021 and have tested it on the field for over two years with two farmer cooperatives in Indonesia. 
+
+The application is designed to cater to collectors who traverse remote farmlands to acquire harvested goods. Our primary aim was to ensure the app's simplicity. It is developed using React and primarily serves two key functions: enrolling farmers and recording their on-site transactions. When enrolling farmers, collectors attach an NFC/QR code-based card, which we provided them in advance, and share it with the farmers. These cards serve as a means for farmers to validate transactions when delivering their products and confirming payments. In essence, the app streamlines the collection process and facilitates farmer-verified payments.
+Additionally, the app offers support for capturing sales receipt photos in case a farmer forgets their card. It operates seamlessly both online and offline. When connected to the internet, the app syncs with Trace, allowing users to access and download all transactions online by logging into Trace.
+
+The app was highly appreciated by cooperatives, and the farmers were enthusiastic about the cards. Since the launch, it has effectively digitised close to 15,000 Nutmeg transactions from rural Indonesian islands. To enhance fairness and transparency, we introduced a digital passbook that is connected to the card. This passbook allows farmers to conveniently access and review their past transactions and payments online by using their card numbers.
+
+We are very much aware open source app without the backend is kind of useless. But we already knew open-sourcing the complex Trace backend is not the ideal solution if you really want people to use it. So we decided to create a small portion of Trace which only covers the basics required to run the app. 
+
+As we contemplated the idea, we came to the realisation that we could employ the same system to establish connections between external systems and data sources with Trace. This would essentially transform it into a central hub for both the inflow and outflow of data within the Trace ecosystem. 
+
+
+###  Goals and Objectives
+Our goal with Trace Connect is to achieve the following objectives:
+
+Standalone Backend for Trace Mobile App: Serve as a backend for the Trace mobile app, allowing users to deploy their own cloud-based instances of the app independently of the main Trace system. This will include configurations like premium payments and access control. 
+
+Data Synchronisation: Guarantee smooth data synchronisation between the Trace mobile app, Trace system, and other external systems, enabling effortless two-way data transfer. Enable the easy import of data from external sources into Trace, as well as the efficient export of data from Trace to external systems, to ensure a fluid exchange of data throughout the ecosystem.
+
+Integration Hub: Act as a central integration hub, facilitating the exchange of data between external systems and ERPs with Trace through APIs and the Connect SDK.
+
+Additional Data Collection Agent: Enable the Trace app to support the creation of new or extra fields for data-gathering purposes. While Connect will function as a data collection agent, focusing mainly on basic farmer data and transactions, it is not intended for use as a survey instrument. However, it can serve as a central point for integrating additional data from various systems.
+
+Modular and Scalable: Design the system to be modular and scalable, allowing for future expansion and integration with evolving technologies and requirements.
+
+
+
+
+
+
+
+
+
+
+### System Architecture 
+The TraceConnect server architecture comprises a Django-based server application that serves as the central hub for seamless data processing and management. It integrates with both PostgreSQL for structured data and MongoDB for unstructured data storage. Through APIs, it establishes connections with the Trace mobile app and external applications, implementing OAuth for external applications and JWT for the Trace mobile app's secure authentication. Furthermore, it features a user interface for manual data export, offering users flexibility and control over data management processes.
+
+Trace communicates with the Connect using a shared SDK, which also serves as a bridge to connect with external ERP systems. When generating OAuth credentials, users have the flexibility to configure different scopes according to their specific requirements.
 
