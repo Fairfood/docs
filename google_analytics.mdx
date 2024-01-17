@@ -1,1 +1,118 @@
+---
+title: Google Analytics - Trace Mobile App
+description: "Google Analytics integrated within the Trace Mobile App allows for the collection of data, enabling the creation of reports that showcase user interaction with the app."
+---
 
+
+
+### Event Logs
+Custom log events in the Trace Mobile App are generated as event logs each time a user performs an action within the app. These logs store the corresponding action counts and parameters on Google Analytics servers, facilitating better analysis of user interaction with the app.
+Below each of them arranged with event name,  parameter keys and possible values.
+
+
+
+<CardGroup cols={3}>
+  <Card
+    title="filters"
+    >
+
+**filter_type:** 
+_transaction_filter, payment_filter_
+
+  </Card>
+  <Card
+    title="language_switch "
+    >
+
+**language:**
+_English, Indonesian_
+
+  </Card>
+
+   <Card
+    title="send_quantity_edited"
+ 
+    
+  >
+**quantity_edited:**
+_edited, not_edited_
+
+
+
+  </Card> 
+  <Card
+    title="transactions"
+    >
+
+**verification_type:**
+_nfc_verification, qr_code_verification, manual_verification_
+
+
+
+**transaction_type:**
+_buy_transaction, send_transaction, pay_farmer_
+
+
+**network_status:**
+_online, offline_
+
+  </Card>
+
+
+
+   <Card
+    title="image_selection_for_profile_picture"
+    >
+
+**selection_method:**
+_gallery, camera_
+
+
+**selection_case:**
+_add_farmer, edit_farmer, edit_profile_
+
+
+  </Card>
+
+
+   <Card
+    title="sort_farmer"
+   
+  >
+**sort_by:**
+_created_descending, created_ascending, name_ascending, name_descending_
+
+
+
+  </Card>
+
+
+  <Card
+    title="sort_farmercard_added_on_farmer_creation"
+   
+  >
+**action:**
+_added, skipped_
+
+
+  </Card>
+
+   <Card
+    title="direct_buy_after_farmer_creation"
+   
+  >
+**direct_buy:**
+_yes, no_
+
+
+
+
+  </Card>
+
+
+</CardGroup>
+
+
+
+### Know more
+If you want to know more about how google analytics implemented in Trace Mobile App, checkout the official firebase documentation below
