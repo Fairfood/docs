@@ -4,9 +4,6 @@ description: "All the authentication and initial details fetch APIs are included
 ---
 
 
-
-
-
 ### Contents
 
 
@@ -18,25 +15,104 @@ description: "All the authentication and initial details fetch APIs are included
 - Edit profile
 
 
+
+
+
 ### Login
-https://<domin>/<version>/projects/login/
 
 
-```html
+
+```javascript headers
 {
- 	"success": true,
- 	"detail": "Success fetched data",
- 	"code": 200,
- 	"data": {
- 		"count": 15,
-		"next": "{root}/products/?limit=10&offset=10",
-		"previous": null,
-		"results": [ {... },  {... }  {... } ]
- 	}
+  'Content-Type': 'application/json',
+  'Version': <app_version>,
+  'Client-Code': <api_client_code>,
+}
+```
+```javascript body [raw]
+{
+  username: <email>,
+  password: <password>,
+  device_id: <device_id>,
+  type: <device_type>,
+  force_logout: <force_logout>,
+  registration_id: <registration_id>,
+  name: <device_name>,
+}
+```
+```javascript response
+{
+  "code": 201,
+  "data": {
+    "email_verified": <boolean>,
+    "id": <id>,
+    "is_granted": <boolean>,
+    "last_active_device": {
+      "active": "True",
+      ...
+    },
+    "status": <status>,
+    "terms_accepted": <boolean>,
+    "token": <user_token>,
+    "type": <user_type>
+  },
+  "detail": "Success",
+  "success": true,
 }
 
 ```
 
+
+
+<CardGroup cols={3}>
+  <Card
+    title="device_id"
+    icon="pen-to-square"
+    href="https://mintlify.com/docs/quickstart"
+  >
+It is passing for device registration. It is used to generate the access token for authentication
+  </Card>
+  <Card
+    title="device_name"
+    icon="image"
+    href="https://mintlify.com/docs/development"
+  >
+  It is passing for device registration. It is used to generate the access token for authentication.. 
+  </Card>
+
+   <Card
+    title="force_logout"
+    icon="image"
+    href="https://mintlify.com/docs/development"
+  >
+  It is a boolean value. If true, the current user token will be refreshed and a new user token will be given in the response. You can restrict multiple device login with this. If the user wants to login into multiple devices, give this value as false.
+  </Card> 
+  <Card
+    title="registration_id"
+    icon="image"
+    href="https://mintlify.com/docs/development"
+  >
+   Current timestamp is using as registration_id here. 
+  </Card>
+     <Card
+    title="is_granted"
+    icon="image"
+    href="https://mintlify.com/docs/development"
+  >
+ It is a boolean variable. If true, the user is allowed to log in. If false, there is some issue in login due to an invalid user token sent or something.
+  </Card>
+
+
+   <Card
+    title="last_active_device"
+    icon="image"
+    href="https://mintlify.com/docs/development"
+  >
+contains details of the user's device that were previously active. Comparing this with the current device, you can verify the user is logging in on multiple devices. If you want to restrict this, call login API again with force_logout as true.
+  </Card>
+
+
+</CardGroup>
 
 
 
