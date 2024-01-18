@@ -57,7 +57,7 @@
   "navigation": [
     {
       "group": "Get Started.",
-      "pages": ["introduction","How Trace Works", "quickstart", "development"]
+      "pages": ["introduction","How Trace Works", "quickstart", "development", "support"]
     },
     {
       "group": "Essentials",
