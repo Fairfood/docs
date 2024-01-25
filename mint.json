@@ -28,6 +28,12 @@
     "url": "https://github.com/orgs/Fairfood/repositories"
   },
   "openapi":"https://v2.dev.api.fairfood.org/connect/v1/?format=openapi",
+  "tabs": [
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    }
+  ],
 
   "anchors": [
     {
@@ -57,7 +63,7 @@
     },
     {
       "group": "API Documentation",
-      "pages": ["openapi/paths"]
+      "pages": ["openapi:"]
     },
     {
       "group": "Endpoint Examples",
