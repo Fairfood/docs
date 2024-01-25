@@ -57,7 +57,7 @@
     },
     {
       "group": "API Documentation",
-      "pages": ["openapi"]
+      "pages": ["openapi/paths"]
     },
     {
       "group": "Endpoint Examples",
