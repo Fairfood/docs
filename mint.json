@@ -31,7 +31,7 @@
   "tabs": [
     {
       "name": "API Reference",
-      "url": "openapi"
+      "url": "openapi:"
     }
   ],
 
@@ -55,7 +55,7 @@
   "navigation": [
     {
       "group": "Get Started.",
-      "pages": ["introduction","How Trace Works", "quickstart", "development", "support"]
+      "pages": ["introduction"]
     },
     {
       "group": "Essentials",
