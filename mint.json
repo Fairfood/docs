@@ -68,11 +68,12 @@
     {
       "group": "Endpoint Examples",
       "pages": [
-        "api-reference/endpoint/get",
+        "openapi",
         "api-reference/endpoint/create",
         "api-reference/endpoint/update",
         "api-reference/endpoint/delete",
-        "api-reference/test/test"
+        "api-reference/test/test",
+        "openapi: /form/form"
       ]
     }
   ],
