@@ -63,7 +63,7 @@
     },
     {
       "group": "API Documentation",
-      "pages": ["openapi:"]
+      "pages": ["api-reference/authentication"]
     },
     {
       "group": "Endpoint Examples",
@@ -71,7 +71,8 @@
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
         "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "api-reference/endpoint/delete",
+        "api-reference/test/test"
       ]
     }
   ],
