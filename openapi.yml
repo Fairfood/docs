@@ -1,0 +1,3147 @@
+openapi: 3.0.1
+info:
+  title: Trace Connect API
+  version: v1
+servers:
+  - url: https://v2.api.fairfood.org/connect/v1
+security:
+  - Bearer: []
+paths:
+  /accounts/privacy-policy/:
+    get:
+      tags:
+        - accounts
+      description: Api to rerive data about latest privacy policy.
+      operationId: accounts_privacy-policy_read
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivacyPolicy'
+  /accounts/users/:
+    get:
+      tags:
+        - accounts
+      description: A simple ViewSet for viewing and editing accounts.
+      operationId: accounts_users_list
+      parameters:
+        - name: limit
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                  - count
+                  - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/User'
+  /accounts/users/{hashid}/:
+    get:
+      tags:
+        - accounts
+      description: A simple ViewSet for viewing and editing accounts.
+      operationId: accounts_users_read
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    patch:
+      tags:
+        - accounts
+      description: A simple ViewSet for viewing and editing accounts.
+      operationId: accounts_users_partial_update
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+      x-codegen-request-body-name: data
+  /auth/login/:
+    post:
+      tags:
+        - auth
+      summary: API to login User.
+      description: Takes in Email and password to login user with a session.
+      operationId: auth_login_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/APILogin'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APILogin'
+      x-codegen-request-body-name: data
+  /auth/logout/:
+    post:
+      tags:
+        - auth
+      description: Get method for logging in user.
+      operationId: auth_logout_create
+      responses:
+        '201':
+          description: ''
+          content: {}
+  /auth/password/change/:
+    post:
+      tags:
+        - auth
+      summary: Calls Django Auth SetPasswordForm save method.
+      description: |-
+        Accepts the following POST parameters: new_password1, new_password2
+        Returns the success/fail message.
+      operationId: auth_password_change_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordChange'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PasswordChange'
+      x-codegen-request-body-name: data
+  /auth/password/check/:
+    post:
+      tags:
+        - auth
+      summary: Api to check user password.
+      description: |-
+        By taking the password as a parameter checks the password is belong
+        the logged-in user.
+      operationId: auth_password_check_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CheckPassword'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CheckPassword'
+      x-codegen-request-body-name: data
+  /auth/password/reset/:
+    post:
+      tags:
+        - auth
+      summary: API to reset user password.
+      description: |-
+        Open API to reset user's password. An email will be sent to the
+        email ID to verify and reset the password
+      operationId: auth_password_reset_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/APIPasswordReset'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIPasswordReset'
+      x-codegen-request-body-name: data
+  /auth/password/reset/confirm/:
+    post:
+      tags:
+        - auth
+      summary: API to set user password.
+      description: |-
+        Takes in the validation token and other information to change the
+        user's password after validating the validation token
+      operationId: auth_password_reset_confirm_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordResetConfirm'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PasswordResetConfirm'
+      x-codegen-request-body-name: data
+  /auth/token/refresh/:
+    post:
+      tags:
+        - auth
+      summary: API to Refresh Token.
+      description: |-
+        Takes in the refresh token to provide a new Refresh and Access.
+        Refresh token is refreshed to ensure that the user is only logged
+        out if inactive for a long time
+      operationId: auth_token_refresh_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenRefresh'
+      x-codegen-request-body-name: data
+  /auth/token/verify/:
+    post:
+      tags:
+        - auth
+      description: |-
+        Takes a token and indicates if it is valid.  This view provides no
+        information about a token's fitness for a particular use.
+      operationId: auth_token_verify_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenVerify'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenVerify'
+      x-codegen-request-body-name: data
+  /auth/trace/sync-status/:
+    post:
+      tags:
+        - auth
+      description: Get method for syncing trace data.
+      operationId: auth_trace_sync-status_create
+      responses:
+        '201':
+          description: ''
+          content: {}
+  /auth/validate/:
+    post:
+      tags:
+        - auth
+      summary: API to verify Validate Email, password or Token.
+      description: >-
+        This API can be used to validate any of Email-ID, Password or Validation
+
+        token.
+
+
+        Email and password fields are optional and can be sent alone.
+
+
+        For validating Validation token, user id received in the url should also
+        be
+
+        supplied.
+      operationId: auth_validate_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Validation'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Validation'
+      x-codegen-request-body-name: data
+  /catalogs/connect-cards/:
+    get:
+      tags:
+        - catalogs
+      operationId: catalogs_connect-cards_list
+      parameters:
+        - name: limit
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                  - count
+                  - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ConnectCard'
+    post:
+      tags:
+        - catalogs
+      operationId: catalogs_connect-cards_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConnectCard'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConnectCard'
+      x-codegen-request-body-name: data
+  /catalogs/connect-cards/{hashid}/:
+    get:
+      tags:
+        - catalogs
+      operationId: catalogs_connect-cards_read
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConnectCard'
+  /catalogs/countries/:
+    get:
+      tags:
+        - catalogs
+      description: View to list, create and update country data.
+      operationId: catalogs_countries_list
+      parameters:
+        - name: search
+          in: query
+          description: A search term.
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                  - count
+                  - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Country'
+  /catalogs/countries/{hashid}/:
+    get:
+      tags:
+        - catalogs
+      description: View to list, create and update country data.
+      operationId: catalogs_countries_read
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Country'
+  /catalogs/currencies/:
+    get:
+      tags:
+        - catalogs
+      description: View to list, create and update country data.
+      operationId: catalogs_currencies_list
+      parameters:
+        - name: search
+          in: query
+          description: A search term.
+          schema:
+            type: string
+        - name: name
+          in: query
+          schema:
+            type: string
+        - name: code
+          in: query
+          schema:
+            type: string
+        - name: all
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                  - count
+                  - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Currency'
+  /catalogs/currencies/{hashid}/:
+    get:
+      tags:
+        - catalogs
+      description: View to list, create and update country data.
+      operationId: catalogs_currencies_read
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Currency'
+  /catalogs/premiums/:
+    get:
+      tags:
+        - catalogs
+      operationId: catalogs_premiums_list
+      parameters:
+        - name: name
+          in: query
+          schema:
+            type: string
+        - name: updated_after
+          in: query
+          schema:
+            type: number
+        - name: limit
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                  - count
+                  - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Premium'
+    post:
+      tags:
+        - catalogs
+      operationId: catalogs_premiums_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Premium'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Premium'
+      x-codegen-request-body-name: data
+  /catalogs/premiums/{hashid}/:
+    get:
+      tags:
+        - catalogs
+      operationId: catalogs_premiums_read
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Premium'
+  /catalogs/products/:
+    get:
+      tags:
+        - catalogs
+      operationId: catalogs_products_list
+      parameters:
+        - name: name
+          in: query
+          schema:
+            type: string
+        - name: description
+          in: query
+          schema:
+            type: string
+        - name: updated_after
+          in: query
+          schema:
+            type: number
+        - name: limit
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                  - count
+                  - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Product'
+  /catalogs/products/{hashid}/:
+    get:
+      tags:
+        - catalogs
+      operationId: catalogs_products_read
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+  /catalogs/provinces/:
+    get:
+      tags:
+        - catalogs
+      description: View to list, create and update Province data.
+      operationId: catalogs_provinces_list
+      parameters:
+        - name: search
+          in: query
+          description: A search term.
+          schema:
+            type: string
+        - name: country
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                  - count
+                  - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Province'
+  /catalogs/provinces/{hashid}/:
+    get:
+      tags:
+        - catalogs
+      description: View to list, create and update Province data.
+      operationId: catalogs_provinces_read
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Province'
+  /constants/:
+    get:
+      tags:
+        - constants
+      description: |-
+        Returns the list of constants used across the apps, categorized by
+        app name.
+      operationId: constants_list
+      responses:
+        '200':
+          description: ''
+          content: {}
+  /forms/forms/:
+    get:
+      tags:
+        - forms
+      description: ViewSet for the Form model.
+      operationId: forms_forms_list
+      parameters:
+        - name: limit
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                  - count
+                  - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Form'
+    post:
+      tags:
+        - forms
+      description: ViewSet for the Form model.
+      operationId: forms_forms_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Form'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Form'
+      x-codegen-request-body-name: data
+  /forms/forms/{hashid}/:
+    get:
+      tags:
+        - forms
+      description: ViewSet for the Form model.
+      operationId: forms_forms_read
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Form'
+  /notifications/:
+    get:
+      tags:
+        - notifications
+      description: API to list notifications with option to filter by entity.
+      operationId: notifications_list
+      parameters:
+        - name: search
+          in: query
+          description: A search term.
+          schema:
+            type: string
+        - name: entity
+          in: query
+          schema:
+            type: string
+        - name: is_read
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                  - count
+                  - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Notification'
+  /notifications/read/:
+    patch:
+      tags:
+        - notifications
+      description: API to mark notifications as read.
+      operationId: notifications_read_partial_update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReadNotification'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReadNotification'
+      x-codegen-request-body-name: data
+  /notifications/summary/:
+    get:
+      tags:
+        - notifications
+      operationId: notifications_summary_list
+      responses:
+        '200':
+          description: ''
+          content: {}
+  /supply-chains/companies/:
+    get:
+      tags:
+        - supply-chains
+      description: A viewset for viewing and editing Company instances.
+      operationId: supply-chains_companies_list
+      parameters:
+        - name: limit
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                  - count
+                  - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Company'
+    post:
+      tags:
+        - supply-chains
+      description: A viewset for viewing and editing Company instances.
+      operationId: supply-chains_companies_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyCreate'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyCreate'
+      x-codegen-request-body-name: data
+  /supply-chains/companies/{hashid}/:
+    get:
+      tags:
+        - supply-chains
+      description: A viewset for viewing and editing Company instances.
+      operationId: supply-chains_companies_read
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company'
+    patch:
+      tags:
+        - supply-chains
+      description: A viewset for viewing and editing Company instances.
+      operationId: supply-chains_companies_partial_update
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyCreate'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyCreate'
+      x-codegen-request-body-name: data
+  /supply-chains/company-members/:
+    post:
+      tags:
+        - supply-chains
+      description: A viewset for viewing and editing CompanyMember instances.
+      operationId: supply-chains_company-members_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyMemer'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyMemer'
+      x-codegen-request-body-name: data
+  /supply-chains/company-products/:
+    post:
+      tags:
+        - supply-chains
+      description: A viewset for viewing and editing CompanyProduct instances.
+      operationId: supply-chains_company-products_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyProduct'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyProduct'
+      x-codegen-request-body-name: data
+  /supply-chains/entity-cards/:
+    get:
+      tags:
+        - supply-chains
+      description: A viewset for viewing and editing EntityCard instances.
+      operationId: supply-chains_entity-cards_list
+      parameters:
+        - name: card_id
+          in: query
+          schema:
+            type: string
+        - name: created_after
+          in: query
+          schema:
+            type: number
+        - name: limit
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                  - count
+                  - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/EntityCard'
+    post:
+      tags:
+        - supply-chains
+      description: A viewset for viewing and editing EntityCard instances.
+      operationId: supply-chains_entity-cards_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EntityCard'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityCard'
+      x-codegen-request-body-name: data
+  /supply-chains/entity-cards/{hashid}/:
+    get:
+      tags:
+        - supply-chains
+      description: A viewset for viewing and editing EntityCard instances.
+      operationId: supply-chains_entity-cards_read
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityCard'
+  /supply-chains/farmers/:
+    get:
+      tags:
+        - supply-chains
+      description: A viewset for viewing and editing Farmer instances.
+      operationId: supply-chains_farmers_list
+      parameters:
+        - name: first_name__icontains
+          in: query
+          schema:
+            type: string
+        - name: last_name__icontains
+          in: query
+          schema:
+            type: string
+        - name: number__icontains
+          in: query
+          schema:
+            type: string
+        - name: updated_after
+          in: query
+          schema:
+            type: number
+        - name: created_after
+          in: query
+          schema:
+            type: number
+        - name: limit
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                  - count
+                  - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Farmer'
+    post:
+      tags:
+        - supply-chains
+      description: A viewset for viewing and editing Farmer instances.
+      operationId: supply-chains_farmers_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Farmer'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Farmer'
+      x-codegen-request-body-name: data
+  /supply-chains/farmers/{hashid}/:
+    get:
+      tags:
+        - supply-chains
+      description: A viewset for viewing and editing Farmer instances.
+      operationId: supply-chains_farmers_read
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Farmer'
+    patch:
+      tags:
+        - supply-chains
+      description: A viewset for viewing and editing Farmer instances.
+      operationId: supply-chains_farmers_partial_update
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Farmer'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Farmer'
+      x-codegen-request-body-name: data
+  /transactions/payment-transactions/:
+    get:
+      tags:
+        - transactions
+      operationId: transactions_payment-transactions_list
+      parameters:
+        - name: payment_type
+          in: query
+          schema:
+            type: string
+        - name: updated_after
+          in: query
+          schema:
+            type: number
+        - name: limit
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                  - count
+                  - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PaymentTransactions'
+    post:
+      tags:
+        - transactions
+      operationId: transactions_payment-transactions_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentTransactions'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentTransactions'
+      x-codegen-request-body-name: data
+  /transactions/payment-transactions/{hashid}/:
+    get:
+      tags:
+        - transactions
+      operationId: transactions_payment-transactions_read
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentTransactions'
+    patch:
+      tags:
+        - transactions
+      operationId: transactions_payment-transactions_partial_update
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentTransactions'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentTransactions'
+      x-codegen-request-body-name: data
+  /transactions/payment-transactions/{hashid}/invoice/:
+    patch:
+      tags:
+        - transactions
+      description: Adding separate API for uploading invoice.
+      operationId: transactions_payment-transactions_invoice
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentTransactions'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentTransactions'
+      x-codegen-request-body-name: data
+  /transactions/product-transactions/:
+    get:
+      tags:
+        - transactions
+      operationId: transactions_product-transactions_list
+      parameters:
+        - name: updated_after
+          in: query
+          schema:
+            type: number
+        - name: created_after
+          in: query
+          schema:
+            type: number
+        - name: updated_before
+          in: query
+          schema:
+            type: number
+        - name: only_quantity_available
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: Number of results to return per page.
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: The initial index from which to return the results.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                  - count
+                  - results
+                type: object
+                properties:
+                  count:
+                    type: integer
+                  next:
+                    type: string
+                    format: uri
+                    nullable: true
+                  previous:
+                    type: string
+                    format: uri
+                    nullable: true
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ProductTransaction'
+    post:
+      tags:
+        - transactions
+      operationId: transactions_product-transactions_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductTransaction'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductTransaction'
+      x-codegen-request-body-name: data
+  /transactions/product-transactions/{hashid}/:
+    get:
+      tags:
+        - transactions
+      operationId: transactions_product-transactions_read
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductTransaction'
+    patch:
+      tags:
+        - transactions
+      operationId: transactions_product-transactions_partial_update
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductTransaction'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductTransaction'
+      x-codegen-request-body-name: data
+  /transactions/product-transactions/{hashid}/invoice/:
+    patch:
+      tags:
+        - transactions
+      description: Adding separate API for uploading invoice.
+      operationId: transactions_product-transactions_invoice
+      parameters:
+        - name: hashid
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductTransaction'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductTransaction'
+      x-codegen-request-body-name: data
+components:
+  schemas:
+    PrivacyPolicy:
+      type: object
+      properties:
+        id:
+          type: string
+        content:
+          title: Policy Content
+          type: string
+          nullable: true
+        version:
+          title: Version
+          maximum: 2147483647
+          minimum: 0
+          type: integer
+        date:
+          title: Privacy Policy Date
+          type: string
+          format: date
+          nullable: true
+        since:
+          title: Start Date
+          type: string
+          format: date
+          nullable: true
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        first_name:
+          title: First name
+          maxLength: 150
+          type: string
+        last_name:
+          title: Last name
+          maxLength: 150
+          type: string
+        email:
+          title: Email address
+          maxLength: 254
+          type: string
+          format: email
+        dob:
+          title: Date Of Birth
+          type: string
+          format: date
+          nullable: true
+        phone:
+          title: Phone
+          type: string
+          nullable: true
+        address:
+          title: Address
+          maxLength: 2000
+          type: string
+          nullable: true
+        image:
+          title: Photo
+          type: string
+          format: uri
+          nullable: true
+          readOnly: true
+        updated_email:
+          title: Last Updated Email
+          maxLength: 254
+          type: string
+          format: email
+          nullable: true
+        managing_entitys:
+          uniqueItems: true
+          type: array
+          readOnly: true
+          items:
+            type: string
+        default_entity:
+          type: string
+        accepted_policy:
+          type: string
+        policy_accepted:
+          title: Policy accepted
+          type: string
+          readOnly: true
+        current_policy:
+          title: Current policy
+          type: string
+          readOnly: true
+        language:
+          title: Language
+          minLength: 1
+          type: string
+    APILogin:
+      required:
+        - device_id
+        - password
+        - username
+      type: object
+      properties:
+        username:
+          title: Username
+          minLength: 1
+          type: string
+        password:
+          title: Password
+          minLength: 1
+          type: string
+        device_id:
+          title: Device id
+          minLength: 1
+          type: string
+        device_name:
+          title: Device name
+          minLength: 1
+          type: string
+        device_loc:
+          title: Device loc
+          minLength: 1
+          type: string
+        force_logout:
+          title: Force logout
+          type: boolean
+    PasswordChange:
+      required:
+        - new_password1
+        - new_password2
+      type: object
+      properties:
+        new_password1:
+          title: New password1
+          maxLength: 128
+          minLength: 1
+          type: string
+        new_password2:
+          title: New password2
+          maxLength: 128
+          minLength: 1
+          type: string
+    CheckPassword:
+      required:
+        - password
+      type: object
+      properties:
+        password:
+          title: Password
+          minLength: 1
+          type: string
+    APIPasswordReset:
+      required:
+        - email
+      type: object
+      properties:
+        email:
+          title: Email
+          minLength: 1
+          type: string
+          format: email
+    PasswordResetConfirm:
+      required:
+        - new_password1
+        - new_password2
+        - token
+      type: object
+      properties:
+        validation_token:
+          title: Validation token
+          minLength: 1
+          type: string
+        user:
+          type: string
+        email:
+          title: Email
+          minLength: 1
+          type: string
+          format: email
+        password:
+          title: Password
+          minLength: 1
+          type: string
+        entity:
+          type: string
+        token:
+          title: Token
+          minLength: 1
+          type: string
+        new_password1:
+          title: New password1
+          maxLength: 128
+          minLength: 1
+          type: string
+        new_password2:
+          title: New password2
+          maxLength: 128
+          minLength: 1
+          type: string
+        old_password:
+          title: Old password
+          maxLength: 128
+          minLength: 1
+          type: string
+    TokenRefresh:
+      required:
+        - entity
+        - refresh
+      type: object
+      properties:
+        refresh:
+          title: Refresh
+          minLength: 1
+          type: string
+        access:
+          title: Access
+          minLength: 1
+          type: string
+          readOnly: true
+        entity:
+          type: string
+    TokenVerify:
+      required:
+        - token
+      type: object
+      properties:
+        token:
+          title: Token
+          minLength: 1
+          type: string
+    Validation:
+      type: object
+      properties:
+        validation_token:
+          title: Validation token
+          minLength: 1
+          type: string
+        user:
+          type: string
+        email:
+          title: Email
+          minLength: 1
+          type: string
+          format: email
+        password:
+          title: Password
+          minLength: 1
+          type: string
+        entity:
+          type: string
+    ConnectCard:
+      required:
+        - card_id
+      type: object
+      properties:
+        id:
+          type: string
+        card_id:
+          title: Card id
+          minLength: 1
+          type: string
+        updated_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        created_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        display_id:
+          title: Display ID
+          maxLength: 100
+          type: string
+          nullable: true
+        creator:
+          type: string
+        updater:
+          type: string
+    Country:
+      required:
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          title: Country Name
+          maxLength: 1000
+          minLength: 1
+          type: string
+        latitude:
+          title: Latitude
+          maxLength: 500
+          type: string
+          nullable: true
+        longitude:
+          title: Longitude
+          maxLength: 500
+          type: string
+          nullable: true
+        alpha_2:
+          title: Country Code
+          maxLength: 10
+          type: string
+          nullable: true
+        alpha_3:
+          title: CCA3 Country Code
+          maxLength: 10
+          type: string
+          nullable: true
+        dial_code:
+          title: Dial Code
+          maxLength: 100
+          type: string
+          nullable: true
+        language:
+          title: Selected Language
+          type: string
+          enum:
+            - en
+            - nl
+            - de
+            - fr
+        currency:
+          type: string
+    Currency:
+      required:
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          title: Currency Name
+          maxLength: 1000
+          minLength: 1
+          type: string
+        code:
+          title: Currency Code
+          maxLength: 100
+          type: string
+          nullable: true
+    PremiumOptionSeriazer:
+      required:
+        - amount
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+        updated_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        created_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        name:
+          title: Option Name
+          maxLength: 25
+          minLength: 1
+          type: string
+        amount:
+          title: Amount
+          type: number
+        is_active:
+          title: Is Active
+          type: boolean
+        creator:
+          type: string
+        updater:
+          type: string
+    Premium:
+      required:
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+        options:
+          type: array
+          items:
+            $ref: '#/components/schemas/PremiumOptionSeriazer'
+        updated_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        created_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        category:
+          title: Premium Category
+          type: string
+          enum:
+            - PAYOUT
+            - TRANSACTION
+        name:
+          title: Premium Name
+          maxLength: 100
+          minLength: 1
+          type: string
+        type:
+          title: Premium Type
+          type: string
+          enum:
+            - PER_TRANSACTION
+            - PER_KG
+            - PER_UNIT_CURRENCY
+            - PER_FARMER
+        amount:
+          title: Amount
+          type: number
+          nullable: true
+        included:
+          title: Included
+          type: boolean
+        dependant_on_card:
+          title: Dependant on Card
+          type: boolean
+        applicable_activity:
+          title: Applicable Activity
+          type: string
+          enum:
+            - BUY
+            - SELL
+        calculation_type:
+          title: Calculation Type
+          type: string
+          enum:
+            - NORMAL
+            - MANUAL
+            - OPTIONS
+        is_active:
+          title: Is Active
+          type: boolean
+        creator:
+          type: string
+        updater:
+          type: string
+        owner:
+          type: string
+    Product:
+      required:
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+        premiums:
+          title: Premiums
+          type: string
+          readOnly: true
+        is_active:
+          title: Is active
+          type: string
+          readOnly: true
+        updated_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        created_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        name:
+          title: Product Name
+          maxLength: 500
+          minLength: 1
+          type: string
+        description:
+          title: Product Description
+          maxLength: 500
+          type: string
+          nullable: true
+        image:
+          title: Product Image
+          type: string
+          format: uri
+          nullable: true
+          readOnly: true
+        creator:
+          type: string
+        updater:
+          type: string
+    Province:
+      required:
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          title: Province Name
+          maxLength: 1000
+          minLength: 1
+          type: string
+        latitude:
+          title: Latitude
+          maxLength: 500
+          type: string
+          nullable: true
+        longitude:
+          title: Longitude
+          maxLength: 500
+          type: string
+          nullable: true
+    FormField:
+      required:
+        - label
+        - type
+      type: object
+      properties:
+        id:
+          type: string
+        updated_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        created_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        label:
+          title: Label
+          maxLength: 100
+          minLength: 1
+          type: string
+        label_en_us:
+          title: Label [en-us]
+          maxLength: 100
+          type: string
+          nullable: true
+        label_en_uk:
+          title: Label [en-uk]
+          maxLength: 100
+          type: string
+          nullable: true
+        label_fr:
+          title: Label [fr]
+          maxLength: 100
+          type: string
+          nullable: true
+        label_nl:
+          title: Label [nl]
+          maxLength: 100
+          type: string
+          nullable: true
+        label_ind:
+          title: Label [ind]
+          maxLength: 100
+          type: string
+          nullable: true
+        type:
+          title: Field Type
+          type: string
+          enum:
+            - TEXT
+            - INTEGER
+            - FLOAT
+            - RADIO
+            - MULTI_SELECT
+            - EMAIL
+            - PHONE
+            - DATE
+            - BOOLEAN
+            - DROPDOWN
+        key:
+          title: Key
+          maxLength: 100
+          type: string
+          nullable: true
+        required:
+          title: Required
+          type: boolean
+        default_value:
+          title: Default Value
+          maxLength: 100
+          type: string
+          nullable: true
+        options:
+          title: Options
+          type: string
+          nullable: true
+        creator:
+          type: string
+        updater:
+          type: string
+    FormFieldConfig:
+      required:
+        - key
+        - label
+      type: object
+      properties:
+        id:
+          type: string
+        updated_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        created_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        label:
+          title: Label
+          maxLength: 100
+          minLength: 1
+          type: string
+        key:
+          title: Key
+          maxLength: 100
+          minLength: 1
+          type: string
+        visibility:
+          title: Visibility
+          type: boolean
+        required:
+          title: Required
+          type: boolean
+        creator:
+          type: string
+        updater:
+          type: string
+    Form:
+      required:
+        - fields
+        - owner
+      type: object
+      properties:
+        id:
+          type: string
+        products:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/Product'
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormField'
+        field_config:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormFieldConfig'
+        updated_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        created_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        form_type:
+          title: Form Type
+          type: string
+          enum:
+            - TRANSACTION
+            - FARMER
+            - PAYMENT
+            - PRODUCT
+        creator:
+          type: string
+        updater:
+          type: string
+        owner:
+          type: string
+    Notification:
+      required:
+        - body
+        - title
+      type: object
+      properties:
+        id:
+          type: string
+        is_read:
+          title: Is read?
+          type: boolean
+        title:
+          title: Title
+          maxLength: 300
+          minLength: 1
+          type: string
+        body:
+          title: Body
+          maxLength: 500
+          minLength: 1
+          type: string
+        actor_entity:
+          type: string
+        target_entity:
+          type: string
+        event_id:
+          type: string
+        event_type:
+          title: Event type
+          minLength: 1
+          type: string
+        created_on:
+          title: Created on
+          type: string
+          format: date-time
+          readOnly: true
+        redirect_id:
+          type: string
+        redirect_type:
+          title: Redirect type
+          maxLength: 200
+          type: string
+          nullable: true
+        creator:
+          type: string
+    ReadNotification:
+      type: object
+      properties:
+        ids:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        all:
+          title: All
+          type: boolean
+          default: false
+    EntityCard:
+      required:
+        - card
+        - entity
+      type: object
+      properties:
+        id:
+          type: string
+        card:
+          $ref: '#/components/schemas/ConnectCard'
+        updated_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        created_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        is_active:
+          title: Is Active
+          type: boolean
+          readOnly: true
+        creator:
+          type: string
+        updater:
+          type: string
+        entity:
+          type: string
+    Entity:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          title: Name
+          minLength: 1
+          type: string
+          readOnly: true
+        entity_card:
+          $ref: '#/components/schemas/EntityCard'
+        image:
+          title: Photo
+          type: string
+          format: uri
+          nullable: true
+          readOnly: true
+        description:
+          title: Description
+          maxLength: 500
+          type: string
+          nullable: true
+    CompanyFieldVisibiltySerilizer:
+      required:
+        - company
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+        updated_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        created_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        name:
+          title: Name
+          maxLength: 100
+          minLength: 1
+          type: string
+        visibility:
+          title: Visibility
+          type: boolean
+        type:
+          title: Type
+          type: string
+          enum:
+            - TRANSACTION
+            - FARMER
+        creator:
+          type: string
+        updater:
+          type: string
+        company:
+          type: string
+    Company:
+      required:
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+        currency:
+          $ref: '#/components/schemas/Currency'
+        buyer:
+          $ref: '#/components/schemas/Entity'
+        entity_card:
+          $ref: '#/components/schemas/EntityCard'
+        forms:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/Form'
+        field_visibilties:
+          type: array
+          readOnly: true
+          items:
+            $ref: '#/components/schemas/CompanyFieldVisibiltySerilizer'
+        owned_premiums:
+          uniqueItems: true
+          type: array
+          readOnly: true
+          items:
+            type: string
+        updated_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        created_on:
+          title: Created On
+          type: string
+          format: date-time
+        image:
+          title: Photo
+          type: string
+          format: uri
+          nullable: true
+          readOnly: true
+        description:
+          title: Description
+          maxLength: 500
+          type: string
+          nullable: true
+        house_name:
+          title: House name
+          maxLength: 100
+          type: string
+          nullable: true
+        street:
+          title: Street
+          maxLength: 500
+          type: string
+          nullable: true
+        city:
+          title: City
+          maxLength: 500
+          type: string
+          nullable: true
+        sub_province:
+          title: Sub province
+          maxLength: 500
+          type: string
+          nullable: true
+        province:
+          title: Province
+          maxLength: 500
+          type: string
+          nullable: true
+        latitude:
+          title: Latitude
+          type: number
+        longitude:
+          title: Longitude
+          type: number
+        zipcode:
+          title: Zipcode
+          maxLength: 50
+          type: string
+          nullable: true
+        country:
+          title: Country
+          maxLength: 500
+          type: string
+          nullable: true
+        email:
+          title: Email Address
+          maxLength: 100
+          type: string
+          format: email
+          nullable: true
+        phone:
+          title: Phone Number
+          maxLength: 50
+          type: string
+          nullable: true
+        name:
+          title: Company Name
+          maxLength: 500
+          minLength: 1
+          type: string
+        buy_enabled:
+          title: Buy Enabled
+          type: boolean
+        sell_enabled:
+          title: Sell Enabled
+          type: boolean
+        quality_correction:
+          title: Quality Correction
+          type: boolean
+        allow_multiple_login:
+          title: Allow Multiple Login
+          type: boolean
+        creator:
+          type: string
+        updater:
+          type: string
+        members:
+          uniqueItems: true
+          type: array
+          readOnly: true
+          items:
+            type: string
+        products:
+          uniqueItems: true
+          type: array
+          readOnly: true
+          items:
+            type: string
+    CompanyCreate:
+      required:
+        - name
+      type: object
+      properties:
+        id:
+          type: string
+        currency:
+          title: Currency
+          minLength: 1
+          type: string
+        updated_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        created_on:
+          title: Created On
+          type: string
+          format: date-time
+        image:
+          title: Photo
+          type: string
+          format: uri
+          nullable: true
+          readOnly: true
+        description:
+          title: Description
+          maxLength: 500
+          type: string
+          nullable: true
+        house_name:
+          title: House name
+          maxLength: 100
+          type: string
+          nullable: true
+        street:
+          title: Street
+          maxLength: 500
+          type: string
+          nullable: true
+        city:
+          title: City
+          maxLength: 500
+          type: string
+          nullable: true
+        sub_province:
+          title: Sub province
+          maxLength: 500
+          type: string
+          nullable: true
+        province:
+          title: Province
+          maxLength: 500
+          type: string
+          nullable: true
+        latitude:
+          title: Latitude
+          type: number
+        longitude:
+          title: Longitude
+          type: number
+        zipcode:
+          title: Zipcode
+          maxLength: 50
+          type: string
+          nullable: true
+        country:
+          title: Country
+          maxLength: 500
+          type: string
+          nullable: true
+        email:
+          title: Email Address
+          maxLength: 100
+          type: string
+          format: email
+          nullable: true
+        phone:
+          title: Phone Number
+          maxLength: 50
+          type: string
+          nullable: true
+        name:
+          title: Company Name
+          maxLength: 500
+          minLength: 1
+          type: string
+        buy_enabled:
+          title: Buy Enabled
+          type: boolean
+        sell_enabled:
+          title: Sell Enabled
+          type: boolean
+        quality_correction:
+          title: Quality Correction
+          type: boolean
+        allow_multiple_login:
+          title: Allow Multiple Login
+          type: boolean
+        creator:
+          type: string
+        updater:
+          type: string
+        buyer:
+          type: string
+        entity_card:
+          type: string
+        members:
+          uniqueItems: true
+          type: array
+          readOnly: true
+          items:
+            type: string
+        products:
+          uniqueItems: true
+          type: array
+          readOnly: true
+          items:
+            type: string
+    CompanyMemer:
+      required:
+        - company
+        - user
+      type: object
+      properties:
+        id:
+          type: string
+        user:
+          $ref: '#/components/schemas/User'
+        updated_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        created_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        type:
+          title: Member Type
+          type: string
+          enum:
+            - SUPER_ADMIN
+            - ADMIN
+            - REPORTER
+        is_active:
+          title: Is Member Active
+          type: boolean
+        creator:
+          type: string
+        updater:
+          type: string
+        company:
+          type: string
+    CompanyProduct:
+      required:
+        - company
+      type: object
+      properties:
+        id:
+          type: string
+        product:
+          $ref: '#/components/schemas/Product'
+        product_id:
+          title: Product id
+          minLength: 1
+          type: string
+        updated_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        created_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        is_active:
+          title: Is Company Product Active
+          type: boolean
+        creator:
+          type: string
+        updater:
+          type: string
+        company:
+          type: string
+        forms:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        premiums:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+    SubmissionValues:
+      required:
+        - field
+        - value
+      type: object
+      properties:
+        id:
+          type: string
+        field_details:
+          $ref: '#/components/schemas/FormField'
+        field:
+          title: Field
+          minLength: 1
+          type: string
+        updated_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        created_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        value:
+          title: Value
+          maxLength: 100
+          minLength: 1
+          type: string
+        creator:
+          type: string
+        updater:
+          type: string
+    Submission:
+      required:
+        - form
+        - values
+      type: object
+      properties:
+        id:
+          type: string
+        form_details:
+          $ref: '#/components/schemas/Form'
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubmissionValues'
+        updated_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        created_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        creator:
+          type: string
+        updater:
+          type: string
+        form:
+          type: string
+        product:
+          type: string
+    Farmer:
+      required:
+        - first_name
+      type: object
+      properties:
+        id:
+          type: string
+        entity_card:
+          $ref: '#/components/schemas/EntityCard'
+        submission:
+          $ref: '#/components/schemas/Submission'
+        phone:
+          title: Phone
+          type: string
+          nullable: true
+        updated_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        created_on:
+          title: Created On
+          type: string
+          format: date-time
+        image:
+          title: Photo
+          type: string
+          format: uri
+          nullable: true
+          readOnly: true
+        description:
+          title: Description
+          maxLength: 500
+          type: string
+          nullable: true
+        house_name:
+          title: House name
+          maxLength: 100
+          type: string
+          nullable: true
+        street:
+          title: Street
+          maxLength: 500
+          type: string
+          nullable: true
+        city:
+          title: City
+          maxLength: 500
+          type: string
+          nullable: true
+        sub_province:
+          title: Sub province
+          maxLength: 500
+          type: string
+          nullable: true
+        province:
+          title: Province
+          maxLength: 500
+          type: string
+          nullable: true
+        latitude:
+          title: Latitude
+          type: number
+        longitude:
+          title: Longitude
+          type: number
+        zipcode:
+          title: Zipcode
+          maxLength: 50
+          type: string
+          nullable: true
+        country:
+          title: Country
+          maxLength: 500
+          type: string
+          nullable: true
+        number:
+          title: Number
+          maxLength: 10
+          type: string
+          nullable: true
+        email:
+          title: Email Address
+          maxLength: 100
+          type: string
+          format: email
+          nullable: true
+        identification_no:
+          title: Identification
+          maxLength: 100
+          type: string
+          nullable: true
+        reference_number:
+          title: Reference Number
+          maxLength: 100
+          type: string
+          nullable: true
+        first_name:
+          title: First Name
+          maxLength: 100
+          minLength: 1
+          type: string
+        last_name:
+          title: Last Name
+          maxLength: 100
+          type: string
+          nullable: true
+        date_of_birth:
+          title: Date of Birth
+          type: string
+          format: date
+          nullable: true
+        gender:
+          title: Gender
+          maxLength: 50
+          type: string
+          nullable: true
+        consent_status:
+          title: Consent Status
+          type: string
+          enum:
+            - GRANTED
+            - NOT_GRANTED
+            - UNKNOWN
+        creator:
+          type: string
+        updater:
+          type: string
+        buyer:
+          type: string
+    PaymentTransactions:
+      required:
+        - destination
+        - source
+      type: object
+      properties:
+        id:
+          type: string
+        premium_details:
+          $ref: '#/components/schemas/Premium'
+        currency_details:
+          $ref: '#/components/schemas/Currency'
+        type:
+          title: Type
+          type: string
+          readOnly: true
+        currency:
+          title: Currency
+          minLength: 1
+          type: string
+        updated_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        number:
+          title: Number
+          maxLength: 10
+          type: string
+          nullable: true
+        created_on:
+          title: Created On
+          type: string
+          format: date-time
+        date:
+          title: Date
+          type: string
+          format: date-time
+        invoice:
+          title: Invoice
+          type: string
+          format: uri
+          nullable: true
+          readOnly: true
+        invoice_number:
+          title: Invoice Number
+          maxLength: 100
+          type: string
+          nullable: true
+        verification_latitude:
+          title: Verification Latitude
+          type: number
+        verification_longitude:
+          title: Verification Longitude
+          type: number
+        method:
+          title: Method
+          type: string
+          nullable: true
+          enum:
+            - CARD
+            - INVOICE
+            - NONE
+        payment_type:
+          title: Payment Type
+          type: string
+          enum:
+            - TRANSACTION
+            - PREMIUM
+            - TRANSACTION_PREMIUM
+        amount:
+          title: Amount
+          type: number
+        selected_option:
+          title: Selected Option
+          maxLength: 100
+          type: string
+          nullable: true
+        creator:
+          type: string
+        updater:
+          type: string
+        source:
+          type: string
+        destination:
+          type: string
+        card:
+          type: string
+        premium:
+          type: string
+        transaction:
+          type: string
+        submissions:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+    ProductTransaction:
+      required:
+        - amount
+        - destination
+        - product
+        - source
+      type: object
+      properties:
+        id:
+          type: string
+        transaction_payments:
+          type: array
+          items:
+            $ref: '#/components/schemas/PaymentTransactions'
+        amount:
+          title: Amount
+          type: string
+          format: decimal
+        currency:
+          title: Currency
+          minLength: 1
+          type: string
+        type:
+          title: Type
+          type: string
+          readOnly: true
+        source_quantity:
+          title: Source quantity
+          type: string
+          format: decimal
+          readOnly: true
+        current_quantity:
+          title: Current quantity
+          type: string
+          format: decimal
+          readOnly: true
+        submissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Submission'
+        card_details:
+          $ref: '#/components/schemas/ConnectCard'
+        currency_details:
+          $ref: '#/components/schemas/Currency'
+        updated_on:
+          title: Updated On
+          type: string
+          format: date-time
+          readOnly: true
+        number:
+          title: Number
+          maxLength: 10
+          type: string
+          nullable: true
+        created_on:
+          title: Created On
+          type: string
+          format: date-time
+        date:
+          title: Date
+          type: string
+          format: date-time
+        invoice:
+          title: Invoice
+          type: string
+          format: uri
+          nullable: true
+          readOnly: true
+        invoice_number:
+          title: Invoice Number
+          maxLength: 100
+          type: string
+          nullable: true
+        verification_latitude:
+          title: Verification Latitude
+          type: number
+        verification_longitude:
+          title: Verification Longitude
+          type: number
+        method:
+          title: Method
+          type: string
+          nullable: true
+          enum:
+            - CARD
+            - INVOICE
+            - NONE
+        quality_correction:
+          title: Quality Correction
+          type: number
+        quantity:
+          title: Quantity
+          type: string
+          format: decimal
+          nullable: true
+        creator:
+          type: string
+        updater:
+          type: string
+        source:
+          type: string
+        destination:
+          type: string
+        card:
+          type: string
+        product:
+          type: string
+        parents:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header
+x-original-swagger-version: '2.0'

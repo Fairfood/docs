@@ -1,0 +1,33 @@
+---
+title: 'API Authentication'
+---
+
+
+This document provides detailed information about the authentication methods used in our Connect server backend API.
+
+## Authentication
+
+Our API supports two types of authentication:
+
+### 1. JWT Token Authentication
+
+JWT (JSON Web Token) token authentication is primarily used for mobile applications. It is a compact, URL-safe means of representing claims to be transferred between two parties. The claims in a JWT are encoded as a JSON object that is used as the payload of a JSON Web Signature (JWS) structure or as the plaintext of a JSON Web Encryption (JWE) structure, enabling the claims to be digitally signed or integrity protected with a Message Authentication Code (MAC) and/or encrypted.
+
+To authenticate using JWT:
+
+1. Send a `POST` request to [login API ](auth/api-to-login-user) with your `username` and `password`.
+2. The server will verify your credentials and, if valid, will return a response with your `access` and `refresh` tokens.
+3. Include the `access` token in the `Authorization` header for subsequent requests. This token is used to authenticate your requests.
+
+### 2. OAuth Using Client Credentials
+
+OAuth 2.0 is a protocol that allows a user to grant limited access to their resources on one site, to another site, without having to expose their credentials. Using client credentials is suitable for machine-to-machine authentication where a specific user’s permission to access data is not required.
+
+To authenticate using OAuth:
+
+1. Send a `POST` request to `/oauth/token/` with your `client_id` and `client_secret`. These are unique identifiers for the app that is trying to access the user's account.
+2. The server will verify your credentials and, if valid, will return a response with your `access_token`.
+3. Include the `access_token` in the `Authorization` header for subsequent requests. This token is used to authenticate your requests.
+
+---
+

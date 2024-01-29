@@ -27,14 +27,14 @@
     "name": "GitHub",
     "url": "https://github.com/orgs/Fairfood/repositories"
   },
-  "openapi":"https://v2.dev.api.fairfood.org/connect/v1/?format=openapi",
-  "tabs": [
+  "openapi":["openapi.yml"],
+  "tabs":[
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "API References",
+      "icon": "code",
+      "url": "api-references"
     }
   ],
-
   "anchors": [
     {
       "name": "Documentation",
@@ -55,27 +55,107 @@
   "navigation": [
     {
       "group": "Get Started.",
-      "pages": ["introduction","How Trace Works", "quickstart", "development", "support"]
+      "pages": ["introduction","how_trace_works", "quickstart", "development"]
     },
     {
       "group": "Essentials",
       "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
     },
     {
-      "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
-    },
-    {
-      "group": "Endpoint Examples",
+      "group": "Connect API Documentation",
       "pages": [
-        "openapi",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete",
-        "api-reference/test/test",
-        "openapi: /form/form"
+        "api-references/oauth",
+        {
+          "group": "Authentication",
+          "pages": [
+            "api-references/auth/api-to-check-user-password",
+            "api-references/auth/api-to-login-user",
+            "api-references/auth/api-to-refresh-token",
+            "api-references/auth/api-to-reset-user-password",
+            "api-references/auth/api-to-set-user-password",
+            "api-references/auth/api-to-verify-validate-email-password-or-token",
+            "api-references/auth/calls-django-auth-setpasswordform-save-method",
+            "api-references/auth/post-authlogout",
+            "api-references/auth/post-authtokenverify",
+            "api-references/auth/post-authtracesync-status"
+          ]
+        },
+        {
+          "group": "Accounts",
+          "pages": [
+            "api-references/accounts/get-accountsusers-",
+            "api-references/accounts/get-accountsusers",
+            "api-references/accounts/patch-accountsusers-"
+          ]
+        },
+        {
+          "group": "Catalogs",
+          "pages": [
+            "api-references/catalogs/get-catalogsconnect-cards-", 
+            "api-references/catalogs/get-catalogsconnect-cards", 
+            "api-references/catalogs/get-catalogscountries-", 
+            "api-references/catalogs/get-catalogscountries", 
+            "api-references/catalogs/get-catalogscurrencies-", 
+            "api-references/catalogs/get-catalogscurrencies", 
+            "api-references/catalogs/get-catalogspremiums-", 
+            "api-references/catalogs/get-catalogspremiums", 
+            "api-references/catalogs/get-catalogsproducts-", 
+            "api-references/catalogs/get-catalogsproducts", 
+            "api-references/catalogs/get-catalogsprovinces-", 
+            "api-references/catalogs/get-catalogsprovinces", 
+            "api-references/catalogs/post-catalogsconnect-cards", 
+            "api-references/catalogs/post-catalogspremiums"
+          ]
+        },
+        {
+          "group": "Forms",
+          "pages": [
+            "api-references/forms/get-formsforms-", 
+            "api-references/forms/get-formsforms", 
+            "api-references/forms/post-formsforms"
+          ]
+        },
+        {
+          "group": "Supply Chain",
+          "pages": [
+            "api-references/supply-chains/get-supply-chainscompanies-", 
+            "api-references/supply-chains/get-supply-chainscompanies", 
+            "api-references/supply-chains/get-supply-chainsentity-cards", 
+            "api-references/supply-chains/get-supply-chainsfarmers-", 
+            "api-references/supply-chains/get-supply-chainsentity-cards-", 
+            "api-references/supply-chains/get-supply-chainsfarmers", 
+            "api-references/supply-chains/patch-supply-chainscompanies-", 
+            "api-references/supply-chains/patch-supply-chainsfarmers-", 
+            "api-references/supply-chains/post-supply-chainscompanies", 
+            "api-references/supply-chains/post-supply-chainscompany-members", 
+            "api-references/supply-chains/post-supply-chainscompany-products", 
+            "api-references/supply-chains/post-supply-chainsentity-cards", 
+            "api-references/supply-chains/post-supply-chainsfarmers"
+          ]
+        },
+        {
+          "group": "Product Transactions",
+          "pages": [
+            "api-references/transactions/get-transactionsproduct-transactions-", 
+            "api-references/transactions/get-transactionsproduct-transactions", 
+            "api-references/transactions/patch-transactionsproduct-transactions-", 
+            "api-references/transactions/patch-transactionsproduct-transactions-invoice", 
+            "api-references/transactions/post-transactionsproduct-transactions"
+          ]
+        },
+        {
+          "group": "Payment Transactions",
+          "pages": [
+            "api-references/transactions/get-transactionspayment-transactions-", 
+            "api-references/transactions/get-transactionspayment-transactions", 
+            "api-references/transactions/patch-transactionspayment-transactions-", 
+            "api-references/transactions/patch-transactionspayment-transactions-invoice", 
+            "api-references/transactions/post-transactionspayment-transactions"
+          ]
+        }
       ]
     }
+
   ],
   "footerSocials": {
     "twitter": "https://twitter.com/mintlify",
