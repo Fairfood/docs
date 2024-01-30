@@ -1,0 +1,106 @@
+---
+title: 'Trace Connect Server'
+sidebarTitle: Introduction
+---
+## Welcome
+Welcome to the API documentation for **Trace Connect**, a robust and versatile system designed to effectively interact with the Trace mobile app and other external systems. 
+
+
+This API documentation will guide you through the various endpoints, request/response formats, and use cases that you'll encounter when integrating with Trace Connect. Whether you're looking to deploy your own instance of the Trace mobile app, synchronize data between systems, or integrate additional data into your workflow, Trace Connect has you covered.
+
+Let's get started on this journey towards a more connected and efficient data ecosystem!
+##
+## REST APIs
+Trace Connect uses REST APIs to connect with mobile apps and external servers, particularly for syncing data and executing supply-chain operations. The Connect Server is the control center, offering a user-friendly REST API for all features and operations.
+### Authentication and authorization
+#### Authentication:
+        The Trace Connect APIs support the following authentication methods:
+        * Basic authentication using JWT
+        * OAuth 2.0 (Using client credentials)
+#### Authorization: 
+Authorization depends on the user type and the scope of the token or registered application in OAuth 2.0 authentication workflow. This ensures that access is granted based on the user's role and specific permissions.
+## URI structure
+With Trace Connect APIs, you access resources through URI paths. To interact with a REST API, your application sends an HTTP request and interprets the received response.
+
+The Trace Connect API communicates using JSON and employs standard HTTP methods such as GET, PATCH, POST, and DELETE. The URIs for accessing Trace Connect API resources follow a specific structure:
+
+```http://host:port/connect/api-version/resource-root/resource-name/```
+
+The current API version is denoted as `v1`, symbolically representing version `1`. As new versions are introduced, this number will change accordingly.
+
+Resource roots serve as categorizations for resources. The currently available roots are listed below:
+    * `acoounts`: -for managing users and user divices.
+    * `auth`: -for handling basic authentication.
+    * `catalogs`:- for holding commonly used basic resources like products,premium etc.
+    * `forms`:- for managing extra fields and custom fields
+    * `supply-chain`:- for handling supply-chain related entities such as companies, farmers, and their relationships with other resources.
+    * `transactions`:- for managing product transactions and payments.
+
+As an example, to retrieve the JSON representation of a product transaction with the hashid **V9D3YRRE52** from the Connect Server, you would access:
+
+```https://localhost:3000/connect/v1/transactions/product-transactions/V9D3YRRE52/```
+
+## Response
+The following topics outline the structure of Trace Connect API responses and guide you on how to interact with them.
+
+When interacting with resources, the response body contains the result within a key `data` , along with the status `code` and `success` flag, for example:
+```
+{
+    "success": true,
+    "detail": "Success",
+    "code": 200,
+    "data": {
+        "id": "YK8W53Z6J4",
+        "currency": {
+            "id": "G9V6KZQ524",
+            "name": "Indonesian Rupiah",
+            "code": "IDR"
+        },
+        "buyer": null,
+        "entity_card": null
+        }
+}
+```
+### Pagination
+Connect employs pagination to control response size when listing resources. A request to a paged API will yield an encapsulated JSON object as data in response, accompanied by paging metadata, for example:
+```
+{
+    "success": true,
+    "detail": "Success",
+    "code": 200,
+    "data": {
+        "count": 7,
+        "next": null,
+        "previous": null,
+        "results": [
+            {/* item 0 */},
+            {/* item 0 */},
+            {/* item 0 */}
+        ]
+    }
+}
+            
+```
+* `count:`- total number of items available in the resource table.
+* `next:`-  provides a link to the next set of paginated resources; if not available, it indicates the last page.
+* `previous:`- link to the previous set of paginated resources.
+* `results:` - the actual paginated resource list
+
+Clients can use the `limit` and `offset` parameters to manage the number of items displayed and the starting point, adhering to server-enforced limits. The server-side default value for pagination can also be defined, for example.
+
+```http://host:port/connect/api-version/resource-root/resource-name/?limit=10&offset=0```
+
+### Filters
+Certain resource lists support filtering by specific field names or filter queries as parameters. These filters are predefined for each endpoint.
+
+Filters are typically useful for searching specific data or categorizing resources based on specific parameters or types. Further details on this topic will be discussed in upcoming sections about API endpoints.
+
+### Standardized Datetime Format
+Datetime values in Trace Connect REST API requests and responses are standardized to Unix timestamps.
+
+Any property of type date or datetime is expected in Unix timestamp format, for example:
+
+```Tue, 30 Jan 2024 17:02:23 GMT``` represented as ```1706634143```
+
+### Error Response
+The error response is similar to the normal resource response, with an additional JSON schema attached as message.

@@ -28,13 +28,8 @@
     "url": "https://github.com/orgs/Fairfood/repositories"
   },
   "openapi":["openapi.yml"],
-  "tabs":[
-    {
-      "name": "API Documentation",
-      "icon": "code",
-      "url": "api-references"
-    }
-  ],
+
+  
   "anchors": [
     {
       "name": "Documentation",
@@ -52,6 +47,13 @@
       "url": "https://mintlify.com/blog"
     }
   ],
+  "tabs":[
+    {
+      "name": "API Documentation",
+      "icon": "code",
+      "url": "api-references"
+    }
+  ],
   "navigation": [
     {
       "group": "Get Started.",
@@ -64,13 +66,19 @@
     {
       "group": "Trace Connect APIs",
       "pages": [
-        "api-references/oauth",
+        "api-references/introduction",
         {
           "group": "Authentication using JWT",
           "pages": [
             "api-references/auth/api-to-login-user",
             "api-references/auth/api-to-refresh-token",
             "api-references/auth/post-authlogout"
+          ]
+        },
+        {
+          "group": "OAuth 2.0",
+          "pages": [
+            "api-references/oauth/oauth-introduction"
           ]
         },
         {

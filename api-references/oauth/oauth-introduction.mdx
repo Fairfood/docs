@@ -1,0 +1,25 @@
+---
+title: 'Trace Connect OAuth 2.0 provider'
+sidebarTitle: Introduction
+---
+Trace Connect Server provides APIs to allow external services to access resources on a user’s behalf with the OAuth 2.0 protocol.
+
+## Supported OAuth 2.0 flows
+We support the following OAuth 2.0 flows:
+* Client Credential
+
+We don’t support Implicit Grant and Resource Owner Password Credentials flows, as they will be deprecated in the next OAuth specification version.
+
+<Info>
+  **Note** Support for the other OAuth 2.0 flows will be available soon.
+</Info>
+
+For more information on how these flows work, see [OAuth RFC](https://datatracker.ietf.org/doc/html/rfc6749)
+
+## Authorization using Client Credential Grant
+This flow lets you securely perform the OAuth exchange of client credentials for access tokens on confidential clients. The following steps and parameters describe our implementation of this flow.
+
+### Steps included
+* The client authenticates with the authorization server and requests an access token from the token endpoint.
+* The authorization server authenticates the client, and if valid,issues an access token.
+
