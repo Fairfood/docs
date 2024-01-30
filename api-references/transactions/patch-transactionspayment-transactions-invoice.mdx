@@ -1,3 +1,6 @@
 ---
+title: Update Payment Invoice Endpoint
+sidebarTitle: Attach Payment Invoice
+description:  The Update Invoice for a Payment Transaction endpoint allows you to patch and update the invoice for a specific payment transaction identified by the `hashid` parameter. The request should include the invoice file as form data with the key invoice. The API responds with the updated transaction details, including the transaction's ID and the new invoice value.
 openapi: patch /transactions/payment-transactions/{hashid}/invoice/
 ---

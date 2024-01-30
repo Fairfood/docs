@@ -3,7 +3,7 @@ info:
   title: Trace Connect API
   version: v1
 servers:
-  - url: https://v2.api.fairfood.org/connect/v1
+  - url: http://localhost:3000/connect/v1
 security:
   - Bearer: []
 paths:
@@ -1422,9 +1422,9 @@ paths:
             type: string
       requestBody:
         content:
-          application/json:
+          multipart/form-data:
             schema:
-              $ref: '#/components/schemas/PaymentTransactions'
+              $ref: '#/components/schemas/TransactionInvoice'
         required: true
       responses:
         '200':
@@ -1432,7 +1432,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PaymentTransactions'
+                $ref: '#/components/schemas/TransactionInvoiceResponse'
       x-codegen-request-body-name: data
   /transactions/product-transactions/:
     get:
@@ -1565,9 +1565,9 @@ paths:
             type: string
       requestBody:
         content:
-          application/json:
+          multipart/form-data:
             schema:
-              $ref: '#/components/schemas/ProductTransaction'
+              $ref: '#/components/schemas/TransactionInvoice'
         required: true
       responses:
         '200':
@@ -1575,7 +1575,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ProductTransaction'
+                $ref: '#/components/schemas/TransactionInvoiceResponse'
       x-codegen-request-body-name: data
 components:
   schemas:
@@ -3027,6 +3027,24 @@ components:
           type: array
           items:
             type: string
+    TransactionInvoice:
+      required:
+        - invoice
+      type: object
+      properties:
+        invoice:
+          title: Invoice
+          type: string
+          format: binary
+    TransactionInvoiceResponse:
+      type: object
+      properties:
+        id: 
+          type: string
+        invoice:
+          title: Invoice
+          type: string
+          format: binary
     ProductTransaction:
       required:
         - amount
