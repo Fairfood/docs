@@ -56,7 +56,7 @@
   ],
   "navigation": [
     {
-      "group": "Get Started.",
+      "group": "Support",
       "pages": ["introduction","how_trace_works", "quickstart", "development", "Free"]
     },
     {
