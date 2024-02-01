@@ -57,7 +57,7 @@
   "navigation": [
     {
       "group": "Get Started.",
-      "pages": ["introduction","how_trace_works", "quickstart", "development"]
+      "pages": ["introduction","how_trace_works", "quickstart", "development", "Free"]
     },
     {
       "group": "Essentials",
