@@ -55,10 +55,66 @@
     }
   ],
   "navigation": [
+
+    {
+      "group": "Introduction",
+      "pages": [
+    
+
+   "introduction"
+     
+
+     ]
+    },
+
     {
       "group": "Support",
-      "pages": ["introduction","how_trace_works", "quickstart", "development", "Free"]
+      "pages": [
+        
+        {"group": "Trace Dashboard",
+        "pages": ["how_login", "trace_dashboard", "trace_company_profile", "trace_connections", 
+        "trace _requests", "trace_transactions", "trace_stock", "trace_claims" ] }, 
+      
+        {"group": "Mobile App",
+        "pages": ["install_app", "login_app", "buy_products_app", "sell_products_app", "transactions_app", 
+        "onboarding_farmers", "app_user_profile", "app_clear_data"] },
+
+        {"group": "Storytelling",
+        "pages": ["storytelling_interface"] }
+      
+      ]
     },
+    {
+      "group": "Development",
+      "pages": ["trace_connect", "sync_logic", "google_analytics",
+      {"group": "API Documentation",
+      "pages": ["authentication"] }
+     
+
+     ]
+    },
+    {
+      "group": "Release notes",
+      "pages": [
+      {"group": "Release notes",
+      "pages": ["release_notes_dashboard"] },
+
+      {"group": "Quarterly report",
+      "pages": ["logo/trace_update_q3_2023"] }
+
+     ]
+    },
+
+    {
+      "group": "Design Sytem",
+      "pages": ["design_system_brand","design_system_foundations"]
+    },
+
+
+
+
+
+
     {
       "group": "Essentials",
       "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
