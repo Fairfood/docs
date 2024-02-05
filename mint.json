@@ -129,7 +129,7 @@
             "api-references/auth/api-to-login-user",
             "api-references/auth/api-to-refresh-token",
             "api-references/auth/post-authlogout"
-          ]
+          ] 
         },
         {
           "group": "OAuth 2.0",
