@@ -29,24 +29,10 @@
   },
   "openapi":["openapi.yml"],
 
+
+
+
   
-  "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
-    }
-  ],
   "tabs":[
     {
       "name": "API Documentation",
@@ -107,7 +93,7 @@
       "group": "Blogs",
       "pages": [
         {"group": "Quarterly report",
-        "pages": ["trace_updates_q2_2023", "trace_update_q3_2023"] } ]
+        "pages": ["trace_updates_q1_2023", "trace_updates_q2_2023", "trace_update_q3_2023"] } ]
     },
     
     {
@@ -120,10 +106,7 @@
 
 
 
-    {
-      "group": "Essentials",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
-    },
+ 
     {
       "group": "Trace Connect APIs",
       "pages": [
