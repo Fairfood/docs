@@ -94,10 +94,10 @@
      ]
     },
     {
-      "group": "Release notes",
+      "group": "Updates",
       "pages": [
       {"group": "Release notes",
-      "pages": ["release_notes_dashboard"] },
+      "pages": ["release_notes_dashboard", "mobile_app_release_notes", "storytelling_release_notes"] },
 
       {"group": "Quarterly report",
       "pages": ["logo/trace_update_q3_2023"] }
