@@ -99,13 +99,17 @@
       "pages": [
       {"group": "Release notes",
       "pages": ["release_notes_dashboard", "mobile_app_release_notes", "storytelling_release_notes"] },
-
-      {"group": "Quarterly report",
-      "pages": ["trace_updates_q2_2023", "trace_update_q3_2023"] }
-
-     ]
+    ]
     },
 
+
+    {
+      "group": "Blogs",
+      "pages": [
+        {"group": "Quarterly report",
+        "pages": ["trace_updates_q2_2023", "trace_update_q3_2023"] } ]
+    },
+    
     {
       "group": "Design Sytem",
       "pages": ["design_system_brand","design_system_foundations"]
