@@ -93,6 +93,7 @@
 
      ]
     },
+
     {
       "group": "Updates",
       "pages": [
@@ -100,7 +101,7 @@
       "pages": ["release_notes_dashboard", "mobile_app_release_notes", "storytelling_release_notes"] },
 
       {"group": "Quarterly report",
-      "pages": ["trace_updates_q2_2023.mdx", "logo/trace_update_q3_2023"] }
+      "pages": ["trace_updates_q2_2023", "trace_update_q3_2023"] }
 
      ]
     },
