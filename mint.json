@@ -6,11 +6,11 @@
   },
   "favicon": "logo/dark.svg",
   "colors": {
-    "primary": "#9563FF",
-    "light": "#AE87FF",
-    "dark": "#0D001D",
+    "primary": "#4DCAF4",
+    "light": "#91DDF5",
+    "dark": "#003A60",
     "background": {
-      "dark": "#090014"
+      "dark": "#011F32"
     },
     "anchors": {
       "from": "#FF7F57",
@@ -100,7 +100,7 @@
       "pages": ["release_notes_dashboard", "mobile_app_release_notes", "storytelling_release_notes"] },
 
       {"group": "Quarterly report",
-      "pages": ["logo/trace_update_q3_2023"] }
+      "pages": ["trace_updates_q2_2023.mdx", "logo/trace_update_q3_2023"] }
 
      ]
     },
