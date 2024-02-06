@@ -98,7 +98,7 @@
       "group": "Updates",
       "pages": [
       {"group": "Release notes",
-      "pages": ["release_notes_dashboard", "mobile_app_release_notes", "storytelling_release_notes"] },
+      "pages": ["release_notes_dashboard", "mobile_app_release_notes", "storytelling_release_notes"] }
     ]
     },
 
