@@ -14,7 +14,7 @@ We are very much aware open source app without the backend is kind of useless. B
 
 As we contemplated the idea, we came to the realisation that we could employ the same system to establish connections between external systems and data sources with Trace. This would essentially transform it into a central hub for both the inflow and outflow of data within the Trace ecosystem. 
 
-**image here**
+
 ###  Goals and Objectives
 Our goal with Trace Connect is to achieve the following objectives:
 
@@ -28,7 +28,7 @@ Standalone Backend for Trace Mobile App: Serve as a backend for the Trace mobile
 
 **Modular and Scalable:** Design the system to be modular and scalable, allowing for future expansion and integration with evolving technologies and requirements.
 
-**image here**
+
 
 
 
@@ -39,7 +39,7 @@ The TraceConnect server architecture comprises a Django-based server application
 Trace communicates with the Connect using a shared SDK, which also serves as a bridge to connect with external ERP systems. When generating OAuth credentials, users have the flexibility to configure different scopes according to their specific requirements.
 
 
-**image here**
+<img height="200" src="/images/systemarc.png" />
 
 
 ### Core Modules
@@ -58,7 +58,7 @@ The core modules of TraceConnect primarily revolve around companies, farmers, th
 
 
 ### Database Architecture
-**image here**
+<img height="200" src="/images/dbarc.png" />
 
 Our database architecture has been thoughtfully designed to prioritise simplicity and minimalism while maintaining efficient data management. Central to this architecture is the "company" table, which serves as the core entity around which all data structures revolve. This approach ensures clean separation and allows multiple companies to utilise the same server without data overlap.
 
@@ -79,9 +79,9 @@ In the provided high-level database architecture diagram, the following key elem
 
 
 ### Operational Workflow
-**image here**
+<img height="200" src="/images/flow.png" />
 
-<img height="200" noZoom src="images/images/operationalworkflow.png" />
+
 
 
 In the preceding section, we elaborated on how Trace Connect can effectively operate as a data collection server, highlighting the necessary configuration steps for seamless functionality. To illustrate the simplicity of these steps, let's dive into the operational flow. For this demonstration, we assume that the Trace Connect server is already up and running.
