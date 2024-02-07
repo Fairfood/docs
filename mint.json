@@ -72,7 +72,7 @@
     },
     {
       "group": "Development",
-      "pages": ["trace_connect", "sync_logic", "google_analytics",
+      "pages": ["trace_connect", "sync_logic", "app_packages", "google_analytics", 
       {"group": "API Documentation",
       "pages": ["authentication"] }
      
