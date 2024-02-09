@@ -7,94 +7,153 @@ description: Dashboard will help Trace partners will be able to gain a better un
 
 
 <Steps>
-  <Step title="Backend  V 1.0.1">
-  <sup>11 October 2023</sup>	
+  <Step title="Dashboard V 4.0.2">
+  <sup>19 January 2024</sup>	
 
-    **New Features :**
-Updated the claim detail page in the backend.
-
-Added company claims in the storytelling interface by including company claims in the stages API.
-
-Introduced an invoice number field in the payment table.
+**New Features:**
 
 
-**Suggestions:** Made dynamic template connections by making the connection type non-mandatory and setting the default value to 'Farmer'.
+* Transaction date format has been updated.
+
+* Number format information has been added to the Income page statistics.
+
+* Repository configuration improvements.
+
+* Research and Development conducted on library development.
+
+* Frontend unit tests for service implemented.
+
+* Unit tests and issue fixes for existing frontend issues.
+
+* Regression issues addressed in the development.
+
+* Unit testing and code optimization performed.
+
+* Material library updates for frontend.
+
+* Components made standalone for better integration.
+
+* Select All feature testing conducted in development and stage environments.
+
+* Unit testing and end-to-end testing for stock list selection in frontend.
+
+* Trace test cases documented.
+
+* Unique identification added to frontend elements.
+
+* Automation tasks for Team Members.
+
+* Code documentation and preparation of other documents.
+
+* Codebase improvements in two parts.
+
+* Setup documentation added to Fairfood applications.
+
+* Code documentation in storytelling for frontend.
+
+* Open source documentation in farmer passbook, login app, and admin application.
+
+* Detailed documentation for frontend trace module.
+
+* Unit testing for the transaction module in frontend.
+
+* Translation feature added to the transaction, stock, claim, and trace modules.
+
+* Stage testing conducted for Trace Dashboard.
+
+* Translation feature added to farmer profile and connections, dashboard, and company profile.
+
+* Farmer profile polygon upload and testing.
 
 
-**Bug Fixes:** Resolved the issue of incorrect data on the summary page after adding farmers through Excel in the development environment.
-Fixed the problem of getting an invalid identification number and country code on the trace template in the stage and development environments.
-Corrected the display of different identification numbers on the trace template in the production environment.
-Updated the product name display on stages and claim popups in the development environment.
-Resolved a Sentri issue in the production environment.
-Fixed the issue where the connection type displayed as "Farmer" in the listing page but as "Collector" in the trace template in the stage environment.
-Ensured the display of claim names on storytelling and claim popups when switching to Dutch in the development environment.
-Enabled the deletion of added interventions from the database, resolving a type error in the development environment.
+**Suggestions:** 
 
-  </Step>
-  <Step title="Backend  V 1.0.1">
+
+* Stock listing page Select All feature enhanced.
+
+* Logic change in stock listing for improved functionality.
+
+
+**Bug Fixes:** 
+
+* Request for information popup issue fixed.
+
+* Display issue with only 50 batches after selecting entire stock list fixed.
+
+* Searched text not clearing from the page issue resolved.
+
+* Various display and selection issues in stock, filter, and pagination fixed.
+
+* Transaction with future dates prevented.
+
+* UI issues on Add connections, Receive stock page, Request stock fixed.
+
+* Stock display issues after Remove stock fixed.
+
+* Country code selection issue addressed.
+
+* UI issues in system testing fixed.
+
+* Claim description not displaying on the transaction report page fixed.
+
+* Stock selection issue resolved.
+
+* Data not displaying on Supplier filter option fixed.
+
+* Location pointing issue on adding plot with Accurate type fixed.
+
+* Continue button disabled on Accurate popup issue fixed.
+
+* Claim icon not showing in production fixed.
+
+</Step>
+
+  <Step title="Backend V 1.0.1">
   <sup>11 October 2023</sup>
 
   
-       **Bug Fixes :**
-Fixed the issue where data was not displaying on the connection type column in the development environment.
+       **New Features:**
+* Updated the claim detail page in the backend.
 
-Corrected the issue where the "Not verified" status was appearing under the verification type in the production and stage environments.
-  </Step>
+* Added company claims in the storytelling interface by including company claims in the stages API.
+
+* Introduced an invoice number field in the payment table.
+
+**Enhancements:**
+
+* Made dynamic template connections by making the connection type non-mandatory and setting the default value to 'Farmer'.
+
+**Bug Fixes:**
+
+* Resolved the issue of incorrect data on the summary page after adding farmers through Excel in the development environment.
+* 
+* Fixed the problem of getting an invalid identification number and country code on the trace template in the stage and development environments.
+* 
+* Corrected the display of different identification numbers on the trace template in the production environment.
+* 
+* Updated the product name display on stages and claim popups in the development environment.
+* 
+* Resolved a Sentri issue in the production environment.
+* 
+* Fixed the issue where the connection type displayed as "Farmer" in the listing page but as "Collector" in the trace template in the stage environment.
+* 
+* Ensured the display of claim names on storytelling and claim popups when switching to Dutch in the development environment.
+* 
+* Enabled the deletion of added interventions from the database, resolving a type error in the development environment.
+
+</Step>
 
 
 
-   <Step title="Backend V 1.0.0">
-  <sup>07 September 2023</sup>
+   <Step title="Backend V 1.1.1">
+  <sup>11 October 2023</sup>
 
   
-       **New Features:**
+       **Bug fixes:**
 
 
-
-- Enhanced paginated API for connection (company and farm).
-- Created a comprehensive test case plan and status sheet.
-- Addressed data loading issues on the Stock listing page.
-- Restructured the API for improved performance.
-- Developed a test plan, added test tasks, and generated coverage reports.
-- Added missing fields in connections API for completeness.
-- Implemented Dynamic Bulk Upload Validation and Error Handling.
-- Resolved Dynamic Upload issues and improved data save logic.
-- Introduced a verification feature for farmer passbook.
-- Created APIs for excel preview and header detection.
-- Modified Trace template and pre-filled existing farmer data.
-- Upgraded Python version.
-- Made changes to Dynamic templates and uploads.
-- Implemented a preview API for templates.
-- Updated Dynamic templates with a new schema.
-- Added and updated schema validations.
-- Improved save logic for Dynamic templates.
-- Made API changes in Dynamic templates and uploads.
-- Updated Dynamic Template Update Summary APIs.
-- Validated product, currency, and unit in creating transaction templates.
-- Retested Dynamic templates.
-- Retested Angular 15 and Dynamic templates.
-- Conducted Trace Template testing.
-
-
-
-
-
-**Bug fixes**
-
-*  Fixed issues related to data display, search, and filters in various sections.
-*  Resolved validation, upload, and error handling problems.
-*  Corrected UI issues and inconsistencies.
-*  Addressed issues with company creation, export, and listing.
-*  Fixed issues related to anonymous and specific connections.
-*  Improved data visibility and display in summary pages.
-*  Resolved errors and issues during template uploads.
-*  Fixed issues related to duplicates, missing data, and product validation.
-*  Corrected issues with stock listing, errors, and filters.
-*  Addressed issues related to farmer profiles, connections, and stock listing.
-*  Improved data validation and display in Trace templates.
-*  Fixed issues related to trace template uploads and data display.
-*  Addressed issues with company creation from trace templates.
-*  Improved data visibility and consistency in various sections.
+* Fixed the issue where data was not displaying on the connection type column in the development environment.
+* Corrected the issue where the "Not verified" status was appearing under the verification type in the production and stage environments.
 
 
   </Step>
@@ -106,7 +165,7 @@ Corrected the issue where the "Not verified" status was appearing under the veri
 
 
    <Step title="V 3.2.0">
-  <sup>22 June 2023</sup>
+  <code>22 June 2023</code>
 
 
 **Story**
