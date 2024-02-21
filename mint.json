@@ -63,7 +63,7 @@
       
         {"group": "Mobile App",
         "pages": ["install_app", "login_app", "buy_products_app", "sell_products_app", "transactions_app", 
-        "onboarding_farmers", "app_user_profile", "app_clear_data", "app_privacy"] },
+        "onboarding_farmers", "app_user_profile", "app_clear_data", "privacypolicy"] },
 
         {"group": "Storytelling",
         "pages": ["storytelling_interface"] }
