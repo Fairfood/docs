@@ -82,62 +82,79 @@
           ]
         },
         {
-          "group": "Accounts",
+          "group": "Basic APIs",
           "pages": [
-            "api-references/accounts/get-accountsusers-",
-            "api-references/accounts/patch-accountsusers-"
-          ]
-        },
-        {
-          "group": "Catalogs",
-          "pages": [
-            "api-references/catalogs/post-catalogspremiums",
-            "api-references/catalogs/get-catalogspremiums", 
-            "api-references/catalogs/get-catalogsconnect-cards", 
-            "api-references/catalogs/get-catalogscurrencies", 
-            "api-references/catalogs/get-catalogsproducts"
-          ]
-        },
-        {
-          "group": "Forms",
-          "pages":[
-            "api-references/forms/post-formsforms"
-          ]
-        },
-        {
-          "group": "Supply Chain",
-          "pages": [
-            "api-references/supply-chains/post-supply-chainscompanies", 
-            "api-references/supply-chains/get-supply-chainscompanies-", 
-            "api-references/supply-chains/patch-supply-chainscompanies-",
-            "api-references/supply-chains/post-supply-chainscompany-members", 
-            "api-references/supply-chains/post-supply-chainscompany-products",
-            "api-references/supply-chains/post-supply-chainsfarmers",
-            "api-references/supply-chains/get-supply-chainsfarmers-", 
+            "api-references/supply-chains/get-supply-chainscompanies-",
             "api-references/supply-chains/get-supply-chainsfarmers", 
-            "api-references/supply-chains/patch-supply-chainsfarmers-", 
-            "api-references/supply-chains/post-supply-chainsentity-cards", 
-            "api-references/supply-chains/get-supply-chainsentity-cards"
-          ]
-        },
-        {
-          "group": "Product Transactions",
-          "pages": [
+            "api-references/supply-chains/post-supply-chainsfarmers",
+            "api-references/catalogs/get-catalogsproducts",
             "api-references/transactions/post-transactionsproduct-transactions",
-            "api-references/transactions/get-transactionsproduct-transactions-", 
-            "api-references/transactions/get-transactionsproduct-transactions", 
-            "api-references/transactions/patch-transactionsproduct-transactions-invoice"
+            "api-references/transactions/get-transactionsproduct-transactions"
+
           ]
         },
         {
-          "group": "Payment Transactions",
-          "pages": [
-            "api-references/transactions/post-transactionspayment-transactions",
-            "api-references/transactions/get-transactionspayment-transactions-", 
-            "api-references/transactions/get-transactionspayment-transactions", 
-            "api-references/transactions/patch-transactionspayment-transactions-invoice"
+          "group": "Advanced APIs",
+          "pages":[
+            {
+              "group": "Accounts",
+              "pages": [
+                "api-references/accounts/get-accountsusers-",
+                "api-references/accounts/patch-accountsusers-"
+              ]
+            },
+            {
+              "group": "Catalogs",
+              "pages": [
+                "api-references/catalogs/post-catalogspremiums",
+                "api-references/catalogs/get-catalogspremiums", 
+                "api-references/catalogs/get-catalogsconnect-cards", 
+                "api-references/catalogs/get-catalogscurrencies"
+                
+              ]
+            },
+            {
+              "group": "Forms",
+              "pages":[
+                "api-references/forms/post-formsforms"
+              ]
+            },
+            {
+              "group": "Supply Chain",
+              "pages": [
+                "api-references/supply-chains/post-supply-chainscompanies",  
+                "api-references/supply-chains/patch-supply-chainscompanies-",
+                "api-references/supply-chains/post-supply-chainscompany-members", 
+                "api-references/supply-chains/post-supply-chainscompany-products",
+                
+                "api-references/supply-chains/get-supply-chainsfarmers-", 
+                
+                "api-references/supply-chains/patch-supply-chainsfarmers-", 
+                "api-references/supply-chains/post-supply-chainsentity-cards", 
+                "api-references/supply-chains/get-supply-chainsentity-cards"
+              ]
+            },
+            {
+              "group": "Product Transactions",
+              "pages": [
+                
+                "api-references/transactions/get-transactionsproduct-transactions-", 
+                 
+                "api-references/transactions/patch-transactionsproduct-transactions-invoice"
+              ]
+            },
+            {
+              "group": "Payment Transactions",
+              "pages": [
+                "api-references/transactions/post-transactionspayment-transactions",
+                "api-references/transactions/get-transactionspayment-transactions-", 
+                "api-references/transactions/get-transactionspayment-transactions", 
+                "api-references/transactions/patch-transactionspayment-transactions-invoice"
+              ]
+            }
           ]
         }
+        
       ]
     }
 

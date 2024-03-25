@@ -634,24 +634,33 @@ paths:
           in: query
           schema:
             type: string
+          description: |
+            Filter products by name.
         - name: description
           in: query
           schema:
             type: string
+          description: |
+            Filter products by description.
         - name: updated_after
           in: query
           schema:
             type: number
+          description: |
+            Filter products updated after a specified timestamp.
         - name: limit
           in: query
-          description: Number of results to return per page.
+          description: |
+            Number of results to return per page.
           schema:
             type: integer
         - name: offset
           in: query
-          description: The initial index from which to return the results.
+          description: |
+            The initial index from which to return the results.
           schema:
             type: integer
+
       responses:
         '200':
           description: ''
@@ -665,18 +674,23 @@ paths:
                 properties:
                   count:
                     type: integer
+                    description: The total count of products in the response.
                   next:
                     type: string
                     format: uri
                     nullable: true
+                    description: The URI for the next page of results, if available.
                   previous:
                     type: string
                     format: uri
                     nullable: true
+                    description: The URI for the previous page of results, if available.
                   results:
                     type: array
                     items:
                       $ref: '#/components/schemas/Product'
+                    description: An array containing details of products returned in the response.
+
   /catalogs/products/{hashid}/:
     get:
       tags:
@@ -1181,36 +1195,49 @@ paths:
       description: A viewset for viewing and editing Farmer instances.
       operationId: supply-chains_farmers_list
       parameters:
-        - name: first_name__icontains
+        - name: first_name
           in: query
           schema:
             type: string
-        - name: last_name__icontains
+          description: |
+            Filter by first name.
+        - name: last_name
           in: query
           schema:
             type: string
-        - name: number__icontains
+          description: |
+            Filter by last name.
+        - name: number
           in: query
           schema:
             type: string
+          description: |
+            Filter by number.
         - name: updated_after
           in: query
           schema:
             type: number
+          description: |
+            Filter by updated timestamp after a specified time.
         - name: created_after
           in: query
           schema:
             type: number
+          description: |
+            Filter by created timestamp after a specified time.
         - name: limit
           in: query
-          description: Number of results to return per page.
+          description: |
+            Number of results to return per page.
           schema:
             type: integer
         - name: offset
           in: query
-          description: The initial index from which to return the results.
+          description: |
+            The initial index from which to return the results.
           schema:
             type: integer
+
       responses:
         '200':
           description: ''
@@ -1224,18 +1251,23 @@ paths:
                 properties:
                   count:
                     type: integer
+                    description: The total count of farmers in the response.
                   next:
                     type: string
                     format: uri
                     nullable: true
+                    description: The URI for the next page of results, if available.
                   previous:
                     type: string
                     format: uri
                     nullable: true
+                    description: The URI for the previous page of results, if available.
                   results:
                     type: array
                     items:
                       $ref: '#/components/schemas/Farmer'
+                    description: An array containing details of farmers returned in the response.
+
     post:
       tags:
         - supply-chains
@@ -1444,28 +1476,39 @@ paths:
           in: query
           schema:
             type: number
+          description: |
+            Filter results by items updated after the specified timestamp.
         - name: created_after
           in: query
           schema:
             type: number
+          description: |
+            Filter results by items created after the specified timestamp.
         - name: updated_before
           in: query
           schema:
             type: number
+          description: |
+            Filter results by items updated before the specified timestamp.
         - name: only_quantity_available
           in: query
           schema:
             type: string
+          description: |
+            Filter results to only include items with available quantity.
         - name: limit
           in: query
-          description: Number of results to return per page.
+          description: |
+            Number of results to return per page.
           schema:
             type: integer
         - name: offset
           in: query
-          description: The initial index from which to return the results.
+          description: |
+            The initial index from which to return the results.
           schema:
             type: integer
+
       responses:
         '200':
           description: ''
@@ -1479,18 +1522,23 @@ paths:
                 properties:
                   count:
                     type: integer
+                    description: The total count of results.
                   next:
                     type: string
                     format: uri
                     nullable: true
+                    description: URI for the next page of results, if available.
                   previous:
                     type: string
                     format: uri
                     nullable: true
+                    description: URI for the previous page of results, if available.
                   results:
                     type: array
                     items:
                       $ref: '#/components/schemas/ProductTransaction'
+                    description: Array containing product transactions.
+
     post:
       tags:
         - transactions
@@ -2029,44 +2077,55 @@ components:
       properties:
         id:
           type: string
+          description: Unique identifier for the product.
         premiums:
           title: Premiums
           type: string
           readOnly: true
+          description: Premiums associated with the product.
         is_active:
           title: Is active
           type: string
           readOnly: true
+          description: Indicates whether the product is currently active.
         updated_on:
           title: Updated On
           type: string
           format: date-time
           readOnly: true
+          description: Date and time when the product information was last updated.
         created_on:
-          title: Updated On
+          title: Created On
           type: string
           format: date-time
           readOnly: true
+          description: Date and time when the product was created.
         name:
           title: Product Name
           maxLength: 500
           minLength: 1
           type: string
+          description: Name of the product.
         description:
           title: Product Description
           maxLength: 500
           type: string
           nullable: true
+          description: Description of the product.
         image:
           title: Product Image
           type: string
           format: uri
           nullable: true
           readOnly: true
+          description: URL to the image or photo of the product.
         creator:
           type: string
+          description: Identifier of the user who created the product.
         updater:
           type: string
+          description: Identifier of the user who last updated the product.
+
     Province:
       required:
         - name
@@ -2410,133 +2469,165 @@ components:
       properties:
         id:
           type: string
+          description: Unique identifier for the company.
         currency:
           $ref: '#/components/schemas/Currency'
+          description: The currency used by the company for financial transactions.
         buyer:
           $ref: '#/components/schemas/Entity'
+          description: The buyer entity associated with the company.
         entity_card:
           $ref: '#/components/schemas/EntityCard'
+          description: Information related to the entity card of the company.
         forms:
           type: array
           readOnly: true
           items:
             $ref: '#/components/schemas/Form'
+          description: Forms associated with the company.
         field_visibilties:
           type: array
           readOnly: true
           items:
             $ref: '#/components/schemas/CompanyFieldVisibiltySerilizer'
+          description: Field visibilities configured for the company.
         owned_premiums:
           uniqueItems: true
           type: array
           readOnly: true
           items:
             type: string
+          description: Premiums owned by the company.
         updated_on:
           title: Updated On
           type: string
           format: date-time
           readOnly: true
+          description: Date and time when the company information was last updated.
         created_on:
           title: Created On
           type: string
           format: date-time
+          description: Date and time when the company was created.
         image:
           title: Photo
           type: string
           format: uri
           nullable: true
           readOnly: true
+          description: URL to the photo or logo of the company.
         description:
           title: Description
           maxLength: 500
           type: string
           nullable: true
+          description: Description or additional information about the company.
         house_name:
           title: House name
           maxLength: 100
           type: string
           nullable: true
+          description: Name of the house or building where the company is located.
         street:
           title: Street
           maxLength: 500
           type: string
           nullable: true
+          description: Name of the street where the company is located.
         city:
           title: City
           maxLength: 500
           type: string
           nullable: true
+          description: Name of the city where the company is located.
         sub_province:
           title: Sub province
           maxLength: 500
           type: string
           nullable: true
+          description: Name of the sub-province where the company is located.
         province:
           title: Province
           maxLength: 500
           type: string
           nullable: true
+          description: Name of the province where the company is located.
         latitude:
           title: Latitude
           type: number
+          description: Latitude coordinate of the company's location.
         longitude:
           title: Longitude
           type: number
+          description: Longitude coordinate of the company's location.
         zipcode:
           title: Zipcode
           maxLength: 50
           type: string
           nullable: true
+          description: Postal code or ZIP code of the area where the company is located.
         country:
           title: Country
           maxLength: 500
           type: string
           nullable: true
+          description: Name of the country where the company is located.
         email:
           title: Email Address
           maxLength: 100
           type: string
           format: email
           nullable: true
+          description: Email address of the company.
         phone:
           title: Phone Number
           maxLength: 50
           type: string
           nullable: true
+          description: Phone number of the company.
         name:
           title: Company Name
           maxLength: 500
           minLength: 1
           type: string
+          description: Name of the company.
         buy_enabled:
           title: Buy Enabled
           type: boolean
+          description: Indicates whether buying functionality is enabled for the company.
         sell_enabled:
           title: Sell Enabled
           type: boolean
+          description: Indicates whether selling functionality is enabled for the company.
         quality_correction:
           title: Quality Correction
           type: boolean
+          description: Indicates whether quality correction is enabled for the company.
         allow_multiple_login:
           title: Allow Multiple Login
           type: boolean
+          description: Indicates whether multiple logins are allowed for the company.
         creator:
           type: string
+          description: Identifier of the user who created the company.
         updater:
           type: string
+          description: Identifier of the user who last updated the company.
         members:
           uniqueItems: true
           type: array
           readOnly: true
           items:
             type: string
+          description: Members associated with the company.
         products:
           uniqueItems: true
           type: array
           readOnly: true
           items:
             type: string
+          description: Products associated with the company.
+
     CompanyCreate:
       required:
         - name
@@ -2807,116 +2898,166 @@ components:
       properties:
         id:
           type: string
+          description: |
+            Unique identifier for the farmer. This identifier is used to distinguish one farmer from another in the system.
         entity_card:
           $ref: '#/components/schemas/EntityCard'
+          description: |
+            Information related to the Connect card of the farmer. 
         submission:
           $ref: '#/components/schemas/Submission'
+          description: |
+            Submission details related to the farmer. This could include any extra fields metioned in form associated with the company.
         phone:
           title: Phone
           type: string
           nullable: true
+          description: |
+            Phone number of the farmer. This is typically used for contacting the farmer if necessary.
         updated_on:
           title: Updated On
           type: string
           format: date-time
           readOnly: true
+          description: |
+            Date and time when the farmer information was last updated. This field is automatically generated and cannot be modified directly.
         created_on:
           title: Created On
           type: string
           format: date-time
+          description: |
+            Date and time when the farmer information was created. This field indicates when the farmer record was initially added to the system.
         image:
           title: Photo
           type: string
           format: uri
           nullable: true
           readOnly: true
+          description: |
+            URL to the photo of the farmer. This could be a link to a profile picture or any relevant image associated with the farmer.
         description:
           title: Description
           maxLength: 500
           type: string
           nullable: true
+          description: |
+            Description or additional information about the farmer. This field allows for notes or comments to be added regarding the farmer.
         house_name:
           title: House name
           maxLength: 100
           type: string
           nullable: true
+          description: |
+            Name of the house or building where the farmer resides. This could be useful for address clarification.
         street:
           title: Street
           maxLength: 500
           type: string
           nullable: true
+          description: |
+            Name of the street where the farmer resides. This is part of the farmer's address details.
         city:
           title: City
           maxLength: 500
           type: string
           nullable: true
+          description: |
+            Name of the city where the farmer resides. This is part of the farmer's address details.
         sub_province:
           title: Sub province
           maxLength: 500
           type: string
           nullable: true
+          description: |
+            Name of the sub-province where the farmer resides. This is part of the farmer's address details.
         province:
           title: Province
           maxLength: 500
           type: string
           nullable: true
+          description: |
+            Name of the province where the farmer resides. This is part of the farmer's address details.
         latitude:
           title: Latitude
           type: number
+          description: |
+            Latitude coordinate of the farmer's location. This is used for geolocation purposes.
         longitude:
           title: Longitude
           type: number
+          description: |
+            Longitude coordinate of the farmer's location. This is used for geolocation purposes.
         zipcode:
           title: Zipcode
           maxLength: 50
           type: string
           nullable: true
+          description: |
+            Postal code or ZIP code of the area where the farmer resides. This is part of the farmer's address details.
         country:
           title: Country
           maxLength: 500
           type: string
           nullable: true
+          description: |
+            Name of the country where the farmer resides. This is part of the farmer's address details.
         number:
           title: Number
           maxLength: 10
           type: string
           nullable: true
+          description: |
+            Additional number for reference. It will be a auto generated value field.
         email:
           title: Email Address
           maxLength: 100
           type: string
           format: email
           nullable: true
+          description: |
+            Email address of the farmer. This is used for electronic communication with the farmer.
         identification_no:
           title: Identification
           maxLength: 100
           type: string
           nullable: true
+          description: |
+            Identification number of the farmer. This could be a national identification number or any other form of identification.
         reference_number:
           title: Reference Number
           maxLength: 100
           type: string
           nullable: true
+          description: |
+            Reference number associated with the farmer. This could be a reference to another system or database.
         first_name:
           title: First Name
           maxLength: 100
           minLength: 1
           type: string
+          description: |
+            First name of the farmer. This is part of the farmer's personal details.
         last_name:
           title: Last Name
           maxLength: 100
           type: string
           nullable: true
+          description: |
+            Last name of the farmer. This is part of the farmer's personal details.
         date_of_birth:
           title: Date of Birth
           type: string
           format: date
           nullable: true
+          description: |
+            Date of birth of the farmer. This is part of the farmer's personal details.
         gender:
           title: Gender
           maxLength: 50
           type: string
           nullable: true
+          description: |
+            Gender of the farmer. This is part of the farmer's personal details.
         consent_status:
           title: Consent Status
           type: string
@@ -2924,12 +3065,21 @@ components:
             - GRANTED
             - NOT_GRANTED
             - UNKNOWN
+          description: |
+            Consent status of the farmer for data usage. This indicates whether the farmer has given consent for their data to be used.
         creator:
           type: string
+          description: |
+            Identifier of the user who created the farmer entry. This indicates the user responsible for adding the farmer information to the system.
         updater:
           type: string
+          description: |
+            Identifier of the user who last updated the farmer entry. This indicates the user responsible for the latest modifications to the farmer information.
         buyer:
           type: string
+          description: |
+            Identifier of the buyer associated with the farmer. This indicates any buyer or customer linked to the farmer, if applicable.
+
     PaymentTransactions:
       required:
         - destination
@@ -3055,75 +3205,93 @@ components:
       properties:
         id:
           type: string
+          description: Unique identifier for the transaction.
         transaction_payments:
           type: array
           items:
             $ref: '#/components/schemas/PaymentTransactions'
+          description: Array of payment transactions associated with the product transaction.
         amount:
           title: Amount
           type: string
           format: decimal
+          description: The amount of the transaction.
         currency:
           title: Currency
           minLength: 1
           type: string
+          description: The currency used in the transaction.
         type:
           title: Type
           type: string
           readOnly: true
+          description: The type of the transaction.
         source_quantity:
           title: Source quantity
           type: string
           format: decimal
           readOnly: true
+          description: The quantity from the source in the transaction.
         current_quantity:
           title: Current quantity
           type: string
           format: decimal
           readOnly: true
+          description: The current quantity in the transaction.
         submissions:
           type: array
           items:
             $ref: '#/components/schemas/Submission'
+          description: Array of submissions associated with the product transaction.
         card_details:
           $ref: '#/components/schemas/ConnectCard'
+          description: Details of the card used in the transaction.
         currency_details:
           $ref: '#/components/schemas/Currency'
+          description: Details of the currency used in the transaction.
         updated_on:
           title: Updated On
           type: string
           format: date-time
           readOnly: true
+          description: Date and time when the transaction was last updated.
         number:
           title: Number
           maxLength: 10
           type: string
           nullable: true
+          description: The number associated with the transaction.
         created_on:
           title: Created On
           type: string
           format: date-time
+          description: Date and time when the transaction was created.
         date:
           title: Date
           type: string
           format: date-time
+          description: The date of the transaction.
         invoice:
           title: Invoice
           type: string
           format: uri
           nullable: true
           readOnly: true
+          description: The invoice associated with the transaction.
         invoice_number:
           title: Invoice Number
           maxLength: 100
           type: string
           nullable: true
+          description: The invoice number associated with the transaction.
         verification_latitude:
           title: Verification Latitude
           type: number
+          description: The latitude of verification in the transaction.
         verification_longitude:
           title: Verification Longitude
           type: number
+          description: The longitude of verification in the transaction.
         method:
           title: Method
           type: string
@@ -3132,31 +3300,41 @@ components:
             - CARD
             - INVOICE
             - NONE
+          description: The method used in the transaction.
         quality_correction:
           title: Quality Correction
           type: number
+          description: The quality correction value in the transaction.
         quantity:
           title: Quantity
           type: string
           format: decimal
           nullable: true
+          description: The quantity associated with the transaction.
         creator:
           type: string
+          description: Identifier of the user who created the transaction.
         updater:
           type: string
+          description: Identifier of the user who last updated the transaction.
         source:
           type: string
+          description: The source of the transaction.
         destination:
           type: string
+          description: The destination of the transaction.
         card:
           type: string
+          description: The card used in the transaction.
         product:
           type: string
+          description: The product associated with the transaction.
         parents:
           uniqueItems: true
           type: array
           items:
             type: string
+          description: Array of parent transactions associated with the product transaction.
   securitySchemes:
     Bearer:
       type: apiKey
