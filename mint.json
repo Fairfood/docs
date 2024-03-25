@@ -6,9 +6,9 @@
   },
   "favicon": "logo/dark.svg",
   "colors": {
-    "primary": "#9563FF",
-    "light": "#AE87FF",
-    "dark": "#0D001D",
+    "primary": "#4DCAF4",
+    "light": "#91DDF5",
+    "dark": "#003A60",
     "background": {
       "dark": "#090014"
     },
@@ -29,24 +29,10 @@
   },
   "openapi":["openapi.yml"],
 
+
+
+
   
-  "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
-    }
-  ],
   "tabs":[
     {
       "name": "API Documentation",
@@ -55,14 +41,77 @@
     }
   ],
   "navigation": [
+
     {
-      "group": "Get Started.",
-      "pages": ["introduction","how_trace_works", "quickstart", "development"]
+      "group": "Introduction",
+      "pages": [
+    
+
+   "introduction"
+     
+
+     ]
+    },
+
+    {
+      "group": "Support",
+      "pages": [
+        
+        {"group": "Trace Dashboard",
+        "pages": ["how_login", "trace_dashboard", "trace_company_profile", "trace_connections", 
+        "trace _requests", "trace_transactions", "trace_stock", "trace_claims" ] }, 
+      
+        {"group": "Mobile App",
+        "pages": ["install_app", "login_app", "buy_products_app", "sell_products_app", "transactions_app", 
+        "onboarding_farmers", "app_user_profile", "app_clear_data" ] },
+
+        {"group": "Storytelling",
+        "pages": ["storytelling_interface"] }
+      
+      ]
     },
     {
-      "group": "Essentials",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
+      "group": "Development",
+      "pages": ["trace_connect", "sync_logic", "app_packages", "google_analytics", 
+      {"group": "API Documentation",
+      "pages": ["authentication"] }
+     
+
+     ]
     },
+
+    {
+      "group": "Updates",
+      "pages": [
+      {"group": "Release notes",
+      "pages": ["release_notes_dashboard", "mobile_app_release_notes", "storytelling_release_notes"] }
+    ]
+    },
+
+
+    {
+      "group": "Blogs",
+      "pages": [
+        {"group": "Quarterly report",
+        "pages": ["trace_updates_q1_2023", "trace_updates_q2_2023", "trace_update_q3_2023", "trace_update_q4_2023"] } ]
+    },
+    
+    {
+      "group": "Design Sytem",
+      "pages": ["design_system_brand","design_system_foundations"]
+    },
+
+    {
+      "group": "Security & Privacy",
+      "pages": ["privacy_policy"]
+    },
+
+
+
+
+
+
+ 
     {
       "group": "Trace Connect APIs",
       "pages": [
@@ -73,7 +122,7 @@
             "api-references/auth/api-to-login-user",
             "api-references/auth/api-to-refresh-token",
             "api-references/auth/post-authlogout"
-          ]
+          ] 
         },
         {
           "group": "OAuth 2.0",
