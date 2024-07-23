@@ -59,7 +59,7 @@
         
         {"group": "Trace Dashboard",
         "pages": ["how_login", "trace_dashboard", "trace_company_profile", "trace_connections", 
-        "trace _requests", "trace_transactions", "trace_stock", "trace_claims" ] }, 
+        "trace _requests", "trace_transactions", "trace_stock", "trace_claims", "trace_export" ] }, 
       
         {"group": "Connect App",
         "pages": ["install_app", "login_app", "buy_products_app", "sell_products_app", "transactions_app", 
