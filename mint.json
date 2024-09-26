@@ -69,7 +69,7 @@
         "pages": ["storytelling_interface"] },
 
         {"group": "Navigate",
-        "pages": ["Navigate"] }
+        "pages": ["navigate"] }
       
       ]
     },
