@@ -66,7 +66,10 @@
         "onboarding_farmers", "app_user_profile", "app_clear_data", "Printinvoice", "data_migration", "more_features"] },
 
         {"group": "Storytelling",
-        "pages": ["storytelling_interface"] }
+        "pages": ["storytelling_interface"] },
+
+        {"group": "Navigate",
+        "pages": ["Navigate"] }
       
       ]
     },
