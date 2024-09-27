@@ -91,6 +91,12 @@
     ]
     },
 
+    {
+      "group": "Others",
+      "pages": ["farmercard"]
+    },
+
+
 
     {
       "group": "Blogs",
@@ -98,6 +104,7 @@
         {"group": "Quarterly report",
         "pages": ["trace_updates_q1_2023", "trace_updates_q2_2023", "trace_update_q3_2023", "trace_update_q4_2023"] } ]
     },
+    
     
     {
       "group": "Design Sytem",
