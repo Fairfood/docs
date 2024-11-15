@@ -1058,6 +1058,1769 @@ description: Dashboard will help Trace partners will be able to gain a better un
 
 
 
+
+
+
+
+
+
+
+
+<Step title="Dashboard V 4.2.0">
+  <sup>23 October 2024</sup>	
+
+**New Features:**
+
+
+* Duplicate Farmer Validation: Implemented validation for duplicate farmers during bulk upload to ensure data accuracy.
+
+* Enable Connect Button: Added an "Enable Connect" button in the Admin Dashboard.
+
+* Tooltip Addition: Added a tooltip in the stock list for the supplier column for better data insight.
+
+* Duplicate Company Removal Script: Scripted removal of duplicate companies in the development environment, addressing case sensitivity issues.
+
+* Static File Fixes: Resolved static file issues in the development environment.
+
+* Product Display Optimization: Optimized the summary to display source products only once when they are identical.
+
+* Testing and Retesting: Conducted comprehensive retesting for Trace bug fixes and regression testing, including bulk upload and Geo JSON bulk upload support.
+
+**Suggestions:** 
+
+
+* Implemented Redirection to Login upon encountering an authentication error.
+
+* Ensured page refresh when adding a new connection with the same email as an existing company.
+
+
+**Bug Fixes:** 
+
+* Dashboard Issues: Resolved various stage environment issues on the Trace dashboard.
+
+* Transaction Details Farmer Count: Fixed an inaccurate farmer count display on the transaction details page.
+
+* Filter Display: Corrected the issue where applied filter data was not displayed (stage).
+
+* Product Validation Message: Displayed appropriate validation message when re-uploading an already uploaded file.
+
+* Mapping Page Error: Resolved errors when entering invalid price and quantity on the mapping page.
+
+* Quantity Display: Corrected quantity mismatches between listing and details pages.
+
+* Invalid ID Error: Addressed invalid ID errors when selecting stocks from the stock listing page (stage).
+
+* Whitespace Validation: Added validation for mandatory fields to prevent whitespace-only entries in "Add Connection as Company" forms.
+
+* Invalid Email Validation: Added validation message for invalid email entries when adding a connection.
+
+* Filter and Passbook Issues: Fixed multiple filter issues, including incorrect amounts, auto-logout, date discrepancies, continuous API calls, and wrong labels in Farmer Passbook.
+
+* Company Name Validation: Implemented validation to display an error message when an already existing company name is entered.
+
+* Duplicate Farmers Upload: Enhanced validation for duplicate farmer entries in the Trace template bulk upload.
+
+* Transaction Display in Passbook: Fixed issues where transactions were not displaying in the farmer passbook.
+
+* Verification Display in Passbook: Resolved missing "Verified by" information in transaction details for Farmer Passbook.
+
+* Supplier Filter Update: Ensured supplier filters in the stock list update correctly when switching companies.
+
+* Loader Issue: Resolved the persistent loader page issue on the Admin Dashboard after a prolonged session timeout.
+
+* Clear Filter Button: Corrected the functionality of the clear filter button in the stock list.
+
+* Select Entire List: Fixed an issue where selecting the entire stock list would clear when loading more rows.
+
+* Sync with Connect: Enhanced error handling during sync with Connect.
+
+* SVG Upload Issue: Enabled SVG image upload in both company and farmer profiles.
+
+* Duplicate Entry Removal: Ensured no additional farmers are removed when trying to delete duplicates in the Trace Template bulk upload.
+
+* Validation Message for Duplicate Files: Added a missing validation message for files already used in bulk uploads.
+
+* Progression After Duplicate Removal: Allowed users to proceed to the next step after removing duplicate entries in Trace bulk upload.
+
+* Template Upload Error: Resolved errors encountered when uploading Trace templates in stock bulk uploads.
+
+* Fixed issue where the Farmer page could not be opened via the Admin dashboard.
+
+* Resolved issue where users were exited from "view as admin" via the Admin dashboard.
+
+* Corrected issue where company status remained inactive even after verification via the Admin dashboard.
+
+* Fixed error when clicking on Storytelling and Trace dashboard theming toggle via the Admin dashboard.
+
+* Corrected issue where the country code was not dynamically updating when a user selected a country via the Admin dashboard.
+
+* Resolved "forbidden" error when editing the Farmer profile page in production.
+
+* Fixed issue where invite emails were not sent when a new company was invited via the Admin dashboard in development.
+
+* Corrected issue where clicking the back button from the "Add multiple farmers" form redirected to the Stock list page in development.
+
+* Fixed issue where input field types could not be added in "Create new Claim" in development.
+
+* Resolved "credentials expired" message when exiting "view as admin" in a tab in development.
+
+* Fixed error when trying to invite a company to send stock in development.
+
+* Resolved token expiration issues in Trace and Admin.
+
+* Fixed "access forbidden" error when inviting a new company with an existing email ID in production.
+
+* Corrected error pop-up when canceling a remove stock transaction in development.
+
+* Fixed issue where the selection checkbox for the current and entire list was not clearing after a remove stock transaction in development.
+
+* Resolved error when bulk uploading stock via the Trace template in development.
+
+* Fixed issue where login to Trace with a new company was not possible.
+
+* Corrected issue where documents could not be deleted from the profile in Trace.
+
+* Resolved issue where the exported Stock loss report could not be downloaded in Trace.
+
+* Fixed error when trying to add a new team member in Trace.
+
+* Corrected issue where companies not in the connections were showing in the Stock request in Trace.
+
+* Added validation for the Connection type field in the Farmer bulk upload Trace template.
+
+* Fixed issue where the company name change was not reflecting after an edit in Trace.
+
+* Resolved error when trying to remove a team member in Trace.
+
+* Corrected issue where logging in for the first time resulted in an error and redirection to the App Selection page in development.
+
+</Step>
+
+
+<Step title="Dashboard V 4.1.1">
+  <sup>16 August 2024</sup>	
+
+**New Features:**
+
+
+* Conducted retesting in the staging environment.
+
+* Performed SSO testing in the development environment.
+
+* Optimized code for the Trace dashboard.
+
+* Performed SSO testing in the staging environment (CLONE).
+
+* Knowledge transfer (KT) session conducted.
+
+* Updated design for SSO authorization page.
+
+* Published release notes in Confluence.
+
+* Updated user invitation via email and added users to SSO while adding them to the company.
+
+* Fixed SSO login issues.
+
+* Removed user redirection timer.
+
+* Retested backlog items.
+
+* Conducted system testing in the staging environment.
+
+* Provided release support and testing in production for Trace.
+
+* Resolved Sentry error 5621547121.
+
+**Suggestions:** 
+
+
+* If stocks are the same, they are now displayed only once in the summary.
+
+
+**Bug Fixes:** 
+
+* Fixed issue where the supply chain was not displaying while creating connection labels in development.
+
+* Corrected issue where the remove request button had no clickable button or hand cursor when a request was selected.
+
+* Resolved issue where tabs in the Profile page were not displayed when the checkbox was already selected.
+
+* Fixed issue where archived stocks were getting removed when merging the entire stock list.
+
+* Corrected the selection checkbox for the current list and entire list not clearing after unselecting a transaction.
+
+* Prevented white spaces from being accepted in the Claim - Comments field.
+
+* Fixed issue where the pagination show per page limit value was not returning to default when changing tabs in Claim.
+
+* Resolved white space issues in Claim.
+
+* Fixed error when trying to cancel Google sign-in.
+
+* Corrected improper warning message for invalid user login using Google sign-in.
+
+* Resolved error when trying to sign in with email.
+
+* Fixed issue where the invitation link for a newly added team member was not working.
+
+* Corrected issue where the map view for connections was not working properly.
+
+* Resolved issue where new users could not be added via the Admin dashboard.
+
+* Fixed issue where admin login was not possible.
+
+* Corrected issue where Trace was not loading when clicking the back button continuously from Trace in development.
+
+* Fixed redirection to Admin when logging in with a Node user in development.
+
+* Prevented the ability to go back to the login page from Trace in development.
+
+* Resolved issue where the page was not loading when clicking on the Join Trace link in development.
+
+* Fixed issue where newly added Super Admin accounts could not be logged into using the invitation link via the Admin dashboard.
+
+* Corrected issue where the Exit view as admin was not working correctly.
+
+* Resolved error when trying to export data via the Admin dashboard.
+
+* Fixed error when trying to log in with email in the staging environment.
+
+* Unblocked Google sign-in in the staging environment.
+
+* Resolved issue where logging in with new connections resulted in an "access forbidden" error.
+
+* Corrected "access forbidden" error in the staging environment.
+
+* Fixed issue where the Farmer page could not be opened via the Admin dashboard.
+
+* Resolved issue where users were exited from "view as admin" via the Admin dashboard.
+
+* Corrected issue where company status remained inactive even after verification via the Admin dashboard.
+
+* Fixed error when clicking on Storytelling and Trace dashboard theming toggle via the Admin dashboard.
+
+* Corrected issue where the country code was not dynamically updating when a user selected a country via the Admin dashboard.
+
+* Resolved "forbidden" error when editing the Farmer profile page in production.
+
+* Fixed issue where invite emails were not sent when a new company was invited via the Admin dashboard in development.
+
+* Corrected issue where clicking the back button from the "Add multiple farmers" form redirected to the Stock list page in development.
+
+* Fixed issue where input field types could not be added in "Create new Claim" in development.
+
+* Resolved "credentials expired" message when exiting "view as admin" in a tab in development.
+
+* Fixed error when trying to invite a company to send stock in development.
+
+* Resolved token expiration issues in Trace and Admin.
+
+* Fixed "access forbidden" error when inviting a new company with an existing email ID in production.
+
+* Corrected error pop-up when canceling a remove stock transaction in development.
+
+* Fixed issue where the selection checkbox for the current and entire list was not clearing after a remove stock transaction in development.
+
+* Resolved error when bulk uploading stock via the Trace template in development.
+
+* Fixed issue where login to Trace with a new company was not possible.
+
+* Corrected issue where documents could not be deleted from the profile in Trace.
+
+* Resolved issue where the exported Stock loss report could not be downloaded in Trace.
+
+* Fixed error when trying to add a new team member in Trace.
+
+* Corrected issue where companies not in the connections were showing in the Stock request in Trace.
+
+* Added validation for the Connection type field in the Farmer bulk upload Trace template.
+
+* Fixed issue where the company name change was not reflecting after an edit in Trace.
+
+* Resolved error when trying to remove a team member in Trace.
+
+* Corrected issue where logging in for the first time resulted in an error and redirection to the App Selection page in development.
+
+</Step>
+
+
+<Step title="Dashboard V 4.1.0">
+  <sup>12 June 2024</sup>	
+
+**New Features:**
+
+
+* Angular version upgrade for Trace and shared components including the farmer passbook.
+
+* Added archive action button for stock listing and integrated it into the transactions.
+
+* Implemented the selecting feature in transactions and archived both stock and transactions in a common component.
+
+* Integrated archive functionality in the transaction report and added illustrations and filters in the archived list component.
+
+* Completed the API integration for archived transaction history and stock actions.
+
+* Implemented transaction and stock automation features, including stock merging and stock loss actions.
+
+* Completed Git integration and automated testing for Trace using Cypress.
+
+* Conducted FE code review and began planning for the custom theme creation module.
+
+* Automated various features, including the claim page, company listings, user profiles, and logout.
+
+* Developed the claim verification feature and provided updates to the claims and connection sections.
+
+* Conducted R&D on Google Earth integration and ArcGis map documentation.
+
+* Continued E2E testing and improved code structure for login and connection updates.
+
+* Supported the Pure Africa storytelling initiative with Excel integration.
+
+* Created, reviewed, and updated automation test cases in Confluence.
+
+* Provided demo support and conducted internal demos.
+
+* Completed the archive stock and transaction feature.
+
+
+**Suggestions:** 
+
+
+* Updated shared components, including changelog and documentation, for better usability and maintenance.
+
+
+**Bug Fixes:** 
+
+* Fixed an issue where all processed stocks were sent after editing the quantity from the stock list page.
+
+* Resolved a bug where non-archived stocks were displayed in the archive list when sorting was applied.
+
+* Restored the missing sort icon for transaction date in the Stock Action Archive.
+
+* Fixed an issue where selected transactions in the Archive were not cleared when clicking the "Clear Selection" button.
+
+* Resolved pagination issues for the Archived Stock list.
+
+* Corrected a bug where unarchiving the current list caused the entire list, except the current one, to get unarchived.
+
+* Fixed an issue where selected stocks from the Stock Archive List were displayed in the Stock List.
+
+* Corrected a bug where unselecting a stock from the stock list caused it to be selected instead of deselected.
+
+* Fixed selection options appearing when both the archive and stock lists were empty.
+
+* Addressed filter issues in the transaction history archive list.
+
+* Resolved a bug where the "Select Current List" option remained selected even after the list was moved to Archive.
+
+</Step>
+
+
+<Step title="Auth V 2.0.0">
+  <sup>12 June 2024</sup>	
+
+**New Features:**
+
+
+* Conducted SSO workflow discussions.
+
+* Upgraded Angular version for the Admin dashboard.
+
+* Implemented the SSO authorize page component.
+
+* Updated the SSO error and success pages.
+
+* Completed R&D on React basics.
+
+* Added redirection for authentication pages when not logged in.
+
+* Integrated SSO with the Trace dashboard.
+
+* Integrated SSO with the Admin dashboard.
+
+* Implemented token handling in the React app for SSO.
+
+* Conducted redirection testing for the Trace application with SSO.
+
+* Integrated refresh token logic into the Trace app for SSO.
+
+* Performed SSO code integration testing.
+
+* Integrated APIs for invite/accept-node invite pages.
+
+* Set up unit testing boilerplate for the login app using Jest.
+
+* Completed the final cleanup for the Admin dashboard.
+
+* Fixed API integration issues for SSO on the Admin dashboard.
+
+* Conducted internal demo for SSO suggestions.
+
+
+**Bug Fixes:** 
+
+* Fixed the issue where "Forgot Password" for email login was not working.
+
+* Resolved the issue preventing the addition of new connections as a company.
+
+* Fixed the issue where adding a connection as a single farmer was not working.
+
+* Corrected the map view for connections not displaying properly.
+
+* Resolved the issue preventing new users from being added via the Admin dashboard.
+
+* Fixed the issue preventing company invitations via the Admin dashboard.
+
+* Corrected filters not working in the Companies section of the Admin dashboard.
+
+* Fixed the loading issue in the Admin dashboard where it would not stop.
+
+* Resolved the redirection issue where accessing the admin URL redirected to the Trace page in development.
+
+* Corrected the "Exit view as admin" functionality not working correctly.
+
+* Fixed the issue where a new team member in Trace was being redirected to the Admin dashboard upon login.
+
+* Resolved the issue where the stage admin URL redirected to the development login.
+
+* Fixed the blank page issue when logging in with admin credentials in the staging environment.
+
+* Corrected "access forbidden" errors when logging in with an admin account in staging.
+
+* Resolved the redirection issue where clicking on a farmer from the connections page would redirect to the Trace dashboard in development.
+
+</Step>
+
+
+<Step title="Backend V 2.0.0">
+  <sup>20 March 2024</sup>	
+
+**New Features:**
+
+
+* Implemented email preferences functionality.
+
+* Verified transactions for Dole.
+
+* Conducted blockchain testing in production environment.
+
+* Imported farmers for ACPCU.
+
+* Conducted development/stage testing.
+
+* Counted ACPC and Ndugu farmers.
+
+* Updated storytelling in production environment.
+
+* Resolved dashboard theme issue related to Theme object in Company details API.
+
+* Provided ACPCU summary.
+
+
+**Bug Fixes:** 
+
+* Resolved issue of creating duplicate transactions and farmers.
+
+* Fixed error occurring during email setup when adding team members in the admin.
+
+* Addressed issue where farmers were not listed if latitude and longitude details were missing during dynamic template file upload.
+
+* Limited the display to 10 error-containing lists with province in dynamic template, remaining are not listed.
+
+* Resolved issues with Dole transactions.
+
+* Fixed farmer count showing as zero after sending entire stock list in both development and production environments.
+
+* Fixed issue where trace page was not loading upon clicking details options from emails in development environment.
+
+* Addressed email preference issues in development environment.
+
+</Step>
+
+
+<Step title="Dashboard V 4.0.5">
+  <sup>20 March 2024</sup>	
+
+**New Features:**
+
+
+* Added card icon in farmer transactions on the consumer interface.
+
+* Implemented unit testing for various modules
+
+* Layout module basic structure
+
+* Dashboard componentCreate connection (Popup, new connection company, and farmer)
+
+* Trace module
+
+* Connections module: list view and map view
+
+* Notifications moduleCode coverage increased to 40%
+
+* Dynamic template upload module - transaction type
+
+* Dynamic template upload - connection type
+
+* Process stock (Merge, convert)
+
+* Process stock (Receive)
+
+* Process stock (Send stock)
+
+* Updates in storytelling
+
+* ID for Automation - Document
+
+* Process stock parent component
+
+* Automation ID updates
+
+* Development/Stage testing
+
+* Identified Dashboard Theme issue
+
+* Researched and developed SSO integration
+
+* Conducted email preference testing in development environment
+
+* Tested header and its base component
+
+* Identified packages not supported by Angular LTS
+
+* Identified and removed deprecated packages in storytelling
+
+* Conducted stage testing for the Trace module
+
+
+**Suggestions:** 
+
+
+* Turned off the option for Email notification preference.
+
+
+**Bug Fixes:** 
+
+* Resolved issue causing 404 error on Link fields page after uploading dynamic template in the stage environment.
+
+* Fixed display of wrong product during dynamic transaction upload in development environment.
+
+* Resolved error occurring on the link fields page in development environment.
+
+* Fixed issue where trace page was not loading upon clicking details options from emails in development environment.
+
+* Resolved 404 error when trying to open rejected transaction details page in development environment.
+
+* Fixed issue where all email toggle buttons were disabled when Request option was disabled in development environment.
+
+</Step>
+
+
+<Step title="Dashboard V 4.0.4">
+
+ <sup>29 February 2024</sup>	
+
+**New Features:**
+
+
+* Request Module -Implemented a request for information popup.
+
+* Connections Module -Added unit tests to enhance functionality.
+
+* Stock Listing -Conducted testing for select all actions.
+
+* Stock Listing - Implemented table unit testing for improved stability.
+
+* Farmer Profile Unit TestingAdd Reference - Enhanced unit testing.
+
+* Farm and Plot - Improved unit tests.Documents - Strengthened unit testing.
+
+* Details -Enhanced unit tests for details.
+
+* Income - Improved unit testing coverage.
+
+* Farmer Activities - Ensured comprehensive unit tests.
+
+* Claim Module Unit TestingClaim List - Thorough unit testing.
+
+* Claim Information -Ensured comprehensive testing.
+
+* Claim Details - Strengthened unit testing.
+
+* Claim Evidence - Implemented thorough unit testing.
+
+* Company Profile Module Unit Testing
+
+* Basic Details - Conducted unit testing for enhanced functionality.
+
+* Team Members -Implemented unit testing to ensure reliability.
+
+* Frontend Unit Testing
+
+* Parent-Child Initialization Issue Fix -Resolved and conducted unit testing.
+
+* Transaction Action and User Profile -Implemented unit testing for improved reliability.
+
+
+**Bug Fixes:**
+
+* Upload/Verification Page Error - Resolved the error occurring on the upload/verification page in the staging environment.
+
+* NaN Text and UI Breakage -Fixed the issue causing NaN text on the transaction report page and UI breakage in the production environment.
+
+</Step>
+
+
+<Step title="Dashboard V 4.0.3">
+  <sup>21 February 2024</sup>	
+
+**New Features:**
+
+* Stock List Select All Update Feature: Conducted a discussion and implemented updates to the select all feature.
+
+* Identifying Incomplete Sections/Tasks: Identified and addressed incomplete sections/tasks.
+
+* Dashboard Module Unit Testing:Map View Component 
+
+* Conducted unit testing for the map view component.
+
+* Supply Chain Component: Completed unit testing for the supply chain component.
+
+* Select All Feature Testing:
+
+* Stage: Conducted feature testing for the select all feature in the stage environment.
+
+* Development: Continued select all feature testing in the development environment.
+
+* Detailed Loader in Transaction Report Page (Trace Tab): Implemented a detailed loader for improved user experience.
+
+* Connections - Add Farmer:Details: 
+
+* Updated and enhanced details for adding a farmer.
+
+* Address: Included address information in the process of adding a farmer.
+
+* Testcase Preparation: Prepared test cases for various scenarios.
+
+* Custom ID and Page Limit:
+
+* Buttons and Text Inputs: Added custom IDs to buttons and text inputs.
+
+* Select All Feature: Increased the page limit for improved usability.
+
+* Stock Listing Filters Unit Testing: Conducted unit testing for stock listing filters.
+
+* Backlog Retest: Retested items from the backlog.
+
+* Get Batch Summary API Integration: Integrated the get batch summary API.
+
+* Change Google Map API Key: Updated the Google Map API key in the frontend.
+
+* Unit Testing - How to Write Session: Conducted unit testing for writing sessions.
+
+* Retesting - Development: Retested issues in the development environment.
+
+* Regression Testing:
+
+* Frontend: Addressed and resolved frontend regression issues on the stage.
+
+* Backend: Resolved backend regression issues on the stage.
+
+* Storytelling Interface Creation: Created a storytelling interface.
+
+* Navigate Impact - Knowledge Transfer: Transferred knowledge for navigating impact.
+
+
+
+
+**Bug Fixes:** 
+
+* Dashboard UI Issues (Mobile View): Resolved UI issues for mobile view.
+
+* Stock Selection and Quantity Display 
+
+* Not Displaying Quantity After Selecting Products.
+
+* Stocks Not Getting Selected After Applying Filter.
+
+* Wrong Count on Stock Listing Page.
+
+* Not Displaying Stocks on the Page.
+
+* Quantity Not Displaying After Unselecting Stock.
+
+* Wrong Item Count After Unselecting Products.
+
+* Email and Excel IssuesInvalid Email Error with Capital Letters.
+
+* Excel Download Issue on Stock Page.
+
+* Connections and Stock Listing Issues:
+
+* Supplier Details on Buyer Tab.
+
+* Wrong Row Count on Stock Listing Page.
+
+* Not Listing Entire Product After Clear Selection.
+
+* Getting +4 Rows Option After Applying Product Filter.
+
+* Products Not Listing After Clear Selection.
+
+* Products Not Listing After Applying Product Filter.
+
+
+</Step>
+
+  <Step title="Dashboard V 4.0.2">
+  <sup>19 January 2024</sup>	
+
+**New Features:**
+
+
+* Transaction date format has been updated.
+
+* Number format information has been added to the Income page statistics.
+
+* Repository configuration improvements.
+
+* Research and Development conducted on library development.
+
+* Frontend unit tests for service implemented.
+
+* Unit tests and issue fixes for existing frontend issues.
+
+* Regression issues addressed in the development.
+
+* Unit testing and code optimization performed.
+
+* Material library updates for frontend.
+
+* Components made standalone for better integration.
+
+* Select All feature testing conducted in development and stage environments.
+
+* Unit testing and end-to-end testing for stock list selection in frontend.
+
+* Trace test cases documented.
+
+* Unique identification added to frontend elements.
+
+* Automation tasks for Team Members.
+
+* Code documentation and preparation of other documents.
+
+* Codebase improvements in two parts.
+
+* Setup documentation added to Fairfood applications.
+
+* Code documentation in storytelling for frontend.
+
+* Open source documentation in farmer passbook, login app, and admin application.
+
+* Detailed documentation for frontend trace module.
+
+* Unit testing for the transaction module in frontend.
+
+* Translation feature added to the transaction, stock, claim, and trace modules.
+
+* Stage testing conducted for Trace Dashboard.
+
+* Translation feature added to farmer profile and connections, dashboard, and company profile.
+
+* Farmer profile polygon upload and testing.
+
+
+**Suggestions:** 
+
+
+* Stock listing page Select All feature enhanced.
+
+* Logic change in stock listing for improved functionality.
+
+
+**Bug Fixes:** 
+
+* Request for information popup issue fixed.
+
+* Display issue with only 50 batches after selecting entire stock list fixed.
+
+* Searched text not clearing from the page issue resolved.
+
+* Various display and selection issues in stock, filter, and pagination fixed.
+
+* Transaction with future dates prevented.
+
+* UI issues on Add connections, Receive stock page, Request stock fixed.
+
+* Stock display issues after Remove stock fixed.
+
+* Country code selection issue addressed.
+
+* UI issues in system testing fixed.
+
+* Claim description not displaying on the transaction report page fixed.
+
+* Stock selection issue resolved.
+
+* Data not displaying on Supplier filter option fixed.
+
+* Location pointing issue on adding plot with Accurate type fixed.
+
+* Continue button disabled on Accurate popup issue fixed.
+
+* Claim icon not showing in production fixed.
+
+</Step>
+
+  <Step title="Backend V 1.0.1">
+  <sup>11 October 2023</sup>
+
+  
+       **New Features:**
+* Updated the claim detail page in the backend.
+
+* Added company claims in the storytelling interface by including company claims in the stages API.
+
+* Introduced an invoice number field in the payment table.
+
+**Enhancements:**
+
+* Made dynamic template connections by making the connection type non-mandatory and setting the default value to 'Farmer'.
+
+**Bug Fixes:**
+
+* Resolved the issue of incorrect data on the summary page after adding farmers through Excel in the development environment.
+* 
+* Fixed the problem of getting an invalid identification number and country code on the trace template in the stage and development environments.
+* 
+* Corrected the display of different identification numbers on the trace template in the production environment.
+* 
+* Updated the product name display on stages and claim popups in the development environment.
+* 
+* Resolved a Sentri issue in the production environment.
+* 
+* Fixed the issue where the connection type displayed as "Farmer" in the listing page but as "Collector" in the trace template in the stage environment.
+* 
+* Ensured the display of claim names on storytelling and claim popups when switching to Dutch in the development environment.
+* 
+* Enabled the deletion of added interventions from the database, resolving a type error in the development environment.
+
+</Step>
+
+
+
+   <Step title="Backend V 1.1.1">
+  <sup>11 October 2023</sup>
+
+  
+       **Bug fixes:**
+
+
+* Fixed the issue where data was not displaying on the connection type column in the development environment.
+
+*  Corrected the issue where the "Not verified" status was appearing under the verification type in the production and stage environments.
+
+
+  </Step>
+
+
+
+
+
+
+
+  <Step title="Backend V 1.0.0">
+  <sup>07 September 2023</sup>
+
+
+**New Features:**
+* Enhanced paginated API for connection (company and farm).
+
+* Created a comprehensive test case plan and status sheet.
+
+* Addressed data loading issues on the Stock listing page.
+
+* Restructured the API for improved performance.
+
+* Developed a test plan, added test tasks, and generated coverage reports.
+
+* Added missing fields in connections API for completeness.
+
+* Implemented Dynamic Bulk Upload Validation and Error Handling.
+ 
+* Resolved Dynamic Upload issues and improved data save logic.
+
+* Introduced a verification feature for farmer passbook.
+
+* Created APIs for excel preview and header detection.
+
+* Modified Trace template and pre-filled existing farmer data.
+
+* Upgraded Python version.
+
+* Made changes to Dynamic templates and uploads.
+ 
+* Implemented a preview API for templates.
+
+* Updated Dynamic templates with a new schema.
+ 
+* Added and updated schema validations.
+
+* Improved save logic for Dynamic templates.
+ 
+* Made API changes in Dynamic templates and uploads.
+
+* Updated Dynamic Template Update Summary APIs.
+
+* Validated product, currency, and unit in creating transaction templates.
+
+* Retested Dynamic templates.
+
+* Conducted Trace Template testing.
+
+* Retested Angular 15 and Dynamic templates.
+
+
+**Bug Fixes:**
+
+* Fixed issues related to data display, search, and filters in various sections.
+
+* Resolved validation, upload, and error handling problems.
+
+* Corrected UI issues and inconsistencies.
+
+* Addressed issues with company creation, export, and listing.
+
+* Fixed issues related to anonymous and specific connections.
+
+* Improved data visibility and display in summary pages.
+
+* Resolved errors and issues during template uploads.
+
+* Fixed issues related to duplicates, missing data, and product validation.
+
+* Corrected issues with stock listing, errors, and filters.
+
+* Addressed issues related to farmer profiles, connections, and stock listing.
+
+* Improved data validation and display in Trace templates.
+
+* Fixed issues related to trace template uploads and data display.
+
+* Addressed issues with company creation from trace templates.
+
+* Improved data visibility and consistency in various sections.
+
+
+</Step>
+
+
+
+
+
+   <Step title="V 4.2.0">
+  <sup>07 September 2023</sup>
+  
+  **New Features:**
+
+  
+* Added pagination to the Connection listing page.
+* Integrated the Auth module into the Angular 15 project.
+* Implemented an error handling service for the new Angular 15 app.
+* Conducted unit testing for the Authentication section in Angular 15.
+* Converted shared modules to standalone components.
+* Integrated the Trace Dashboard layout component in Angular 15.
+* Integrated styles and created themes.
+* Removed unnecessary Bootstrap styles.
+* Optimized the Header component.
+* Utilized SCSS features to create common style components.
+* Installed Material Google Map instead of AGM Map.
+* Updated the Claim detail page.
+* Optimized the Notification section.
+* Integrated the Sidebar component.
+* Created new pages.
+* Established the foundation for the layout.
+* Integrated Company profile with Angular updates.
+* Integrated remaining components of the Company profile.
+* Integrated Dashboard pie charts.
+* Integrated Dashboard tabular data.
+* Implemented filters and map view for the Connection page.
+* Optimized the Add Connection feature.
+* Integrated the Request module.
+* Integrated the Transaction module.
+* Integrated Transaction report functionality.
+* Made changes to Stock listing.
+* Integrated Stock actions.
+* Integrated the Claims section.
+* Integrated Stock detail page.
+* Integrated User profile functionality.
+* Addressed Google Map compatibility issue.
+* Conducted Connection page testing.
+* Conducted web application testing.
+* Created basic configuration for Dynamic template upload.
+* Implemented the template listing page for Dynamic template upload.
+* Enabled uploading new templates for Dynamic template upload.
+* Implemented column mapping for Dynamic template upload.
+* Saved template configuration for Dynamic template upload.
+* Uploaded transactions using Dynamic template upload.
+* Implemented Excel validation for Dynamic template upload.
+* Displayed error page for Dynamic template upload.
+* Validated columns for Dynamic template upload.
+* Displayed success page for Dynamic template upload.
+* Integrated the Farmer profile module.
+* Conducted system testing for Angular 15 update.
+* Reviewed and approved design changes.
+* Fixed bugs related to request popups.
+* Resolved general bugs in Angular 15.
+* Made changes to the Connection farmer upload feature.
+* Removed unnecessary code from the Connection map view.
+* Retested and performed system testing for Angular 15.
+* Conducted dynamic template testing.
+* Continued testing for the Connection page.
+* Retested Dynamic templates.
+* Conducted testing for the Request page.
+* Tested Trace Templates.
+* Reviewed and approved design changes for dynamic template screens.
+* Resolved general bugs in the dashboard.
+* Retested Angular 15 and Dynamic templates.
+
+**Bug Fixes:**
+
+* Fixed the issue of being unable to add connections.
+
+* Resolved the problem of a blank add connection popup.
+
+* Corrected pagination on the Connection page.
+
+* Fixed errors when creating connections with existing company names.
+
+* Resolved the problem of not navigating to stock details from the listing page.
+
+* Removed the Edit option from the company profile.
+
+* Fixed the missing quantity > kg in the dashboard.
+
+* Enabled the map expand option on the dashboard.
+
+* Corrected data issues with the pie chart on the dashboard.
+
+* Fixed the display issues of Supply chain overview and Product and claim list on the dashboard.
+
+* Resolved various UI issues.
+
+* Fixed issues with displaying country and province, and mandatory fields in company profile.
+
+* Addressed the issue of reference number not displaying on transactions listing.
+
+* Fixed pagination issues while switching tabs.
+
+* Removed text from fields and fixed calendar icon issues.
+
+* Corrected the redirection problem to the Trace Dashboard page.
+
+* Fixed the selected stock count display.
+
+* Resolved the issue of displaying selected items when no stocks were selected.
+
+* Enabled the process stock option on the stock listing page.
+
+* Corrected product listing issues during conversion.
+
+* Fixed the display of merge stock option.
+
+* Addressed the problem of receiving stock with future dates.
+
+* Fixed the issue with the View selected batch option.
+
+* Corrected the redirection issue when switching the supply chain.
+
+* Fixed the problem of company name not displaying when sending stocks.
+
+* Enabled the Continue button on the Add connection address page.
+
+* Resolved the issue of being unable to invite farmers.
+
+* Fixed stock listing issues based on supply chain selection.
+
+* Addressed issues with the Select All feature.
+
+* Fixed the problem of not listing stocks after clearing selections.
+
+* Enabled the Clear Filters feature on the Connection page.
+
+* Resolved UI issues on the Connection page.
+
+* Fixed issues related to country code selection.
+
+* Prevented navigation without adding mandatory fields.
+
+* Fixed search text not clearing from the search option.
+
+* Addressed data clearing issues when switching tabs.
+
+* Fixed the issue of the map not displaying the plot tab.
+
+* Resolved issues with item per page and page navigation.
+
+* Fixed the redirection issue after removing stocks from the view selected batch page.
+
+* Enabled the Farmer type filter on the connections page.
+
+* Fixed the issue of getting the select all option in the view selected page.
+
+* Corrected the display of all stocks after sorting from the view selected batch page.
+
+* Addressed the Remove stock issue.
+
+* Fixed stock listing issues.
+
+* Corrected the select all stock count issue on the stock listing page.
+
+* Fixed the issue of applied filters not displaying on the stock listing page.
+
+* Prevented all stocks from displaying on the listing page after clearing filters.
+
+* Removed the activity tab from the company profile page.
+
+* Enabled pagination for supply chain overview on the dashboard.
+
+* Fixed errors when adding a supplier.
+
+* Addressed issues with mapped column values not displaying.
+
+* Corrected issues with NaN text in the Data starts at field.
+
+* Fixed problems with mapping columns and error display on continue button click.
+
+* Addressed transaction time issues on the mapping page.
+
+* Corrected issues with the previous page being disabled.
+
+* Fixed the enabled continue button on the mapping page.
+
+* Prevented uploading files without data.
+
+* Resolved frontend error display issues.
+
+* Provided valid messages on the summary page when uploading the same file.
+
+* Fixed filters not displaying on the Farmers tab.
+
+* Addressed country code issues when not providing a phone number.
+
+* Fixed the issue of getting a successful text after clicking on Remove All option.
+
+* Enabled error display on the Link field page.
+
+* Fixed issues with the calendar popup.
+
+* Prevented selected products from being removed on Link fields page.
+
+* Corrected the display of uploaded data on the Upload/verification page.
+
+* Fixed issues with "No transaction data" while uploading the same file.
+
+* Disabled the continue button on the Link fields page.
+
+* Addressed errors after updating columns.
+
+* Enabled the upload option when selecting a Trace template.
+
+* Fixed errors not displaying on the page.
+
+* Prevented all Excel titles from displaying on the listing page.
+
+* Fixed issues with notifications not listing after searching.
+
+* Disabled the continue button after uploading an Excel file with no data.
+
+* Fixed the issue of the first name column being fixed on the Trace template.
+
+* Addressed various UI issues.
+
+</Step>
+
+
+
+
+
+   <Step title="V 3.2.0">
+  <sup>22 June 2023</sup>
+  
+  **New Features:**
+
+
+* Raw template data can now be stored in the DynamicTemplateUpload table, enabling more efficient data management.
+
+* The logic for bulk-creating transactions (dynamic) has been updated to use IDs from the Farmer-ID table, improving data accuracy.
+
+* Code quality improvements have been merged into the main branch, enhancing overall codebase quality.
+
+* Creator name and email fields have been added to all export sheets, providing additional information for exported data.
+
+* A user profile design has been created, including notifications, terms & conditions, and member organizations.
+
+
+
+**Bug Fixes:**
+
+* The duplicate warning message now correctly displays when uploading the same Excel file multiple times in the "Add Farmer" feature.
+
+* The validation modal no longer appears without any error in the uploaded Excel file in the connections page.
+
+* The export download for the Income page in the farmer profile now functions properly in the demo environment.
+
+* Development issues occurring after merging the Code quality branch have been resolved.
+
+* The "Date of join" field now appears correctly in the farmer export sheet in the staging environment.
+
+* The 500 error encountered when clicking on a stock has been fixed in the development environment.
+
+* The error that occurred while uploading Excel files has been resolved in the development environment.
+
+* The issue related to selecting all stocks (approximately 1100) has been addressed, fixing the Sentry error.
+
+* Email issues in the development environment have been resolved.
+
+* The issue with Excel files in the development environment has been fixed.
+
+* Stock export now functions correctly in the staging environment.
+
+* Users can now log in to the farmer passbook in the development environment.
+
+* The "Something went wrong" error message no longer appears when assigning/reassigning cards to farmers in the development environment.
+
+* The "Unknown" text in the "Created from" column has been resolved in the staging environment.
+
+
+ </Step>
+
+
+
+
+
+
+  
+   <Step title="V 3.1.1">
+  <sup>26 April 2023</sup>
+  
+  **New Features:**
+
+
+
+* Created Farmer profile design.
+* 
+* Added a Map on the Plot page.
+* 
+* Added an Edit option for Plot.
+* 
+* Added Search and filters in the payments page.
+* 
+* Added a field "Verification type" with values (card/Receipt, not verified).
+* 
+* Added a Country flag in the details page.
+
+
+
+
+**Enhancements:**
+
+* Updated company profile design both logged-in company and connection profile
+
+**Bug Fixes:**
+* Fixed Production issues/feedback on the Transaction report page.
+* 
+* Fixed the issue of added profile image not displaying on the Edit page.
+* 
+* Fixed the issue of not loading the Farmer Profile page.
+* 
+* Fixed the issue of not navigating to the plot details page while clicking on the stage.
+* 
+* Fixed the issue of displaying Add connection title on the Plot details Add/Edit popup.
+* 
+* Fixed the issue of getting 400 error while clicking the Update option on the Plot details popup.
+* 
+* Fixed the issue of not displaying validation messages for longitude and latitude field.
+* 
+* Fixed the issue of not displaying logs in the Logs page.
+* 
+* Fixed the issue of consent type not updating.
+* 
+* Fixed the issue of the default Farmer type not displaying on the Edit page.
+* 
+* Fixed the issue of being unable to save the company profile page after the Edit.
+* 
+* Fixed the issue of the Country flag.
+
+</Step>
+
+
+
+
+
+
+
+   <Step title="V 3.1.0">
+  <sup>29 March 2023</sup>
+  
+  **New Features:**
+
+* Updated transaction premium table.
+* 
+* Updated premium table.
+* 
+* Created script to update all payments to the premium table.
+* 
+* Updated create transaction logic for compatibility with old app API calls.
+* 
+* Modified get premiums API to exclude project details.
+* 
+* Created payments sync API.
+* 
+* Created/modified add payment API.
+* 
+* Designed Trace page for frontend.
+* 
+* Integrated map view inside Trace tab for frontend.
+* 
+* Integrated Trace stages UI for frontend.
+* 
+* Integrated Trace tab API for frontend.
+* 
+* Made changes to the Trace page.
+* 
+* Added address and location fields to the payment table.
+* 
+* Tested redesign of the Transaction report page.
+* 
+* Created transaction receipt file popup for frontend.
+* 
+* Released Transaction report page.
+
+
+
+
+
+**Bug fixes**
+
+
+* Fixed issue where the selection was removing data.
+
+* Corrected spelling error to display "Transactions" instead of "Transaction".
+
+* Fixed issue where wrong transaction data was displaying on the Trace page.
+
+* Corrected source details on the Transaction report page.
+
+* Fixed the issue where farmer details were not displaying on the right side of the page.
+
+* Fixed issue where "No data found" text was displaying after applying date filters.
+
+* Corrected issue where some actors were not listed in the Actor filters option on the Transaction page.
+ 
+* Fixed the issue where the scroll was not working on the Trace page.
+
+* Fixed issue where the removed stock note was not displaying on the Basic page.
+
+* Addressed UI issues.
+
+* Fixed the issue where actors were not loading on the Trace page.
+
+* Fixed the pagination issue on the Transaction page.
+
+* Fixed issue where attachment could not be added on the docs page.
+  
+</Step>
+
+
+
+
+
+  
+   <Step title="V 3.0.5">
+  <sup>15th March 2023</sup>
+  
+  **New Features:**
+
+
+* Added flag 'isAdmin' in company profile API.
+
+* Created Trace page designs and integrated Trace stages UI.
+
+* Implemented map view within the Trace tab.
+ 
+* Users can now download transaction report as a PDF.
+ 
+* Added Trace tab API integration.
+
+* Redesigned transaction report page and added a transaction receipt file popup.
+
+
+
+
+**Bug fixes**
+
+
+* Resolved issue with displaying wrong transaction data on Trace page.
+
+* Corrected source details on Transaction report page.
+
+* Fixed issue with farmer details not displaying correctly on the right side of the page.
+
+* Removed "No data found" text after applying date filters.
+
+* Corrected issue with missing actors on Transaction page Actor filters option.
+
+* Resolved issue with pages auto-refreshing.
+
+* Fixed issue with scrolling on Trace page.
+
+* Restored display of removed stock note on Basic page.
+
+* Corrected UI issues on Dev, including actors not loading on Trace page and pagination issue on Transaction page.
+
+* Users can now add attachments on docs page.
+
+* Fixed data display issue on stages and resolved inability to upload Excel files through the "Receive stock from multiple farmers" option on Stage.
+
+</Step>
+
+
+  <Step title="V 3.0.0">
+  <sup>2nd March 2023</sup>
+  
+  **New Features:**
+
+
+
+* Modified logic for duplicate transactions.
+ 
+* Created Transaction Batch report UI design, including comments.
+ 
+* Added Payment Tab to Transaction report, based on video.
+
+* Updated Transaction report claim page.
+ 
+* Integrated Transaction report API and added claim and documents tabs to detail page.
+ 
+* Integrated Transaction receipt API for Frontend.
+
+
+
+
+**Enhancements:**
+* Redesigned transaction details page.
+* Reviewed and made improvements to Transaction report
+
+**Bug Fixes:**
+
+* Resolved Transaction report page redirection issue.
+* Corrected Farmer count displaying as zero on transaction report basic page.
+* Fixed issue with not navigating to claim tab when clicking on claims on Transaction report page.
+* Resolved display of claim with pending status on claim page.
+* Fixed issue with displaying duplicate list on Docs page.
+* Resolved bulk upload listing issue.
+* Corrected issue with getting object text in claims.
+* Fixed pagination error.
+* Checked alignment, padding, and updated font size and color.
+
+</Step>
+
+
+
+
+  <Step title="V 2.9.0">
+  <sup>21st December 2022</sup>
+  
+  **New Features:**
+
+
+
+* Added the ability to upload multiple farmer excel files for stock reception.
+
+
+
+
+**Bug fixes**
+
+
+* Fixed issue with Premium updates not being reflected in product list API.
+
+
+</Step>
+
+
+
+
+
+  <Step title="V 2.8.0">
+  <sup>7th December 2022</sup>
+  
+  **New Features:**
+
+
+* Added Export data API functionality.
+
+* Changed export and notification icons.
+
+* Improved export functionality and added UI changes for exporting as Excel.
+
+* Created ability to export data with improved UI design.
+
+
+
+
+**Bug fixes**
+
+
+
+* Resolved issue with displaying Merge Summary instead of Transaction details.
+
+* Fixed issue with currency breaking.
+
+* Corrected inability to select products on Demo.
+
+* Fixed blockchain address breaking.
+
+* Resolved issue with exported files displaying in another company.
+
+* Removed extra data displaying on exported files.
+
+* Changed "Create by" to "Created by" on stock export.
+
+* Corrected blockchain Hash not displaying on stock list export.
+
+* Fixed issue with not redirecting to Trace URL.
+
+* Resolved Stock Details title breaking and alignment issues.
+
+* Fixed inability to export from Transactions page.
+
+
+</Step>
+
+
+
+
+
+
+ <Step title="V 2.7.0">
+  <sup>24th November 2022</sup>
+  
+  **New Features:**
+
+
+
+* Stock new UI integration has been added.
+
+* Claim list component has been modified.
+
+* Tab component has been extended with active and inactive states.
+
+* Autocomplete dropdown has been updated for Product and Company.
+
+* The stock form has been updated and integrated with UI.
+
+* Claims page design has been updated.
+
+* "No stock found" text on the stock page now has an illustration.
+
+* Select All option on the Stock page has been reworked.
+
+* Merge stock new UI integration has been added.
+
+* Receive stock: Single farmer new design integration has been added.
+
+
+
+
+**Bug fixes**
+
+
+* Pagination, UI, button, and date issues resolved.
+
+* Issues with stock selection, product filtering, and summary display fixed.
+
+* Navigation, mouse hover, and count issues addressed.
+
+* Claim and transaction details issues resolved, including evidence and quantity clearing.
+
+* Invite connection popup and merge stock option issues fixed.
+
+* Add new product and file upload issues resolved.
+
+* Quantity restrictions and save button disabling issues fixed.
+
+
+**Enhancements:**
+
+
+* Connection popup improvements have been added.
+
+
+
+</Step>
+
+
+
+
+
+
+ <Step title="V 2.6.0">
+  <sup>27th October 2022</sup>
+  
+  **New Features:**
+
+
+
+* No new features have been added in this release.
+**Bug fixes**
+
+* Fixed issue with bulk upload feature where last name of farmers was showing in the wrong tab.
+
+* Fixed issue with claim inheritance during convert and merge process.
+
+* Fixed issue with radio button selection in filter list on stock page.
+
+* Fixed UI issues in edit batch modal and company profile rework.
+
+* Fixed issue with missing claim evidences in CI V2.
+
+* Fixed issue with removing stock from stock listing page.
+
+* Fixed issue with error while inviting team members.
+
+* Fixed validation error messages on complete profile page.
+
+* Fixed issue with incorrect items per page count on active supply chain page.
+
+* Fixed issue with connection label in supply chain.
+
+* Fixed issue with rounding KG to 2 decimal places.
+
+* Fixed issue with clear filter option breaking.
+
+* Fixed issue with source quantity alignment and unit removal.
+
+* Fixed issue with disabled Invite connection button.
+
+* Removed "All Supply chain" option from requests page.
+
+
+
+
+**Enhancements:**
+
+* Improved the pagination of the "supply chain overview" widget. 
+
+* Clicking on the previous page button will now bring scroll instead of pagination, same as the stock widget.Increased the ping interval of the notification API.
+
+
+
+</Step>
+
+<Step title="V 2.5.0">
+  <sup>4th October 2022</sup>
+  
+**New Features:**
+
+
+* Synchronized the updated_on field in farmer and card edit.
+
+* Added code documentation and unit tests in the collector app.
+
+* Implemented Material UI development in the stock list.
+
+* Reworked the company profile in Material UI.
+
+* Changed the clear filter option to a clear filter button in the stock, transactions, and claims pages.
+
+* Created a field to store farmer dynamic fields.
+
+* Added reference numbers in stock and transaction listing APIs.
+
+
+
+
+**Bug fixes**
+
+
+* Various UI issues in different pages (refer to attachments).
+
+* Mandatory fields should not accept only white spaces as values.
+
+* User is not able to go to stock details page (refer description).
+
+* Filters are not working properly in various pages.
+
+* Pagination, assignor filter, and other issues in different pages.
+
+* Incorrect file format warning is not showing.
+
+* Duplicate evidence displaying in claims.
+
+* And other minor bugs.
+
+**Enhancements:**
+* Code cleanup and readme updation
+* Reduce the filter size to improve page layout
+
+
+</Step>
+
+
+
+<Step title="V 2.5.0">
+  <sup>4th October 2022</sup>
+  
+**New Features:**
+
+
+* Synchronized the updated_on field in farmer and card edit.
+
+* Added code documentation and unit tests in the collector app.
+
+* Implemented Material UI development in the stock list.
+
+* Reworked the company profile in Material UI.
+
+* Changed the clear filter option to a clear filter button in the stock, transactions, and claims pages.
+
+* Created a field to store farmer dynamic fields.
+
+* Added reference numbers in stock and transaction listing APIs.
+
+
+
+
+**Bug fixes**
+
+
+* Various UI issues in different pages (refer to attachments).
+
+* Mandatory fields should not accept only white spaces as values.
+
+* User is not able to go to stock details page (refer description).
+
+* Filters are not working properly in various pages.
+
+* Pagination, assignor filter, and other issues in different pages.
+
+* Incorrect file format warning is not showing.
+
+* Duplicate evidence displaying in claims.
+
+* And other minor bugs.
+
+**Enhancements:**
+* Code cleanup and readme updation
+* Reduce the filter size to improve page layout
+
+
+</Step>
+
+
 </Steps>
 
 
