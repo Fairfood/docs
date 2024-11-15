@@ -1056,7 +1056,1075 @@ description: Dashboard will help Trace partners will be able to gain a better un
 </Step>
 
 
+<Step title="V 4.0.0">
+   <sup>11 September 2024</sup>
 
+   **New Features:**
+
+* React Native update and API level upgrade to 34.
+
+* Added a feature to display a warning message about unsynced data loss in case of automatic logout.
+
+* Conducted extensive system testing for the Connect in development and stage environments.
+
+* Completed retesting and migration testing for the Connect .
+
+* Supported production release and testing for the Connect .
+
+* Deployed Mobile App V4.0.0 successfully.
+
+
+
+
+**Bug Fixes:**
+
+
+* Resolved missing product fields when adding additional products in the Buy module (Dev).
+
+* Fixed an issue where users were unable to sell when there was a loss in quantity (Sell - Dev).
+
+* Addressed several UI issues found in Connect after the React update.
+
+* Restored missing fields in the Pay module (Dev).
+
+* Fixed the issue of missing states in the state field .
+
+* Corrected an error that occurred when clicking View Invoice after a transaction (Connect Migration).
+
+* Restored the card tapping animation in Buy and Sell.
+
+* Fixed an app crash when going back from Transaction History .
+
+* Resolved UI breaking when boundary values were entered .
+
+* Fixed a UI issue when applying multiple filters in the Transactions tab .
+
+* Fixed an issue where users were unable to access Settings when Bluetooth permissions were not granted .
+
+* Resolved a bug where the QR code scanned twice, causing the Sell pop-up to appear twice (Sell ).
+
+
+
+**Enhancement**
+
+* Updated all icons and removed unnecessary packages to optimize app performance.
+
+* Optimized function calls to avoid unnecessary function creation for better performance.
+
+
+</Step>
+
+<Step title="V 3.7.0">
+   <sup>30 August 2024</sup>
+
+   **New Features:**
+
+* Added the ability to search with a card option.
+
+* Implemented a progress bar to show syncing progress for farmers on the onboarding page.
+
+* Conducted stage testing for the Connect feature.
+
+* Completed production and migration testing for Connect.
+
+
+
+
+**Bug Fixes:**
+
+
+* Resolved an issue where the entire list was briefly displaying after applying a filter on the Payments page in development.
+
+* Fixed an issue where farmer sorting was resetting after opening a farmer in the staging environment.
+
+
+
+</Step>
+
+<Step title="V 3.6.0">
+   <sup>15 August 2024</sup>
+
+   **New Features:**
+
+* Implemented deep linking for SSO.
+
+* Updated verification method with new design changes.
+
+* Modified verification method functionality.
+
+* Updated sync card working flow in the verification method.
+
+* Added options for error correction.
+
+* Added farmer details when verifying transactions with NFC and QR codes
+
+* Introduced rename option for form fields using company forms.
+
+* Conducted verification method testing in the development environment.
+
+* Added a pre-defined 'comment' field in the pay-farmer form.
+
+* Tested the Connect app with verification flow offline.
+
+* Updated the pay-farmer form feature.
+
+* App Feature Testing: Development phase
+
+* App Feature Testing: Staging and production phases
+
+
+
+
+**Bug Fixes:**
+
+
+* Fixed issue with the re-issue card button not working properly.
+
+* Added validation for price and quantity fields in the transaction - Mobile.
+
+* Resolved UI issue in Sell product details - Production.
+
+* Corrected issue where a seller NFC card was reissued to a farmer in offline mode - Connect.
+
+* Fixed continuous scanning of the QR code and warning pop-up - Dev Mobile.
+
+* Resolved issue where transaction verification failed with QR code - Dev Mobile.
+
+* Fixed issue with NFC card not verifying transactions - Dev Mobile.
+
+* Corrected the inability to add a farmer when both verification methods were skipped - Dev.
+
+* Addressed issue where verification method details were being cleared from farmer details - Dev.
+
+* Resolved issue allowing the completion of a buy transaction with a farmer using multiple QR and NFC cards - Dev.
+
+* Fixed issue where the verification pop-up appeared even after completing a transaction - Dev.
+
+* Corrected QR code not reading again after warning pop-up - Dev Mobile.
+
+* Fixed issue where NFC card was not reading again after warning pop-up - Dev Mobile.
+
+* Resolved issue where the QR code was not displaying after a card reissue but allowed transaction completion with QR - Dev.
+
+* Fixed issue where the QR code could not be rescanned after clicking the back button from the NFC scan page - Dev.
+
+* Resolved missing Reference ID in Invoice from the Payment tab - Dev.
+
+* Corrected issue preventing the addition of farmers - Dev.
+
+* Fixed issue where old NFC and QR card combinations were not getting cleared - Dev.
+
+* Resolved issue where a "couldn't find farmer" pop-up appeared when scanning with an already assigned card - Connect Stage Migration.
+
+* Fixed issue allowing transactions to be completed using a card from another company - Stage.
+
+* Corrected issue where the card combination was not being marked as inactive in the backend - Connect.
+
+
+
+**Enhancement**
+
+* Increased font size for small texts
+
+
+</Step>
+
+<Step title="V 3.5.0">
+   <sup>04 July 2024</sup>
+
+   **New Features:**
+
+* App automation: Configuration for multiple automation scripts
+
+* App automation: Create automation test accounts for buy/sell enabled companies
+
+* App automation: Modularize tests based on features and companies
+
+* SSO: Implement deep linking for SSO
+
+* Verification Method Changes: New design changes
+
+* Verification Method Changes: Functionality changes
+
+* Verification Method Changes: Sync card workflow changes
+
+* Error Correction: Add options for error correction
+
+* Voice Functionality: Add voice button for text-to-speech
+
+* Theme Switching: Add theme switching according to backend variables
+
+* Thousand Separator: Update thousand separator settings for other countries
+
+* Form Fields: Add rename option for form fields using company forms
+
+* Verification Method Settings: Add settings option for selecting which verification method should show first time
+
+* App Feature Testing: Development phaseApp Feature Testing: Staging and production phases
+
+
+
+
+**Bug Fixes:**
+
+
+* Fixed error in the app when currency is not provided while creating a new company
+
+* Fixed issue where the re-issue card button click was not working properly
+
+* Added missing announce button for sell transaction in the mobile app
+
+* Fixed issue where transaction announcement was not rounding off the total price
+
+* Fixed issue where announcement was not stopping even after completing the transaction
+
+* Fixed crash occurring when clicking on the voice button from the sell page (development)
+
+* Fixed issue where number format was changing when logging out from the account
+
+* Fixed crash occurring after migration in the production environment
+
+
+
+**Enhancement**
+
+* Increased font size for small texts
+
+* Improved the transaction summary widget
+
+
+
+</Step>
+
+<Step title="V 3.4.0">
+   <sup>30 May 2024</sup>
+
+   **New Features:**
+
+* App Automation: Configuration for multiple automation scripts.
+
+* App Automation: Creation of automation test accounts for buy/sell enabled companies.
+
+* App Automation: Modularization of tests based on features and companies.
+
+* SSO: Implementation of deep linking for Single Sign-On.
+
+* Transaction Management: Delete transaction functionality.
+
+* Design Update: Transaction verification cards updated.
+
+* Production Testing: Comprehensive app testing in production environment.
+
+* Invoice Integration: Integration of invoice printing into the Transactions page.
+
+* Price Field Fix: Float fixes in Collector price field.
+
+* Premium Session: Addition of premium session in transaction summary.
+
+* Form Label: Addition of premium field form label.
+
+* Premium Range: Revamp of Premium range.
+
+* Release Preparation: Preparations for release notes.
+
+* Transaction Management: Addition of view and print invoice option in payment details page.
+
+* Transaction Options: Addition of selected option for every transaction/payment (value entered in fields).
+
+* Form Changes: Hotfix for form changes in live test credential and deployment.
+
+* Documentation: Verification of the app usage documentation.
+
+* Testing: Delete transaction testing.
+
+* Stage Testing: Testing in the staging environment.
+
+* Production Release: Final testing and preparation for production release.
+
+* Popup Message Update: Update the delete transaction popup message.
+
+
+
+
+**Bug Fixes:**
+
+
+* Farmer Field: Fixed issue where data was not listed when clicking on the Select farmer field in the staging environment.
+
+* Text to Speech: Fixed issue where text to speech for Sell was not getting disabled.
+
+* Speech Alert: Corrected the mistake in the speech alert after completing a Buy transaction in the staging environment.
+
+* User Logout: Fixed issue causing user logout from the app after some time.
+
+* Export Error: Resolved error when clicking on export if there is no data on the Farmer & Transactions page in stage/production environments.
+
+* Premium Text: Fixed issue where premium text was not displaying on the sell page in the development environment.
+
+* Total Price Discrepancy: Corrected the difference in Total price displayed in Sell Transaction in the development environment.
+
+* App Crash: Fixed app crash issue when clicking on View image from the Payment details page in the development environment.
+
+* Sync Issues: Resolved issue where deleted payments were not syncing in the development environment.
+
+* Sync Status: Fixed issue where deleted products were not showing sync pending status (Offline) in the development environment.
+
+* Export File: Fixed issue where deleted transactions appeared in the export file in the development environment.
+
+* Transaction History: Resolved issue where transaction was not getting disabled in the Farmer's details transaction history.
+
+* Premium Text Display: Fixed issue where premium text displayed even if there were no premiums in the staging environment.
+
+* Rounding Issue: Fixed round-off issue in Buy and Sell transaction details page in the staging environment.
+
+* Delete Button: Added missing Delete button for old transactions in the production environment.
+
+
+
+
+</Step>
+
+<Step title="V 3.3.0">
+   <sup>14 May 2024</sup>
+
+   **New Features:**
+
+* Enhanced the Farmer and Component sections.
+
+* Updated error handling and JSdoc across all functions
+
+* Researched and developed multi-language support.
+
+* Set up multiple language JSON for Text-to-Speech functionality.
+
+* Implemented Firebase Crash Analytics for better app monitoring.
+
+* Added deep linking support for Single Sign-On (SSO).
+
+* Added company logo and address in invoices.
+
+* Updated the design of transaction verification cards.
+
+
+
+
+**Bug Fixes:**
+
+
+* Fixed display issues for various screens:
+
+* Mobile number and zip code display after edits.
+
+* Farmer list display after adding a farmer.
+
+* Addressed unwanted spaces in the Add New Farmer form.
+
+* Buy page, sell page, pay farmer page, and verify with photo page.
+
+* Clicking on submit button in the buy page base_price field.
+
+* Clicking on the next button from various pages.
+
+* Opening sync icon.
+
+* Resolved issues with app closure when navigating to settings in the profile.
+
+* Addressed white screen display issues when clicking the sync icon.
+
+* Fixed keyboard next button functionality.
+
+* Addressed device back button functionality.
+
+* Improved the display of the Print Invoice option on the transaction completed page and in the transactions listing.
+
+* Resolved data mismatches when applying date filters in transactions.
+
+* Allowed decimal point values in premium range fields.
+
+* Prevented fields from removing values when using the keyboard backspace option.
+
+* Displayed error messages for out-of-range premium values.
+
+* Corrected the total displayed on the transaction completed page.
+
+* Addressed issues with data listing when clicking on the referred by field.
+
+* Ensured correct mobile number display after app updates.
+
+* Fixed data mismatches and null text on invoices.
+
+* Addressed issues with data listing when clicking on the referred by field.
+
+* Ensured correct mobile number display after app updates.
+
+* Fixed data mismatches and null text on invoices.
+
+
+
+</Step>
+
+  <Step title="V 3.2.0">
+   <sup>29 January 2024</sup>
+
+   **New Features:**
+
+* Refactored code for Connect.
+
+* Implemented Bluetooth printing option in the app.
+
+* Added thermal printing functionality and UI.
+
+* Conducted unit testing for the Bluetooth printer service.
+
+* Completed production/stage testing for the mobile app.
+
+* Applied hotfix migration structure for Connect App.
+
+* Updated invoice design for thermal print.
+
+* Implemented CSV export/import feature.
+
+* Enabled CSV export by filtering transactions and payments.
+
+* Introduced Hot Sync UI and functionality.
+
+* Conducted Bluetooth printer testing for the mobile app.
+
+* Retested the mobile app.
+
+* Updated CSV data changes for export.
+
+* Tested export functionality.
+
+* Removed unapplied filter when filter grouped by reference ID in transaction and payment list.
+
+* Added Bluetooth permission modals and recorded printing video for the Play Store.
+
+* Conducted R&D on Text-to-Speech in multiple languages.
+
+* Addressed rejection fix for Connect App v3.2.0.
+
+* Increased refresh token validity time on the mobile app.
+
+* Optimized code in the Farmer section.
+
+* Set up multiple language JSON for Text-to-Speech.
+
+
+
+
+**Bug Fixes:**
+
+
+* Fixed an issue where a request failed with a status code 404.
+
+* Resolved a problem where duplicate transactions and farmers were being created.
+
+* Fixed a bug where button clicks were not working properly on the transaction completed page in the development environment (dev).
+
+* Resolved a UI issue that was breaking in the production environment.
+
+* Fixed a bug that caused the app to crash when clicking on the "Switch environment" option in the dev environment.
+
+* Addressed an issue where changing the county dial code on the "Add Farmer" page was not reflected on page two.
+
+* Fixed a bug where mobile number validation was not displayed, and users couldn't navigate to the next page when clicking on the "Address" button in the dev environment.
+
+* Resolved an error occurring after the app migration in the stage and production environments.
+
+
+
+**Enhancement**
+
+* Improved the transaction details page and transaction list page by showing the transaction type (with or without a card). 
+
+* Added a card icon tag to indicate transactions done with a card.Enhanced the custom input field by changing its value from a string to an object for radio and dropdown types.
+
+
+
+</Step>
+  <Step title="V 3.0.0">
+<sup>26 December 2023</sup>
+
+
+
+**New Features:**
+
+* Enabled receipt printing for farmers using Bluetooth printers.
+
+* Conducted Lambda function testing.
+
+* Implemented authentication APIs for the Connect App.
+
+* Introduced initial synchronization APIs for the Connect App.
+
+* Added migration modal UI and functionality.
+
+* Integrated JWT token APIs and updated middleware code.
+
+* Implemented Stage 1 and Stage 2 APIs for the Connect App.
+
+* Executed database migration and associated scripts.
+
+* Introduced changes to buy and send transactions, removing the batch concept.
+
+* Modified custom field structure according to Connect forms.
+
+* Cross-checked and validated app data with Connect backend.
+
+* Resolved various bugs in the Connect App.
+
+* Restructured APIs for supply chains, entity cards, transactions, and payments.
+
+* Conducted thorough testing for the Connect Mobile App.
+
+* Implemented form changes for buy, add farmer, and details pages.
+
+* Cross-checked form data with backend Django admin.
+
+* Retested the Trace Connect application.
+
+* Performed migration testing on the Connect server.
+
+* Optimized code for the Connect App.
+
+* Implemented API structure for checking backend migration status.
+
+* Introduced design changes in the migration modal.
+
+* Implemented changes in the add farmer forms.
+
+* Included farmer image upload in synchronization flow and prioritized update farmer sync.
+
+* Conducted migration testing in the development environment.
+
+* Added missing translation texts in the Connect App.
+
+* Implemented voice speech functionality in the Harvest App.
+
+* Restricted user multiple device logins and implemented logout API.
+
+* Deployed versions v3.0.0 and v3.0.1 and performed production testing.
+
+
+
+
+
+**Bug fixes**
+
+
+* Resolved error after clearing app cache.
+
+* Fixed inability to sell products with a card.
+
+* Addressed display issues on transaction completed page.
+
+* Fixed parent transaction retrieval issue.
+
+* Resolved editing user phone number error.
+
+* Fixed transaction failed error while buying products.
+
+* Corrected wrong quantity display on transaction completed page.
+
+* Fixed Fairtrade certified validation message issue.
+
+* Resolved error while manually selling products.
+
+* Addressed premium-related issues on buy and sell transactions.
+
+* Fixed duplicate KG display issue.
+
+* Corrected incorrect premium value display on transaction details page.
+
+* Fixed products displaying under wrong date issue.
+
+* Addressed category filter presentation issue.
+
+* Fixed not displaying phone number on farmer details page.
+
+* Corrected total premium not displaying on transaction completed page.
+
+* Fixed NaN on total paid to farmers field on sell transaction details page.
+
+* Addressed dropdown premium3 not displaying on Tokonanga.
+
+* Fixed mobile field display issue while editing farmer.
+
+* Corrected wrong date and time display after farmer edit.
+
+* Resolved mobile number validation issue on address page.
+
+* Fixed already sent quantity display issue after clean up.
+
+* Resolved app crashing issue on Referred By field click in buy transactions.
+
+* Addressed duplicate payments listing issue with Unsync icon.
+
+* Fixed data not displaying with Not Available status on payment page after app update.
+
+* Resolved data migration popup issue during Connect account login and logout after migration.
+
+* Fixed progress bar not reaching full completion issue after migration.
+
+* Resolved error selecting products from Buy option after migration.
+
+* Fixed old referred by farmer data not showing after migration for ptchan.
+
+
+
+
+</Step>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <Step title="V 2.3.0">
+<sup>01 November 2023</sup>
+
+
+
+
+**New Features:**
+
+* Fixed an error while updating a farmer in the development environment (dev).
+
+* Implemented a new user interface (UI) for server switching.
+
+* Added functionality for switching servers.
+
+* Updated the app screenshots in the Play Store.
+
+* Added a country/phone validation library to meet the PtChan requirement.
+
+* Implemented PtChan validation requirements.
+
+* Enabled the ability to print receipts for farmers using a Bluetooth printer.
+
+* Added a custom field for selecting a collector.
+
+* Implemented a custom field for selecting a date, which is important for backdate transactions.
+
+* Conducted unit testing for the authentication section.
+
+* Performed Lambda testing.
+
+* Checked and verified the mobile app's master design for open-source compatibility.
+
+* Conducted PT CAN Requirement testing.
+
+
+
+
+**Bug Fixes:**
+
+
+* Fixed an issue where a request failed with a status code 404.
+
+* Resolved a problem where duplicate transactions and farmers were being created.
+
+* Fixed a bug where button clicks were not working properly on the transaction completed page in the development environment (dev).
+
+* Resolved a UI issue that was breaking in the production environment.
+
+* Fixed a bug that caused the app to crash when clicking on the "Switch environment" option in the dev environment.
+
+* Addressed an issue where changing the county dial code on the "Add Farmer" page was not reflected on page two.
+
+* Fixed a bug where mobile number validation was not displayed, and users couldn't navigate to the next page when clicking on the "Address" button in the dev environment.
+
+* Resolved an error occurring after the app migration in the stage and production environments.
+
+
+
+**Enhancement**
+
+* Improved the transaction details page and transaction list page by showing the transaction type (with or without a card). 
+
+* Added a card icon tag to indicate transactions done with a card.Enhanced the custom input field by changing its value from a string to an object for radio and dropdown types.
+
+</Step>
+
+
+
+
+
+
+
+  <Step title="V 2.2.0">
+<sup>11 October 2023</sup>
+
+
+
+
+**New Features:**
+* Resolved Errors while updating farmers in the development environment.
+
+* Conducted system testing for the mobile app
+
+* Research and implementation of the best automation testing tools
+
+* Implementation of app automation and initial processes
+
+* Automation testing for the login and sync feature
+
+* Research and implementation of Appium automation tool
+
+* Research and implementation of Jest for automation testing
+
+* Conducted login tests with Jest
+
+* Added functionality to show default selection values for dropdown premium
+
+* Implemented a CSV export/import tool
+
+* Automated login tests with Appium
+
+* Added an app update indication when a new version is available on the Play Store
+
+* Created an app update modal on the login page
+
+* Developed a standalone app documentation
+
+* Removed Watermelon DB codes for the new app release
+
+* Restructured the API workflow for the standalone app
+
+* Planned and executed database migration for the standalone app
+
+* Added reference numbers and grouping for multiple transactions.
+
+* Implemented the group transactions user interface (UI)
+
+* Added a download invoice feature for transactions and payments from the transaction page
+
+* Made feature changes for the standalone app
+
+* Added a configuration page and functionality for switching servers in the standalone app
+
+* Optimized code in the Farmer Section
+
+* Optimized code in the Transaction Section
+
+* Optimized code in the Home Section
+
+* Checked thermal printing and edited invoice styles
+
+* Resolved a hotfix for a production issue
+
+* Updated the latest code to GitHub
+
+* Enhanced the UI for app updates
+
+* Tested and updated the invoice design for the mobile app
+
+* Made improvements to the invoice design
+
+* Optimized the sync section of the app
+
+* Implemented an in-built Bluetooth printing option in the app
+
+* Set up ESC-POS printer functionality in the app
+
+* Developed a switching feature in the Harvest app
+
+* Designed environment switching for the Harvest app
+
+* Conducted stage testing for the mobile app
+
+* Added a server-switching user interface (UI)
+
+* Implemented server-switching functionality
+
+* Updated app screenshots in the Play Store
+
+
+
+**Bug Fixes:**
+* Error: Request failed with status code 404
+
+* Duplicate Transaction and farmers are created
+
+* Sentri Issue
+
+* Getting Errors while launching the app after sometime
+
+* Dropdown premium options are not listing after update the app
+
+* displaying the wrong year and time on farmer details page
+
+* Premium not showing in the app in live for MR collectors
+
+* Premium not showing in the app in live for MR collectors
+
+* Alignment issues
+
+* Pay Farmer payments are not showing in the app
+
+* UI issues
+
+* Not getting download option while doing pay farmer
+
+* Not getting app update popup on login page
+
+* Upgrade option is displaying after the updation also
+
+* Profile page issues
+
+* Displaying up-to-date popup while clicking on Buy option after the Mobile app upgrade & Unable to click on Buy, sell ,pay and profile options
+
+* When app app update is available it shows forceUpdateModal even if its not.
+
+* Realm sentry issue
+
+* Getting the wrong time on Pay farmer invoice | dev
+
+* Not displaying Product , Farmer name and premium name on invoice
+
+* Getting Total value as zero on transaction completed page and Invoice
+
+* Send Invoice value issue
+
+* Data is not displaying based on the filter
+
+* App is crashing while clicking on profile after the migration
+
+
+**Enhancement**
+* Improved the transaction details page and transaction list page by showing the transaction type (with or without a card). Added a card icon tag to indicate transactions done with a card.
+* Enhanced the custom input field by changing its value from a string to an object for radio and dropdown types.
+</Step>
+
+
+
+
+
+  <Step title="V 1.2.0">
+<sup>05 July 2023</sup>
+
+
+
+
+**New Features:**
+* Google Analytics: Implemented Google Analytics feature to track user behavior and app usage statistics.
+
+* Document Sync Logic: Added document sync logic to ensure seamless synchronization of data across multiple devices.
+
+* Farmer Payment Log: Introduced a farmer payment log feature to track and manage payments made to farmers.
+
+* GitHub Code Update: Updated the GitHub repository with the latest code changes for improved collaboration and version control.
+
+* Google Analytics Events: Added Google Analytics events to track specific user actions and interactions within the app.
+
+* Google Analytics Documentation: Created comprehensive documentation on integrating and utilizing Google Analytics in the app.
+
+* Spell Checker Extension: Installed a spell checker extension to identify and correct spelling mistakes in comments and code.
+
+* Theme Variable Updates: Updated theme variables in component files for improved consistency and customization.
+
+* Premium Entry Creation: Implemented the creation of premium entries from transaction details if no existing premium is found during transaction syncing.
+
+* Card Server ID: Added the card server ID to transactions during syncing for better data tracking and management.
+
+* Profile Page Redesign: Updated the design of the profile page for a more user-friendly and visually appealing experience.
+
+* Master Design File: Assisted in creating the master design file for the Trace mobile app, ensuring consistency and efficiency in design elements.
+
+* Active Field for Premiums: Added an active field to the premium table and updated its usage throughout the app.
+
+* Payment API Updates: Updated payment APIs in the sync documentation to ensure accurate and reliable payment synchronization.
+
+* Mobile App Packages Documentation: Consolidated and organized the mobile app packages documentation into a single, easily accessible page.
+
+* Report Migration: Created a migration for report fields in the transaction table to streamline reporting functionality.
+
+* Report Page UI: Enhanced the user interface of the report page for improved usability and aesthetics.
+
+* Report API Implementation: Implemented the necessary APIs to support the report functionality within the app.
+
+* Report Functionality: Developed the report functionality to allow users to generate and view reports based on specific criteria.
+
+* In-App Update Feature: Implemented an in-app update feature to provide users with seamless updates to the mobile app.
+
+* Mobile App Package Upgrades: Upgraded mobile app packages to their latest versions for enhanced performance and compatibility.
+
+* Open Source Checklist Excel Sheet: Created an Excel sheet checklist for open source components used in the app.
+
+
+
+
+
+**Bug Fixes:**
+
+* Various bug fixes and improvements addressing issues such as:
+
+* Error 404: Resolved an error that occurred with status code 404.
+
+* Premium Details Update: Fixed an issue where premium details were not updated when modifying existing transactions.
+
+* Duplicate Transactions and Farmers: Addressed the problem of duplicate transactions and farmers being created.
+
+* Transaction and Farmer Sync Errors: Fixed errors related to transaction syncing and adding farmers in both development and production environments.
+
+* App Crashes and Errors: Resolved app crashes, error messages, and UI issues reported in the development environment.
+
+* Syncing and Migration Issues: Fixed issues related to syncing, migration, and data transfer between different versions of the app.
+
+* Premium Calculation and Display: Corrected various issues related to premium calculation, display, and user interface inconsistencies.
+
+* Payment Details and Reporting: Fixed issues with payment details page, reporting popups, and date accuracy.
+
+* Manual Premium Functionality: Resolved issues with manual premium entry, including decimal values, wrong quantities, and incorrect base prices.
+
+* Product and Premium Listing: Fixed issues with product and premium listing based on filters and status.
+
+* Card Scanning and Selling Stocks: Addressed problems with card scanning and selling stocks functionality.
+
+* Error Messages and Handling: Improved error handling, error messages, and user feedback throughout the app.
+
+
+
+
+
+
+
+
+**Enhancement**
+* Transaction Type Display: Added a transaction type indicator (with/without card) in the transaction details and list pages for better clarity.
+</Step>
+
+
+
+
+
+  <Step title="V 1.1.6">
+<sup>12 April 2023</sup>
+
+
+
+
+**New Features:**
+* Added support for product and premium updates from server sync.
+
+* Implemented Google Analytics feature in the app to track user behavior and app usage statistics.
+
+* Added the ability to customize the app theme for components related to authentication and farmers, allowing for a more personalized user experience.
+
+* Added support URL to the app for providing additional support resources to users.
+
+* Enhanced app performance by optimizing screen and component rendering to minimize re-renders.
+
+* Updated transaction premium table and premium table to reflect changes in data structure or requirements.
+
+* Updated create transaction logic to ensure compatibility with older app API calls.
+
+* Modified premiums API to retrieve premiums without project details, streamlining data retrieval.
+
+* Created a payments sync API to synchronize payment data between different parts of the application.
+
+* Created or modified add payment API for managing payment transactions within the app.
+
+* Added base payments to the payments table to provide a foundation for payment-related data.
+
+* Made changes to the payments table structure to accommodate new payment features or requirements.
+
+* Updated get premium API to facilitate the retrieval of premium-related information.
+
+* Added UI components for creating farmer payments and listing payments, enhancing user interaction and management of payment data.
+
+* Updated sync functionality to ensure seamless synchronization of data across devices and platforms.
+
+* Added address and location fields to the payment table to provide additional context for payment transactions.
+
+* Introduced payment filter options to allow users to filter and view specific types of payments.
+
+* Implemented a farmer payment log to track and manage payments made to farmers.
+
+* Implemented payment invoice API to generate and manage payment invoices within the app.
+
+
+
+
+
+**Bug Fixes:**
+
+* Fixed error: Request failed with status code 404
+
+* Fixed issue where premium details were not getting updated when updating an existing transaction
+
+* Fixed issue where duplicate transactions and farmers were being created
+
+* Fixed issue where updated premium was not reflecting on app
+
+* Fixed issue where users were unable to buy stock from Toko
+
+* Fixed app DB migration issue
+
+* Fixed display issue on Pay farmer page
+
+* Fixed error in transaction sync
+
+* Fixed display issue on transaction completed page
+
+* Fixed issue where all payments were showing as negative on payment listing page
+
+* Fixed display issue where it should show "Premiums" instead of "Premium" when there are multiple premiums
+
+* Fixed error when purchasing products
+
+* Fixed issue where buy and sell transactions were failing
+
+* Fixed issue where updated payment premium category was not displaying on the app after sync
+
+* Fixed error when selling products
+
+* Fixed payment syncing error
+
+* Fixed issue where users were unable to sell products with card
+
+* Fixed search issue on payments tab
+
+* Fixed display issue where "No payments" text was not displaying in Indonesian language
+
+* There is a UI issue that needs to be fixed.
+
+* The node id is appearing as blank in transaction sync data and this needs to be addressed.
+
+* We are getting a 404 error while adding farmers and this needs to be fixed.
+
+* There is an issue where if there are no transactions, it is not possible to buy or pay a farmer, and this needs to be resolved.
+
+* The "Pay Farmer" option is not displaying on the Siera Leoness Home page, which needs to be fixed.
+
+* There is a sync issue on the payment and product page that needs to be addressed.
+
+* There is a transaction syncing error in Production that needs to be resolved.
+
+* The category is not listed on the payment page filters option, which needs to be fixed.
+
+* The payments tab lists wrong data and needs to be corrected.
+
+
+
+
+
+
+
+
+
+**Enhancement**
+* In order to improve the user experience, we need to show the transaction type (with/without card) in the transaction details page and transaction list page. It would be better to display a tag (card icon) if the transaction was done with a card. This is an enhancement request for.
+</Step>
 
 </Steps>
 
