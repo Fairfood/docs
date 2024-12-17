@@ -44,14 +44,7 @@
 
     {
       "group": "Introduction",
-      "pages": [
-    
-
-   "introduction"
-     
-
-     ]
-    },
+      "pages": ["introduction", "toolbox" ] },
 
     {
       "group": "Support",
