@@ -3,8 +3,7 @@ title: Connections
 
 ---
 ## Connections
-On the connection page, there are two tabs displaying connected companies and farmers. Users can also access a map view option that visually represents the actors and their connections on a map for a spatial overview.
-
+The **Connection Page** shows information about the companies and farmers in the supply chain. You can find it in the main menu. The page has two tabs: one for companies and one for farmers. It also has a map view that shows where these actors are located and how they are connected.
 
 <Steps>
   <Step title="Connections - Company">
@@ -18,7 +17,9 @@ On the connection page, there are two tabs displaying connected companies and fa
   src="/images/img/connection-list-b.png"
   alt="Hero Dark"
 />
-    The two tabs allow users to view active connections categorized as farmers and companies. The map view displays these connections geographically. The connection list for companies includes columns for Company name, Company Type, Connection relation, and Connection Status, providing a comprehensive overview of the company's network and connection details. The "Add Connection" button enables users to create new connections.
+   
+    - The company connection list includes columns for Company Name, Company Type, Connection Relation, and Connection Status.  
+    - The "Add Connection" button allows you to create new connections.
   </Step>
   <Step title="Connections - Farmers">
      <img
@@ -31,7 +32,9 @@ On the connection page, there are two tabs displaying connected companies and fa
   src="/images/img/connection-list-b.png"
   alt="Hero Dark"
 />
-    The two tabs allow users to view active connections categorized as farmers and companies. The map view displays these connections geographically. The connection list for farmers includes columns for Farmer name, Farmer Type, Connection relation, and Connection Status, providing a comprehensive overview of the farmers' network and connection details. The "Add Connection" button enables users to create new connections.
+    - The connection list for farmers includes columns for Farmer Name, Farmer Type, Connection Relation, and Connection Status.  
+    - This provides a comprehensive overview of the farmers' network and connection details.  
+    - The "Add Connection" button allows you to create new connections.
   </Step>
 
 
@@ -46,23 +49,12 @@ On the connection page, there are two tabs displaying connected companies and fa
   src="/images/img/connections-b.png"
   alt="Hero Dark"
 />
-    The map view option visually displays the connections on a map, allowing users to see the geographic distribution of the connections.
+    - The map view shows the connections on a map.  
+    - It works by showing where farmers and companies are located and how they are connected.  
+    - This helps you see the spread of connections and understand the supply chain.
   </Step>
 
 
-<Step title="Connections - Add connection">
-   <img
-  className="block dark:hidden"
-  src="/images/img/addconnection.png"
-  alt="connection"
-/>
-<img
-  className="hidden dark:block"
-  src="/images/img/addconnection-b.png"
-  alt="Hero Dark"
-/>
-    The "Add Connection" button enables users to add a new company or farmer. The process involves three steps. For adding a company, users input basic information like supplier details, initiating the process of creating a connection with the company.
-  </Step>
 
 
 
@@ -77,8 +69,285 @@ On the connection page, there are two tabs displaying connected companies and fa
     src="/images/img/managefarmer-b.png"
   alt="Hero Dark"
 />
-    Integrate farmers into the system by importing their details from an Excel file, streamlining data entry and enhancing efficiency. Simplify onboarding process and ensure accurate information retrieval.
+    - You can add farmers to the system by uploading an Excel file with their details.  
+    - This method makes it quicker to enter data, saving time and effort.  
+    - It simplifies the process of adding new farmers to the system, making it easier to get started.
   </Step>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<Step title="Add connection">
+     <img
+  className="block dark:hidden"
+  src="/images/img/receive stock.png"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/img/receive stock-b.png"
+  alt="Hero Dark"
+/>
+   Connections can be added to the system as a company using three methods: **Add Single Farmer**, where individual farmer details like name, contact, and location are manually entered; **Add Multiple Farmers (Excel)** for bulk uploads by preparing and uploading an Excel file with farmer data; and **Add Connection as a Company**, which links the connection to a company, reflecting organizational relationships effectively.
+
+## Single Farmer
+Add a connection by providing **Basic Details**, including buyer information, and entering **Address/Contact** details. Finally, map the connection by linking the farmer to the company, either by adding a single farmer manually.
+
+
+
+<Steps>
+  <Step title="Basic details">
+   <img
+  className="block dark:hidden"
+  src="/images/img/receive stock.png"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/img/receive stock-b.png"
+  alt="Hero Dark"
+/>
+    The first step, **Basic Details**, involves entering essential information about the farmer, including their **First Name**, **Last Name**, **Farmer Type**, and an **Identification Number**. This ensures accurate identification and categorization of the farmer within the system.
+  </Step>
+  <Step title="Address/Contact">
+     <img
+  className="block dark:hidden"
+  src="/images/img/receive stock 2nd step.png"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/img/receive stock 2nd step-b.png"
+  alt="Hero Dark"
+/>
+    The second step, **Address/Contact**, involves adding the supplier's address and contact information. This includes entering the **Street Name**, **Country**, **Province**, **City/Village**, and **Postal Code** under the address section. In the contact information section, provide the **Email**, **Country Code**, and **Contact Number** to ensure accurate communication details.
+  </Step>
+
+
+<Step title="Map Connection">
+   <img
+  className="block dark:hidden"
+  src="/images/img/receive stock sum.png"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/receive stock sum-b.png"
+  alt="Hero Dark"
+/>
+    The third step, **Map Connection**, allows mapping the farmer to the company. This step establishes the connection by specifying that products purchased from a particular farmer or supplier are supplied to the corresponding company. After verifying the details, you can finalize the connection by clicking the **Add Connection** button.
+  </Step>
+
+</Steps>
+
+
+
+
+</Step>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<Step title="Add connection">
+
+
+## Multiple Farmers (Excel)
+We can add multiple farmers to the system by uploading an Excel file. First, the system validates the uploaded file. Users have two options: they can download a preformatted Excel template from the system, add the data to it, and upload it, or directly upload an existing Excel file. The system then checks the file for mandatory fields and validates all values. After verifying and linking each row and column, the farmer data is successfully added to the system.
+
+
+
+<Steps>
+  <Step title="Upload/Create Template">
+   <img
+  className="block dark:hidden"
+  src="/images/img/receive stock.png"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/img/receive stock-b.png"
+  alt="Hero Dark"
+/>
+   In the first step, you upload or create an Excel template to add multiple farmers by either selecting a pre-defined template, creating a new one, or uploading an existing file for customization.
+
+
+
+
+
+
+
+  </Step>
+  <Step title="Link Fields">
+     <img
+  className="block dark:hidden"
+  src="/images/img/receive stock 2nd step.png"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/img/receive stock 2nd step-b.png"
+  alt="Hero Dark"
+/>
+    In the second step, the uploaded Excel file is validated. The system checks the file for mandatory fields and verifies that all the data provided is accurate and formatted correctly. You can review the data displayed in the interface to ensure everything aligns with the required structure. Errors, if any, will be highlighted for correction. Once the data passes validation, it is prepared for the final submission.
+  </Step>
+
+
+<Step title="Verification">
+   <img
+  className="block dark:hidden"
+  src="/images/img/receive stock sum.png"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/receive stock sum-b.png"
+  alt="Hero Dark"
+/>
+    Verification ensures that the uploaded Excel file contains all mandatory fields, validates the accuracy of the data, and highlights any errors for correction before proceeding.
+  </Step>
+
+
+  <Step title="Receive summarry">
+   <img
+  className="block dark:hidden"
+  src="/images/img/receive stock sum.png"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/receive stock sum-b.png"
+  alt="Hero Dark"
+/>
+    The final step, **Summary**, provides an overview of the processed data. It displays the total entries, successfully added records, and any errors or skipped entries with reasons. This step allows you to review and confirm the data before finalizing, ensuring accuracy and completeness.
+  </Step>
+
+</Steps>
+
+
+
+
+</Step>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<Step title="Add connection as company">
+
+
+
+
+<Steps>
+  <Step title="Basic details">
+   <img
+  className="block dark:hidden"
+  src="/images/img/receive stock.png"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/img/receive stock-b.png"
+  alt="Hero Dark"
+/>
+  The first step, **Basic Details**, involves selecting the connection type (Supplier or Buyer) and entering essential information such as name, type, and registration number before proceeding.
+
+
+
+
+
+
+
+  </Step>
+  <Step title="Address/Contact">
+     <img
+  className="block dark:hidden"
+  src="/images/img/receive stock 2nd step.png"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/img/receive stock 2nd step-b.png"
+  alt="Hero Dark"
+/>
+    The second step involves collecting address and contact details. It requires the user to provide their street name, country, province, city or village, and postal code for the address. For contact information, the user needs to fill in their first name, last name, email, country code, and phone number.
+  </Step>
+
+
+<Step title="Map Connection">
+   <img
+  className="block dark:hidden"
+  src="/images/img/receive stock sum.png"
+  alt="connection"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/receive stock sum-b.png"
+  alt="Hero Dark"
+/>
+    The third step, "Map Connection," allows you to map a new company to your network. By clicking on "Invite Connection," an invitation will be sent to the selected organization, inviting them to participate in your supply chain. This step helps establish a connection with the organization, enabling collaboration within the network.
+  </Step>
+
+
+ 
+
+</Steps>
+
+
+
+
+</Step>
+
+
+
+
+
+  
 </Steps>
 
 
