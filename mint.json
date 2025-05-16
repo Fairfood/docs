@@ -56,7 +56,7 @@
       
         {"group": "Connect App",
         "pages": ["install_app", "login_app", "buy_products_app", "sell_products_app", "transactions_app", 
-        "onboarding_farmers", "app_user_profile", "app_clear_data", "Printinvoice", "data_migration", "more_features"] },
+        "onboarding_farmers", "app_user_profile", "app_clear_data", "Printinvoice", "data_migration", "more_features", "connect_library"] },
 
         {"group": "Storytelling",
         "pages": ["storytelling_interface"] },
