@@ -1,0 +1,367 @@
+# FairFood-Connect
+
+The fairfood-connect library provides a set of classes and methods to 
+interact with the FairFood Connect API for managing and accessing data 
+related to buyers, farmers, products, companies, transactions and 
+catalogs. This library allows users to interact with the API endpoints 
+and perform operations like retrieving, creating, updating and deleting 
+data.
+
+
+## Installing Fairfood-Connect and Supported Versions
+
+Fairfood-Connect is available on PyPI:
+
+```console
+$ python -m pip install fairfood-connect
+```
+
+Fairfood-Connect officially supports Python 3.9+.
+
+
+## Supported Features & Best–Practices
+
+- Create Buyer
+- List country and provinces
+- Get details of company
+- Create, get and update details of farmer
+- List Products
+- Create and delete Transactions
+
+
+## API Reference and User Guide available on [Read the Docs](docs.fairfood.org)
+
+
+## Example Usage
+
+#### Initialization
+
+Initialize the connect object with the required parameters: base_url, 
+client_id, client_secret, and entity_id. This will automatically handle the 
+authentication and setup for API requests.
+
+### Parameters
+
+| Name          | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
+| `base_url`     | The root URL of the API (e.g., `{API_ROOT_URL}`)                          |
+| `client_id`    | Your client ID provided by FairFood Connect (e.g., `{CLIENT_ID}`)         |
+| `client_secret`| Your client secret provided by FairFood Connect (e.g., `{CLIENT_SECRET}`) |
+| `entity_id`    | The entity ID for your account (e.g., `{ENTITY_ID}`)    
+
+Once initialized, the connect object is ready to make API requests with the 
+authentication token automatically included in the headers.
+
+```python
+from fairfood_connect.client import Connect
+
+base_url = "{API_ROOT_URL}"
+client_id = "{CLIENT_ID}"
+client_secret = "{CLIENT_SECRET}"
+entity_id = "{ENTITY_ID}"
+
+connect = Connect(base_url, client_id, client_secret, entity_id)
+```
+
+#### Get Access Token
+
+The Get Access Token is automatically handled during the initialization 
+process. When you create an instance of the Connect class, the access 
+token is automatically generated and included in the request headers for 
+subsequent API calls. You don't need to manually fetch or pass the token.
+
+We can obtain token by below code
+
+```python
+connect.authenticator.auth_token
+```
+
+#### Company Module
+
+The Company Module allows you to interact with the company-related API 
+endpoints. The get_details method is used to retrieve details of a specific 
+company based on its unique identifier (company_id).
+
+To get company details, you must provide the company_id of the company you 
+want to retrieve information for. This ID is typically the unique identifier 
+for the company in the system.
+
+Arguments:
+    company_id (str): The unique identifier for the company you want to fetch 
+        details for. Replace "{ENTITY_ID}" with the actual company ID.
+
+Returns:
+    A dictionary containing the company's details, such as name, 
+    address, contact information, and more, based on the available 
+    data for the provided company ID.
+
+```python
+connect.companies.get_details(company_id="{ENTITY_ID}")
+```
+
+#### Product Module
+
+The Product Module allows you to interact with the product-related API 
+endpoints. The list method is used to retrieve a list of products. 
+You can specify the number of products to retrieve by using limit and 
+offset, although these are optional parameters. If not provided, 
+the default limit is 10, and the default offset is 0.
+
+limit (int)(optional): The maximum number of products to retrieve 
+    (default is 10).
+offset (int)(optional): The number of products to skip before starting to 
+    return results (default is 0)
+
+Returns:
+    A dictionary containing a list of products, including details such as 
+    product name, ID, description, etc.
+
+```python
+connect.products.list(limit=20, offset=10)
+```
+
+#### Catalog Module
+
+The Catalog Module provides methods to interact with catalog-related API 
+endpoints, specifically for retrieving lists of countries and provinces.
+
+**List Countries**
+
+    The list_countries method retrieves a list of all available countries.
+    Returns a dictionary containing a list of countries with relevant details.
+
+    ```python
+    connect.catalogs.list_countries()
+    ```
+
+**List Countries with Provinces**
+
+    The list_countries_with_provinces method retrieves a list of countries 
+    along with their associated provinces. Returns a dictionary containing a 
+    list of countries, each with its respective provinces.
+
+    ```python
+    connect.catalogs.list_countries_with_provinces()
+    ```
+
+**List Provinces by Country**
+    The list_provinces_by_country method retrieves the list of provinces 
+    for a specific country. You must pass the country_name as an argument 
+    to specify which country’s provinces to retrieve.
+
+    Arguments:
+        country_name (str): The name of the country whose provinces you 
+            want to list. Replace "{country_name}" with the actual 
+            country name.
+
+    Returns: 
+        A dictionary containing a list of provinces for the specified 
+        country.
+
+    ```python
+    connect.catalogs.list_provinces_by_country(country_name="{country_name}")  
+    ```
+
+#### Farmer Module
+
+The Farmer Module allows you to manage farmer-related data through methods 
+that create, retrieve, and update farmer information.
+
+**Create Farmer**
+    The create method allows you to create a new farmer by passing in a 
+    data dictionary containing all the necessary information about the farmer.
+
+    Arguments:
+        data (dict): A dictionary containing all the necessary details for the 
+        farmer, including personal information, location, plots, and other 
+        meta data.
+
+    Returns:
+        A dictionary with the newly created farmer's details, including 
+        the unique farmer_id.
+
+    ```python
+    data = {
+        "phone": "1234567890",
+        "description": "test",
+        "house_name": "Test",
+        "street": "Test",
+        "city": "Test",
+        "sub_province": "Test",
+        "reference_number": "X112",
+        "identification_no": "XSSSE22222",
+        "province": "Test",
+        "latitude": 123,
+        "longitude": 123,
+        "zipcode": "680020",
+        "country": "Indonesia",
+        "email": "test@example.com",
+        "first_name": "test",
+        "last_name": "test",
+        "date_of_birth": "2023-12-25",
+        "meta_data": {},
+        "plots": {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[
+                    [-122.801742, 45.48565],
+                    [-122.801742, 45.60491],
+                    [-122.584762, 45.60491],
+                    [-122.584762, 45.48565],
+                    [-122.801742, 45.48565]
+                ]]
+            }
+        }
+    }
+
+    connect.farmers.create(data="{data}")
+    ```
+
+**Get Farmer Details**
+    The get_details method retrieves information about a specific farmer 
+    using their farmer_id.
+
+    Arguments:
+        farmer_id (str): The unique identifier of the farmer whose details 
+            you want to retrieve.
+
+    Returns:
+        A dictionary containing the farmer's details.
+
+    ```python
+    connect.farmers.get_details(farmer_id="{farmer_id}")
+    ```
+
+**Update Farmer Details**
+
+    The update_details method allows you to update specific details of an 
+    existing farmer. You need to pass both the farmer_id and the data 
+    containing the fields you wish to update.
+
+    Arguments:
+        farmer_id (str): The unique identifier of the farmer whose details you 
+            want to update.
+        data (dict): A dictionary containing the fields to be updated, such as 
+            last_name, phone, address, etc
+
+    Returns:
+        A dictionary with the updated farmer details.
+
+    ```python
+    data = {
+        "last_name": "test"
+    }
+    connect.farmers.update_details(
+        farmer_id="{farmer_id}", data="{data}"
+    )
+    ```
+
+#### Buyer Module
+
+The Buyer Module allows you to manage buyer-related data. The primary 
+functionality provided is the creation of a buyer.
+
+**Create Buyer**
+    The create method allows you to create a new buyer by passing in a 
+    data dictionary that contains all the necessary information about 
+    the buyer.
+
+    Arguments:
+        data (dict): A dictionary containing all the necessary details for the 
+            buyer, such as name, contact information, address, and any other 
+            relevant metadata.
+
+    Returns:
+        A dictionary containing the newly created buyer's details.
+
+    ```python
+    connect.buyers.create(data="{buyer_data}")
+    ```
+
+#### Transaction Module
+
+The Transaction Module allows you to manage transaction-related data, 
+including creating and deleting transactions.
+
+**Create Transaction**
+    The create method allows you to create a new transaction by passing in a 
+    data dictionary containing the transaction details.
+
+    Arguments:
+        data (dict): A dictionary containing the transaction details, such as 
+            payment information, amount, currency, source, destination, and any 
+            additional metadata.
+
+    Returns:
+        A dictionary containing the created transaction details, including 
+        the unique transaction identifier.
+
+    ```python
+    sample_transaction_data = {
+    "transaction_payments": [
+        {
+            "id": 123,
+            "currency": "INR",
+            "number": "123",
+            "date": "1726731120",
+            "invoice_number": "332",
+            "verification_latitude": 123,
+            "verification_longitude": 123,
+            "method": "CARD",
+            "payment_type": "TRANSACTION",
+            "amount": 123,
+            "card": "123"
+        }
+    ],
+    "amount": "500",
+    "currency": "INR",
+    "card_details": {
+        "card_id": "2242",
+        "display_id": "1234"
+    },
+    "number": "123",
+    "date": "1726731120",
+    "invoice_number": "123",
+    "verification_latitude": 123,
+    "verification_longitude": 123,
+    "method": "CARD",
+    "quality_correction": 123,
+    "quantity": "500",
+    "card": "123",
+    "source": "G9V5K39E52",
+    "destination": "G9V5K39E52",
+    "product": "JK2528EN53",
+    "parents": []
+    }
+
+    connect.transactions.create(data="{transaction_data}")
+    ```
+
+**Delete Transaction**
+    The delete method allows you to delete a transaction by providing the 
+    transaction_id.
+
+    Arguments:
+        transaction_id (str): The unique identifier of the transaction you 
+            wish to delete
+
+    Returns:
+        A dictionary containing the status of the transaction deletion 
+        (typically includes a success message).
+
+    ```python
+    connect.transactions.delete(transaction_id="{transaction_id}")
+    ```
+
+
+## Cloning the repository
+
+```shell
+git clone https://git.cied.in/fairfood/trace-v2/connect-sdk/fairfood-connect-python-sdk
+```
+
+
+---
+
+
