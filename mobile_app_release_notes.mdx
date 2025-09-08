@@ -5,6 +5,175 @@ title: Mobile App Release Notes
 
 <Steps>
 
+<Step title="V 4.2.1">
+   <sup>04 June 2025</sup>
+
+   **New Features:**
+
+* Updated the server selection screen with an improved UI.
+
+* Added informative pop-up messages for unsupported languages in text-to-speech.
+
+* Standardized the appearance and behavior of validation messages and pop-ups.
+
+* Introduced the ability to search farmers using their reference ID.
+
+* Conducted testing for the reference ID search functionality in Connect.
+
+* Added support for Boolean and Radio type fields in Payment and Transaction forms.
+
+
+
+**Bug Fixes:**
+
+
+* Resolved issue where users were unable to switch between tabs after performing a hot sync.
+
+* Fixed validation messages not clearing when users corrected the error input.
+
+* Addressed a UI alignment issue with the sync icon in offline transactions.
+
+* Fixed an issue where form data was not being correctly submitted to the backend.
+
+
+</Step>
+
+  <Step title="V 4.2.0">
+   <sup>16 January 2025</sup>
+
+   **New Features:**
+
+* Implemented common authentication mechanism for inter-service app communication.
+
+* Added mock APIs for authentication and initial APIs section.
+
+* Updated automated test cases for add farmer, edit farmer, pay farmer, send, transaction filter, payment filter, and buy flows.
+
+* Enabled theme switching based on company in the Connect app.
+
+* Developed linked services in farmer profile.
+
+* Added separator line between card scanning icon and search field in Connect.
+
+* Updated transaction summary widget in Connect.
+
+* Applied label changes in the Connect app.
+
+* Highlighted country code in phone number field for better usability.
+
+* Added farmer service management in Connect.
+
+* Introduced multiple buyer feature for sell transactions in Connect and mapped multiple buyers between Trace and Connect.
+
+* Redesigned profile and settings pages.
+
+* Displayed price range for premiums with ranges in Connect.
+
+* Conducted compatibility, production, and release support testing for Connect.
+
+
+
+
+**Bug Fixes:**
+
+
+* Fixed issue where users were not redirected to the app after login.
+
+* Resolved login automation test bugs.
+
+* Fixed issue where Sort, Filter, and Export options were not closing when clicking outside.
+
+* Corrected alignment of the Edit button in farmer details.
+
+* Fixed incorrect color specification (#003a60) in Connect.
+
+* Added proper error handling when camera permission is not granted.
+
+* Fixed UI issues in theme switching.
+
+* Corrected "Not available" showing in transaction payment details.
+
+* Fixed errors during sell transactions in Connect and migration.
+
+* Added error validation for invalid URLs in linked services.
+
+* Fixed errors when adding farmers in Connect.
+
+* Resolved issue preventing sell transactions with card verification.
+
+* Fixed undefined card ID in transaction details page.
+
+
+</Step>
+
+  <Step title="V 4.1.0">
+   <sup>13 November 2024</sup>
+
+   **New Features:**
+
+* Implemented rotating access token to enhance security.
+  
+* Expanded app automation by creating test accounts for companies with buy/sell functionality and modularizing tests for easier feature-based testing.
+
+* Integrated SSO (Single Sign-On) APIs and implemented SSO flow documentation.
+
+* Developed and integrated Handshake API for secure connections.
+
+* Configured authentication for Connect, including logout API creation and management of multiple device logins.
+
+* Resolved login looping issues with SSO and enabled SSO deep linking for the app.
+
+* Implemented changes to support user migration to SSO, including handling disabled users and token verifications.
+
+* Updated error handling and fail cases for SSO login.
+
+* Added production URL for mobile app deep linking and logout feature for SSO users in Connect.
+
+* Conducted extensive feature testing, migration checks, and retesting to ensure stability.
+
+* Provided production release support for Connect, including migration testing.
+
+* Enabled authentication through Trace SSO for enhanced user access.
+
+* Developed server management and handshake processes for Connect.
+
+* Improved logout and device management for a seamless user experience.
+
+
+
+**Bug Fixes:**
+
+
+* Fixed redirection issues in Connect from Samsung’s default browser.
+  
+* Resolved login errors related to email/password and redirect failures in Connect.
+
+* Addressed issues with Connect not redirecting properly, sometimes presenting app selection prompts.
+
+* Corrected errors allowing re-login post-logout by refreshing the authentication page.
+
+* Resolved issues with deep links working multiple times unintentionally.
+
+* Ensured forced logout when logging in from another device and resolved instances of incorrect search result retention.
+
+* Addressed issues with undefined values in search results and post-login errors causing redirection to the login page.
+
+* Fixed errors in device registration during login and ensured the presence of an "Open App" button on the authentication success page.
+
+
+
+**Enhancement**
+
+* Migrated ESLint configurations to the latest version for improved code quality.
+
+* Fixed Husky pre-commit issues to streamline the development process.
+
+* Updated unit test coverage for comprehensive testing and improved maintainability.
+
+
+
+</Step>
+
 <Step title="V 4.0.0">
    <sup>11 September 2024</sup>
 
