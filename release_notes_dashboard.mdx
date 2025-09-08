@@ -8,6 +8,578 @@ description: Dashboard will help Trace partners will be able to gain a better un
 
 <Steps>
 
+<Step title="Dashboard V 4.2.4">
+  <sup>25 June 2025</sup>	
+
+**New Features:**
+
+
+* Updated Fairfood World Map to focus on province or region-wise locations.
+
+* Added project detail popups in the Fairfood World Map.
+
+* Performed production analysis to identify slow-loading APIs in Trace.
+
+* Designed and developed the new Claims tab in the Trace dashboard.
+
+* Integrated Claims tab APIs with the frontend.
+
+* Added Guardian claim visibility in the farmer profile.
+
+* Created and integrated a popup for claim details in both company and farmer profiles.
+
+* Updated API keys and claim data structure for Guardian claims.
+
+* Enabled hash ID redirection to hashscan.io for verified claims.
+
+* Enhanced the Claim details UI.
+
+* Changed the transaction number to transaction ID in Guardian claim view.
+
+* Updated missing project data in the World Map.
+
+* Focused the map automatically based on project name.
+
+* Conducted production testing of Guardian claim workflows.
+
+* Integrated Guardian Policy with the Trace platform for improved verifiable claims.
+
+**Suggestions:** 
+
+
+* Fixed the placement of the Claim tab in the company profile to remain visible at all times.
+
+
+**Bug Fixes:** 
+
+* Improved loading performance of marked locations in the Fairfood World Map.
+
+* Fixed highlighted country UI issues such as underlining country names and inconsistent province borders.
+
+* Removed unwanted spacing on the map layout.
+
+* Resolved issue where added claims were not showing in profiles.
+
+* Fixed the bug where the cancel button appeared pre-selected in claim views.
+
+* Prevented unwanted reloads of the Claim page when closing the popup.
+
+* Ensured correct redirection to the Claim tab from farmer profiles.
+
+* Made Hash IDs clickable in verified Guardian claims.
+
+* Corrected claim status check functionality.
+
+* Fixed case sensitivity issues in project URLs on the World Map.
+
+</Step>
+
+<Step title="Backend V 2.4.0">
+  <sup>25 June 2025</sup>	
+
+**New Features:**
+
+
+* Developed API to sync users with Hedera.
+
+* Guardian Policy Integration with Trace.
+
+* Implemented Guardian integration workflow and analyzed Guardian workflows.
+
+* Created policies for digital receipts and premium paid processes.
+
+* Fixed policy workflow issues and updated policy field structures.
+
+* Integrated Guardian policy APIs and workflows with multiple user roles.
+
+* Added evidence file hash to policy and updated APIs.
+
+* Built model to save digital receipt details of transactions.
+
+* Enhanced reverse sync to save invoice files and synced invoice images from Connect to Trace.
+
+* Added relation for bulk upload with transactions.
+
+* Saved token details for policies.
+
+* Integrated company claims and added new initial fields to company policies.
+
+* Set up user profiles in Guardian and granted permissions to policies.
+
+* Resolved auto-approval issues in policies for transaction claims.
+
+* Linked Hash IDs to hashscan.io in Guardian claims.
+
+* Enabled creation of blockchain wallet users with Guardian login type.
+
+* Added Hashgram URL and Guardian URL configurations.
+
+* Updated policy filters, created new schema, and added token for premium paid in Guardian.
+
+* Changed sync to Guardian by using random usernames instead of emails.
+
+* Created Hedera accounts for methodology owners in production.
+
+* Restarted Guardian server with updated block IDs, implemented DB backup to prevent deletion.
+
+* Designed and implemented Policy 1 Workflow for Guardian integration.
+
+* Fully integrated Guardian policy and token management into Trace backend.
+
+
+**Bug Fixes:** 
+
+* Fixed issue where invoice images and document updates were not reflecting during reverse sync to Trace from Connect.
+
+</Step>
+
+<Step title="Backend V 2.3.1">
+  <sup>21 May 2025</sup>	
+
+**New Features:**
+
+
+* Added new filters in the “search by” field on the stock list page.
+
+* Enabled claim functionality across all farmers.
+
+* Integrated carbon token support into the farmer onboarding process.
+
+* Resolved validation issues in bulk upload for production.
+
+* Revamped carbon credit logic and functional requirements.
+
+* Changed currency display in the farmer passbook.
+
+* Updated API for generating farmer card IDs.
+
+* Ensured farmer data is saved before initiating sync with Connect.
+
+* Investigated and improved server response and loading times for data-heavy companies.
+
+
+**Bug Fixes:** 
+
+* Fixed issues preventing farmer bulk upload without ID in both Trace and dynamic templates.
+
+* Resolved error encountered during stock bulk upload using Trace template.
+
+* Corrected logic to prevent Tier 2 farmers from being incorrectly added as Tier 1 in Connect.
+
+* Fixed issue where the last name was being saved as "None" when editing farmer consent via Django admin.
+
+</Step>
+
+ <Step title="Dashboard V 4.2.3">
+  <sup>21 May 2025</sup>	
+
+**New Features:**
+
+
+* Integrated carbon token as a product in farmer transactions.
+
+* Added a carbon emission transaction list and filters in the farmer profile.
+
+* Displayed company claims in the farmer details view.
+
+* Updated units in stock transactions.
+
+* Implemented design changes for emission claims and carbon transaction tables.
+
+* Updated map location granularity to province/region level.
+
+* Introduced a project details popup on the Fairfood world map.
+
+* UI revamp for carbon transaction tables and farmer consent section in the passbook.
+
+* Translation updates across Farmer Passbook and map modules.
+
+* Included API updates and new endpoints for carbon transactions.
+
+* Google Maps API key updates across modules.
+
+* Setup integration for customer support platform (Zendesk).
+
+* Added filters in the “search by” field on the stock list page.
+
+* Carbon credit integration in farmer transactions.
+
+
+
+**Bug Fixes:** 
+
+* Fixed mobile responsiveness in the farmer passbook and transaction details pages.
+
+* Resolved issues in the dynamic template column mapping.
+
+* Corrected preview and QR sizing in the farmer card generator.
+
+* Fixed translation issues and multiple UI bugs in the farmer passbook.
+
+* Improved map loading performance and visual design for the World of Fairfood map.
+
+* Resolved pagination-related search issues in the farmer list and stock pages.
+
+* Fixed inconsistent province borders and spacing on the world map.
+
+* Addressed incorrect behavior in the "Search by" dropdown when set to "All".
+
+</Step>
+
+  <Step title="Backend V 2.3.0">
+  <sup>03 April 2025</sup>	
+
+**New Features:**
+
+
+* Updated the storytelling/consumer interface to the latest version as default.
+
+* Fixed reverse sync issues and improved error logging with Sentry.
+
+* Enhanced card creation to support both Card ID and Fair ID for nodes.
+
+* Resolved premium option issues in reverse sync.
+
+* Implemented farmer data anonymization when consent is not provided.
+
+* Added support for editing and updating farmer consent in the passbook.
+
+* Integrated Slack notifications for farmer consent updates.
+
+* Created API for GTIN storage and GS1 URL generation service.
+
+* Added Celery Flower for background task monitoring.
+
+* Introduced buffer time to improve reverse sync handling.
+
+* Prevented unnecessary transaction updates to avoid reverse sync issues.
+
+* Implemented caching improvements for farmer consent APIs.
+
+* Included remittance scheme in transactions synced from Connect.
+
+* Added date of birth validation for farmer passbook entries.
+
+* Introduced company-level control for DOB validation and related sync logic.
+
+* Updated TOTP key generation for improved security.
+
+* Updated farmer consent logic and flow.
+
+* Implemented GTIN storage and GS1 URL generation.
+
+
+**Bug Fixes:** 
+
+* Resolved issue where storytelling claim popup failed to show evidence in production.
+
+* Fixed 400 error when requesting stocks in the development environment.
+
+* Resolved error encountered when adding a connection in production.
+
+* Fixed incorrect farmer count in transaction reports in production.
+
+* Resolved error when editing farmer consent via Django Admin.
+
+* Prevented duplicate GTIN numbers in the GS1 field.
+
+* Fixed crash when viewing a transaction as admin under “View as Admin” mode.
+
+</Step>
+
+  <Step title="Dashboard V 4.2.2">
+  <sup>03 April 2025</sup>	
+
+**New Features:**
+
+
+* Updated pagination in Trace.
+
+* Added "Search by" option in filters.
+
+* Show province filter only when a country is selected.
+
+* Prevented null or empty parameters when supply chain is unavailable.
+
+* Updated Google Maps API in Storytelling (Dev/Stage).
+
+* Fixed back button navigation issues across multiple pages (Transactions, Farmers, Companies, Stock actions, Stock list, Claims).
+
+* Added consent field to Farmer Passbook (design and frontend).
+
+* Redesigned batch details page layout (RTS).
+
+* Designed and integrated GS1 information form and button.
+
+* Implemented URL generation, parameter parsing, QR code rendering, and legacy URL support.
+
+* Updated transaction sort key in Trace dashboard.
+
+* Included remittance scheme in transactions synced from Connect.
+
+* Updated TOTP in Farmer Passbook.
+
+* Validated GTIN number for duplicates and updated related APIs.
+
+* Disabled GS1 add/remove features for sent stock transactions.
+
+* Conducted stage testing for GS1 info.
+
+* Farmer consent updation.
+
+* Added GS1 information to batch details.
+
+* Implemented GS1 information feature.
+
+**Suggestions:** 
+
+
+* Added a message indicating that consent updates take effect within 24 hours in Farmer Passbook.
+
+
+**Bug Fixes:** 
+
+* Fixed UI breaking in pagination.
+
+* Updated labels in new filters.
+
+* Fixed delayed updates when switching companies.
+
+* Corrected decimal and NaN issues in pagination search.
+
+* Fixed over-zoom issue in farm plot with geo JSON.
+
+* Corrected number display in pagination search.
+
+* Fixed logout issue when exiting "view as admin" in Admin dashboard.
+
+* Passed user ID in header when calling connection API.
+
+* Fixed search in company tab of connections module.
+
+* Reset pagination after switching tabs.
+
+* Fixed province dropdown not resetting when country changes in farmer edit.
+
+* Restored pagination in stock page after back navigation.
+
+* Fixed missing stock images when navigating back from transaction details.
+
+* Corrected page numbers when filters are applied in transaction module.
+
+* Fixed applied filter visibility in farmer profile (Admin dashboard).
+
+* Corrected stock disappearance after backward navigation.
+
+* Fixed missing applied filter labels.
+
+* Corrected translations in Farmer Passbook filters.
+
+* Fixed saving issue of GTIN numbers in transaction details.
+
+* Prevented transaction page reload when cancelling GS1 modal.
+
+* Fixed alignment of stock request button in Admin dashboard.
+
+* Fixed broken images of companies and farmers in Storytelling (Stage).
+
+</Step>
+
+  <Step title="Backend V 2.2.0">
+  <sup>07 March 2025</sup>	
+
+**New Features:**
+
+
+* Fixed float and integer handling in collector price field.
+
+* Implemented common authentication mechanism for inter-service app communication.
+
+* Enabled theme switching based on company in Connect (backend support).
+
+* Developed backend support for linked services in farmer profile.
+
+* Added farmer service management in Connect.
+
+* Enabled multiple buyers in sell transactions and mapped them between Trace and Connect.
+
+* Added search-by option in Trace filters.
+
+* Enabled downloading all transactions as a CSV file in Django Admin for Connect.
+
+* Fixed issues in API for Dole Connect transactions.
+
+* Improved reverse sync logic for farmers, cards, transactions, and entities.
+
+* Fixed PT Chan transaction API retrieval.
+
+* Enabled syncing farmers from Trace to Connect and vice versa.
+
+* Updated buyer and farmer details when Connect is enabled.
+
+* Synced farmer plots from Connect to Trace during reverse sync.
+
+* Refactored reverse sync code and excluded deleted transactions from views.
+
+
+**Bug Fixes:** 
+
+* Fixed login errors for Connect-enabled companies in the Connect app.
+
+* Resolved issue allowing duplicate unique IDs when adding farmers.
+
+* Fixed errors when adding farmers in Connect.
+
+* Corrected errors when searching for farmers in the connection tab.
+
+* Fixed sync issues between Trace and Connect.
+
+* Corrected farmer location mapping issues after sync.
+
+* Fixed missing farmer card IDs in Trace profiles after sync.
+
+* Ensured farmer profile pictures sync properly from Connect to Trace.
+
+* Fixed issue where edited farmer names in Connect were not reflected in Trace.
+
+* Resolved errors when enabling Connect in Trace.
+
+* Fixed search issues in the Connections module (company tab).
+
+* Prevented duplicate farmers from being created in Connect during sync.
+
+</Step>
+
+  <Step title="Dashboard V 4.2.1">
+  <sup>12 December 2024</sup>	
+
+**New Features:**
+
+
+* Added new filters and search functionality in the Trace farmer list.
+
+* Implemented zoom-in functionality for farmer plots on the map when plot data is available.
+
+* Ensured farm plot area does not display as zero.
+
+* Added an edit button for the farmer's unique ID.
+
+* Made the farmer reference ID unique within a company.
+
+* Incorporated UI suggestions for enhanced usability.
+
+* Conducted testing and provided support for the production release of new filters and search.
+
+**Suggestions:** 
+
+
+* Added labels to the "Add or edit profile picture" field for farmers and company profiles for better clarity.
+
+
+**Bug Fixes:** 
+
+* Resolved issues with stopping APIs when switching between company and farmer tabs in Trace.
+
+* Fixed missing farmer plot displays in the farmer module of the Admin dashboard.
+
+* Addressed API calls not stopping during farmer search queries.
+
+* Ensured filters reset correctly in the Admin dashboard.
+
+* Fixed issues preventing the addition of reference or unique IDs for already-added farmers.
+
+* Corrected redirection issues from the company profile URL to the homepage.
+
+* Made search functional in the "Team Member" tab of the Trace company profile.
+
+* Fixed "Show More" functionality in the Supply Chain section of the Admin dashboard.
+
+* Prevented duplicate supply chain creation when clicking the create button multiple times.
+
+* Improved visibility of the "More Options" icon in the Companies List without requiring horizontal scrolling.
+
+* Enhanced sorting button behavior to visually indicate active sorts.
+
+* Ensured the status filter resets correctly in the Claim (RTD) section of the Admin dashboard.
+
+* Fixed font color discrepancies to meet the required specification (#003a60).
+
+* Addressed UI issues identified during the design review.
+
+* Corrected errors in the farmer plot edit modal labels.
+
+* Fixed overlapping of ID numbers in the farmer reference ID field.
+
+* Added validation for incomplete email addresses in the invite company details page.
+
+* Prevented adding the same supply chain multiple times when inviting a company in the Admin dashboard.
+
+</Step>
+
+<Step title="Backend V 2.1.0">
+  <sup>13 November 2024</sup>	
+
+**New Features:**
+
+
+* Implemented rotation of access tokens to enhance security.
+
+* Removed duplicate farmer entries from production.
+
+* Reorganized API documentation for improved readability and access.
+
+* Added model fields and filters for managing archived stocks and transactions.
+
+* Developed APIs for toggling archive status on records.
+
+* Set up PT CAN OAuth test accounts in the development environment.
+
+* Identified farmers lacking BC accounts and provided support for PTCan and Ugacof users.
+
+* Introduced delete functionality for transactions.
+
+* Corrected float values and integrated integer types for pricing in the Collector price field.
+
+* Enhanced premium field range and labels.
+
+* Linked the Farmer Passbook with Connect and added polygon data fields during farmer creation.
+
+* Set up auto-backup for production to prevent data loss.
+
+* Integrated SSO in Trace Connect for streamlined access.
+
+* Addressed timezone issues in reverse-sync and created long-living Connect SSO tokens with password mapping.
+
+* Enhanced farmer table with metadata fields, including polygon data, in connection templates.
+
+* Addressed Connect SSO mobile app linking issues.
+
+* Released updates for staging environment.
+
+* Enabled synchronization between Trace and Connect for seamless data flow.
+
+
+**Bug Fixes:** 
+
+* Resolved issues with downloading the Trace Template for farmers in Stage.
+
+* Fixed archived flags in transaction reports and restructured Archive APIs.
+
+* Corrected failures with the "select all" feature in stock processing.
+
+* Resolved issues with moving archived stocks back to Transaction History.
+
+* Fixed various errors in stock requests, Google sign-in, and connection additions in production.
+
+* Addressed discrepancies in premium amounts, total transaction summaries, and income volumes in the Farmer Passbook.
+
+* Corrected zero farmer counts in the transaction report and restored inactive card combinations in Connect.
+
+* Removed deleted transactions from appearing in the Farmer Passbook in development.
+
+</Step>
+
+
 <Step title="Dashboard V 4.2.0">
   <sup>23 October 2024</sup>	
 
